@@ -1,0 +1,55 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "airbnb/hooks"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-console": 0,
+    "comma-dangle": 0,
+    "react/jsx-filename-extension": 0,
+    "linebreak-style": 0,
+    "global-require": 0,
+    "skipBlankLines": 0,
+    "react/require-default-props": 0,
+    "react/default-props-match-prop-types": 0,
+    "react/forbid-prop-types":0,
+    "no-nested-ternary":0,
+    "no-unused-vars":0,
+    "react/jsx-props-no-spreading":0,
+    "react/destructuring-assignment":0,
+    "max-len": 0,
+    "jsx-a11y/control-has-associated-labe":0,
+    "no-return-await":0,
+    "no-useless-escape":0,
+    "consistent-return":0,
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": 0, // Checks effect dependencies
+    "react/prop-types":0
+  },
+  "overrides": [
+    {
+      "files": ["*.js","*.jsx"],
+      "rules": {
+        "quotes": ["error", "single"]
+      }
+    }
+  ],
+  "globals": {
+    "__API__": true,
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "plugins": [
+    "react"
+  ]
+}
