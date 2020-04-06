@@ -35,18 +35,9 @@ export default function HeaderElement(props) {
         }}
       />
 
-      <Parallax image={`${__API__}/landing.png`} />
-
-      <div className={classes.paralaxDiv}>
-        <GridRow>
-          <h1 className={classes.title}>{title}</h1>
-        </GridRow>
-      </div>
-
-      <div className={classes.paralaxDiv2} {...rest}>
+      <div style={{ position: 'relative', top: '0%' }}>
         {children}
       </div>
-
     </div>
   );
 }

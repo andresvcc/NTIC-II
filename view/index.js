@@ -7,7 +7,7 @@ import {
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { responsiveFontSizes } from '@material-ui/core/styles';
-
+import { CookiesProvider } from 'react-cookie';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -37,11 +37,13 @@ ReactDOM.render(
     <ToastContainer />
     <CssBaseline />
     <BrowserRouter>
-      <Switch>
-        {routerController(routes)}
-        <Redirect exact from="/" to="/home" />
-        <Route component={routes[0].component} />
-      </Switch>
+      <CookiesProvider>
+        <Switch>
+          {routerController(routes)}
+          <Redirect exact from="/" to="/home" />
+          <Route component={routes[0].component} />
+        </Switch>
+      </CookiesProvider>
     </BrowserRouter>
   </ThemeProvider>,
   document.getElementById('root')

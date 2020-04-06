@@ -6,6 +6,8 @@ import {
   CssBaseline,
 } from '@material-ui/core';
 
+import PigeonMap from './sections/pigeonMap';
+
 import {
   GridRow,
   VerticalTabs,
@@ -30,8 +32,9 @@ export default function Home() {
     <div className={classes.root}>
       <CssBaseline />
       <Header title="MEISTER ENGINEERING" classes={classes}>
-        {' '}
+        <PigeonMap />
       </Header>
+
 
       <Body classes={classes}>
         <Scroll>

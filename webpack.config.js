@@ -7,7 +7,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-const outputDirectory = '../../public/buildSite/';
+const outputDirectory = '/build';
 const apiUrl = 'http://localhost:8081';
 
 const apiHost = '"images"';
@@ -16,7 +16,7 @@ module.exports = {
   entry: './view/index.js',
   output: {
     path: path.join(__dirname, outputDirectory),
-    filename: 'bundle.js'
+    filename: './bundle.js'
   },
   performance: {
     hints: process.env.NODE_ENV === 'production' ? 'warning' : false

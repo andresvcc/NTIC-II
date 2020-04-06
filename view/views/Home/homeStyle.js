@@ -15,7 +15,8 @@ const style = {
     position: 'absolute',
     top: '250px',
     left: '5%',
-    rigth: '5%'
+    rigth: '5%',
+    zIndex: '50'
   },
   paralaxDiv2: {
     width: '90%',
