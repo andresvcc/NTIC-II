@@ -362,13 +362,12 @@ export default function PigeonMap(props) {
                     <h6 style={{
                       width: '30px',
                       position: 'absolute',
-                      top: '-50%',
+                      top: '-40%',
                       left: '0%',
-                      background: 'black',
                       color: 'white'
                     }}
                     >
-                      {`${value.id}: ${value.pts.length}`}
+                      {`${value.pts.length}`}
                     </h6>
                   </div>
                 </Overlay>
@@ -385,15 +384,15 @@ export default function PigeonMap(props) {
         </Map>
       </div>
       {
-        zoomSize.area
+        `zoomSize.area: ${zoomSize.area} `
       }
       /
       {
-        zoomSize.radio
+        ` zoomSize.radio: ${zoomSize.radio} `
       }
       /
       {
-        dataDisplay.zoom
+        ` dataDisplay.zoom:${dataDisplay.zoom} `
       }
     </div>
   );
