@@ -6,7 +6,7 @@ import {
   CssBaseline,
 } from '@material-ui/core';
 
-import PigeonMap from './sections/pigeonMap';
+import Map from './sections/map';
 
 import {
   GridRow,
@@ -32,7 +32,7 @@ export default function Home() {
     <div className={classes.root}>
       <CssBaseline />
       <Header title="MEISTER ENGINEERING" classes={classes}>
-        <PigeonMap />
+        <Map classes={classes} />
       </Header>
 
 

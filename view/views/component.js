@@ -19,6 +19,7 @@ import VerticalTabs from '../components/VerticalTabs/VerticalTabs';
 import Scroll from '../components/Scroll/Scroll';
 import Table from '../components/Table/table';
 import SubTable from '../components/Table/subTable';
+import Map from '../components/Map/pigeonMap';
 
 export {
   redux,
@@ -41,5 +42,6 @@ export {
   VerticalTabs,
   Scroll,
   Table,
-  SubTable
+  SubTable,
+  Map
 };

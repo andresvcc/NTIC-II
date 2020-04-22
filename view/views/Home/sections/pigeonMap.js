@@ -16,89 +16,13 @@ import {
 
 import { makeStyles } from '@material-ui/core/styles';
 
+import markers from './markers';
+
 const useStyles = makeStyles((theme) => ({
   root: {
 
   },
 }));
-
-const markers = [
-  {
-    type: 'point',
-    id: 'm1',
-    pos: [46.201364405672045, 6.146247963150643],
-  },
-  {
-    type: 'point',
-    id: 'm2',
-    pos: [46.19992354808063, 6.084032328910524],
-  },
-  {
-    type: 'point',
-    id: 'm3',
-    pos: [46.18459861942422, 6.109488633777175],
-  },
-  {
-    type: 'point',
-    id: 'm4',
-    pos: [46.09295214705564, 6.193975780894164],
-  },
-  {
-    type: 'point',
-    id: 'm5',
-    pos: [46.197662682852766, 6.11974110123117],
-  },
-  {
-    type: 'point',
-    id: 'm6',
-    pos: [46.09443073362386, 6.201108593906952],
-  },
-  {
-    type: 'point',
-    id: 'm7',
-    pos: [46.12430686717495, 6.0582714952134324],
-  },
-  {
-    type: 'point',
-    id: 'm8',
-    pos: [46.17436916403085, 6.256383557285858],
-  },
-  {
-    type: 'point',
-    id: 'm9',
-    pos: [46.15012704605653, 6.098163051710884],
-  },
-  {
-    type: 'point',
-    id: 'm10',
-    pos: [46.20135209840719, 6.139276990367961],
-  },
-  {
-    type: 'point',
-    id: 'm11',
-    pos: [46.195054737251255, 6.116789349987101],
-  },
-  {
-    type: 'point',
-    id: 'm12',
-    pos: [46.244523041717464, 6.111124524547648],
-  },
-  {
-    type: 'point',
-    id: 'm13',
-    pos: [46.1657852787818, 6.040107703016616],
-  },
-  {
-    type: 'point',
-    id: 'm14',
-    pos: [46.19036950556386, 6.118930603976338],
-  },
-  {
-    type: 'point',
-    id: 'm15',
-    pos: [46.19737877459925, 6.118670389414547],
-  },
-];
 
 
 function mapTilerProvider(x, y, z) {
@@ -106,28 +30,6 @@ function mapTilerProvider(x, y, z) {
   const s = String.fromCharCode(97 + (x + y + z) % 3);
   return `https://cartodb-basemaps-${s}.global.ssl.fastly.net/rastertiles/voyager_labels_under/${z}/${x}/${y}.png`;
 }
-
-/*
-function zoomCalGroup(zoom) {
-  const valueDis = zoom > 17 ? 50
-    : zoom >= 16 ? 100
-      : zoom >= 15 ? 200
-        : zoom >= 14 ? 300
-          : zoom >= 13 ? 600
-            : zoom >= 12 ? 1000 //*
-              : zoom >= 11 ? 3000
-                : zoom >= 10 ? 3000
-                  : zoom >= 9 ? 6000
-                    : zoom >= 8 ? 7000
-                      : zoom >= 7 ? 8000
-                        : zoom >= 6 ? 10000
-                          : zoom >= 5 ? 20000
-                            : zoom >= 4 ? 30000
-                              : zoom >= 3 ? 40000
-                                : 50000;
-
-  return valueDis;
-} */
 
 function zoomCalGroup(zoom) {
   const valueDis = zoom > 17 ? { radio: 50, area: 30 }
@@ -163,6 +65,7 @@ export default function PigeonMap(props) {
   const [zoomSize, setZoomSize] = useState({ radio: 50, area: 10 });
 
   const [animating, setAnimating] = useState(false);
+
   const [data, setData] = useState({
     center: [46.201364405672045, 6.146247963150643],
     zoom: 10,
@@ -187,7 +90,7 @@ export default function PigeonMap(props) {
     });
   };
 
-  const handleClick = ({ event, latLng, pixel }) => {
+  const handleMapClick = ({ event, latLng, pixel }) => {
     console.log('Map clicked!', latLng, pixel);
   };
 
@@ -350,7 +253,7 @@ export default function PigeonMap(props) {
           minZoom={4}
           maxZoom={18}
           animated
-          onClick={handleClick}
+          onClick={handleMapClick}
           dprs={[1, 2]}
         >
           {
@@ -401,36 +304,3 @@ export default function PigeonMap(props) {
 PigeonMap.propTypes = {
   initials: PropTypes.any
 };
-
-
-/**
- *
- *
- *
-.map((marker, index) => {
-              const a = 0;
-              if (marker.type === 'polygon') {
-                return (
-                  <Overlay anchor={marker.center} offset={[15, 30]} key={`${marker.pos[0]},${marker.pos[1]}${marker.nom}`}>
-                    <div>
-                      <img src={`${__API__}/placeholder.svg`} width={30} height={30} alt="" />
-                      <h6 style={{
-                        width: '60px',
-                        position: 'absolute',
-                        top: '-100%',
-                        left: '40%',
-                        background: 'black',
-                        color: 'white'
-                      }}
-                      >
-                        {`${marker.nom}: ${data.zoom}`}
-                      </h6>
-                    </div>
-                  </Overlay>
-                );
-              }
-
-              return '';
-            })
- *
- */
