@@ -1,6 +1,6 @@
 const markers = [
   {
-    type: 'point',
+    type: 'polygon',
     id: 'm1',
     pos: [46.201364405672045, 6.146247963150643],
   },
