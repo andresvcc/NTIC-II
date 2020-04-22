@@ -1,32 +1,26 @@
 const menuNavegation = [
   {
     key: 1,
-    label: 'Menu 1',
+    label: 'Database',
     element: [
       {
         id: 0,
-        label: 'Home',
-        link: '/'
-      }
-    ],
-  },
-  {
-    key: 2,
-    label: 'Menu 2',
-    element: [
-      {
-        id: 0,
-        label: 'Opction 1',
+        label: 'Library',
         link: '/'
       },
       {
         id: 1,
-        label: 'Opcion 2',
+        label: 'City',
         link: '/'
       },
       {
         id: 2,
-        label: 'Opcion 3',
+        label: 'Manuscripts',
+        link: '/'
+      },
+      {
+        id: 2,
+        label: 'Interval',
         link: '/'
       }
     ],

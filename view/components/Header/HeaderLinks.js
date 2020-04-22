@@ -25,6 +25,7 @@ import CustomDropdown from "../CustomDropdown/CustomDropdown";
 import Button from '../CustomButtons/Button';
 
 import styles from './headerLinksStyle';
+import SettingsIcon from '@material-ui/icons/Settings';
 
 const useStyles = makeStyles(styles);
 
@@ -77,7 +78,7 @@ export default function HeaderLinks(props) {
             fontFamily: '"Black Ops One", cursive',
           }}
         >
-           Logout
+           <SettingsIcon />
         </Button>
       </ListItem>
     </List>

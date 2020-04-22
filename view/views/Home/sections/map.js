@@ -46,9 +46,7 @@ export default function MapDisplay(props) {
 
   const [parcheminsData, setParcheminsData] = useState(parchemins);
 
-  const animationEvent = (data) => {
-    // console.log(dataMap);
-  };
+  const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
     const distanceCal = zoomCalGroup(dataMap.zoom);
@@ -61,18 +59,17 @@ export default function MapDisplay(props) {
     <div className={classes.root}>
       <Map
         initial={dataMap}
-        animatedAction={(data) => animationEvent(data)}
+        animatedAction={(data) => setAnimated(!data)}
         setDataMap={(data) => setDataMap(data)}
       >
         {
           parcheminsData.map((data) => (
             <Overlay anchor={data.pos} offset={[10, 20]} key={data.id}>
-              <Marker data={data} />
+              <Marker data={data} animated={animated} />
             </Overlay>
           ))
         }
       </Map>
-      {`${dataMap.zoom}`}
     </div>
   );
 }

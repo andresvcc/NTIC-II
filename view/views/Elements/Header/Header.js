@@ -23,16 +23,12 @@ export default function HeaderElement(props) {
   return (
     <div className={classes.root}>
       <Header
-        color="transparent"
+        color="dark"
         routes={dashboardRoutes}
         brand=""
         urlIcon={`${__API__}/logo.png`}
         rightLinks={<HeaderLinks color="black" menu={menuNavegation} />}
         fixed
-        changeColorOnScroll={{
-          height: 500,
-          color: 'dark'
-        }}
       />
 
       <div style={{ position: 'relative', top: '0%' }}>

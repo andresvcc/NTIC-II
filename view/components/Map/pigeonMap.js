@@ -49,7 +49,7 @@ export default function PigeonMap(props) {
   };
 
   useEffect(() => {
-    if (animating === false) animatedAction(dataMap);
+    if (animating === false) animatedAction(animating);
   }, [animating]);
 
   const handleAnimationStart = () => setAnimating(true);
@@ -71,7 +71,7 @@ export default function PigeonMap(props) {
           zoom={dataMap.zoom}
           defaultZoom={16}
           onBoundsChanged={handleBoundsChange}
-          height={window.innerHeight - 50}
+          height={window.innerHeight}
           boxClassname="pigeon-filters"
           onAnimationStart={handleAnimationStart}
           onAnimationStop={handleAnimationStop}
