@@ -26,7 +26,7 @@ import Button from '../CustomButtons/Button';
 
 import styles from './headerLinksStyle';
 import SettingsIcon from '@material-ui/icons/Settings';
-
+import Slider from './Slider'
 const useStyles = makeStyles(styles);
 
 
@@ -42,6 +42,9 @@ export default function HeaderLinks(props) {
 
   return (
     <List className={classes.list}>
+      <ListItem className={classes.listItem}>
+        <Slider />
+      </ListItem>
       {
         menu.map((subMenu)=>(
             <ListItem key={subMenu.key} className={classes.listItem}>
