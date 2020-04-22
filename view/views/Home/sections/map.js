@@ -10,6 +10,28 @@ import {
 
 import Marker from './markers';
 
+function zoomCalGroup(zoom) {
+  const valueDis = zoom >= 18 ? { radio: 0, area: 30 }
+    : zoom >= 17 ? { radio: 50, area: 30 }
+      : zoom >= 16 ? { radio: 100, area: 35 }
+        : zoom >= 15 ? { radio: 150, area: 35 }
+          : zoom >= 14 ? { radio: 200, area: 35 }
+            : zoom >= 13 ? { radio: 300, area: 40 }
+              : zoom >= 12 ? { radio: 1000, area: 55 }
+                : zoom >= 11 ? { radio: 1500, area: 55 }
+                  : zoom >= 10 ? { radio: 3000, area: 60 }
+                    : zoom >= 9 ? { radio: 6000, area: 55 }
+                      : zoom >= 8 ? { radio: 9000, area: 55 }
+                        : zoom >= 7 ? { radio: 25000, area: 50 }
+                          : zoom >= 6 ? { radio: 36000, area: 40 }
+                            : zoom >= 5 ? { radio: 60000, area: 35 }
+                              : zoom >= 4 ? { radio: 140000, area: 35 }
+                                : zoom >= 3 ? { radio: 200000, area: 30 }
+                                  : { radio: 360000, area: 30 };
+
+  return valueDis;
+}
+
 export default function MapDisplay(props) {
   const {
     classes
@@ -25,10 +47,15 @@ export default function MapDisplay(props) {
   const [parcheminsData, setParcheminsData] = useState(parchemins);
 
   const animationEvent = (data) => {
-    const newMapData = groupFonction(parcheminsData);
-    setParcheminsData(newMapData);
+    // console.log(dataMap);
   };
 
+  useEffect(() => {
+    const distanceCal = zoomCalGroup(dataMap.zoom);
+    const distanceMinGroup = distanceCal.radio;
+    const newMapData = groupFonction(parchemins, distanceMinGroup);
+    setParcheminsData(newMapData);
+  }, [dataMap.zoom]);
 
   return (
     <div className={classes.root}>
@@ -45,6 +72,7 @@ export default function MapDisplay(props) {
           ))
         }
       </Map>
+      {`${dataMap.zoom}`}
     </div>
   );
 }

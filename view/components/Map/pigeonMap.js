@@ -75,7 +75,7 @@ export default function PigeonMap(props) {
           boxClassname="pigeon-filters"
           onAnimationStart={handleAnimationStart}
           onAnimationStop={handleAnimationStop}
-          minZoom={4}
+          minZoom={3}
           maxZoom={18}
           animated
           onClick={handleMapClick}

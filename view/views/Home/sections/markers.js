@@ -10,7 +10,8 @@ function Pointer(props) {
   const { data, classes } = props;
   return (
     <div>
-      <img src={`${__API__}/placeholder.svg`} width={20} height={20} alt="" />
+      <img src={`${__API__}/placeholder.svg`} width={18} height={18} alt="" />
+      {/* <Avatar style={{ background: 'gray', fontSize: '14px' }}>1</Avatar> */}
     </div>
   );
 }
@@ -25,10 +26,21 @@ Pointer.propTypes = {
 };
 
 function Polygon(props) {
-  const { data, classes } = props;
+  const { data, classes, size } = props;
+
+  const area = 20 + data.markers.length;
+
   return (
     <div>
-      <Avatar style={{ background: 'gray', fontSize: '14px' }}>{data.id}</Avatar>
+      <Avatar style={{
+        background: 'gray',
+        fontSize: '14px',
+        width: area >= 40 ? 40 : area,
+        height: area >= 40 ? 40 : area,
+      }}
+      >
+        {data.markers.length}
+      </Avatar>
     </div>
   );
 }
@@ -39,16 +51,18 @@ Polygon.defaultProps = {
 
 Polygon.propTypes = {
   classes: PropTypes.any,
-  data: PropTypes.object
+  data: PropTypes.object,
+  size: PropTypes.number
 };
 
 export default function Marker(props) {
   const {
     classes,
-    data
+    data,
+    size
   } = props;
 
-  if (data.type === 'polygon') { return (<Polygon data={data} classes={classes} />); }
+  if (data.type === 'polygon') { return (<Polygon data={data} size={size} classes={classes} />); }
   if (data.type === 'point') { return (<Pointer data={data} classes={classes} />); }
   return (<div />);
 }
@@ -59,5 +73,6 @@ Marker.defaultProps = {
 
 Marker.propTypes = {
   classes: PropTypes.any,
-  data: PropTypes.object
+  data: PropTypes.object,
+  size: PropTypes.number
 };
