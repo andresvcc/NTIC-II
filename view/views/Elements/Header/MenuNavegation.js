@@ -19,7 +19,7 @@ const menuNavegation = [
         link: '/'
       },
       {
-        id: 2,
+        id: 3,
         label: 'Interval',
         link: '/'
       }

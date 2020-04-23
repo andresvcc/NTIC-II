@@ -26,7 +26,8 @@ import Button from '../CustomButtons/Button';
 
 import styles from './headerLinksStyle';
 import SettingsIcon from '@material-ui/icons/Settings';
-import Slider from './Slider'
+import Slider from './Slider';
+
 const useStyles = makeStyles(styles);
 
 
@@ -41,33 +42,10 @@ export default function HeaderLinks(props) {
   const [valHover, setHover] = useState(false)
 
   return (
-    <List className={classes.list}>
+      <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <Slider />
       </ListItem>
-      {
-        menu.map((subMenu)=>(
-            <ListItem key={subMenu.key} className={classes.listItem}>
-              <CustomDropdown
-                hoverColor={color || 'black'}
-                noLiPadding
-                buttonText={subMenu.label}
-                buttonProps={{
-                  className: classes.navLink,
-                  color: "transparent"
-                }}
-                hover={{valHover, setHover}}
-                dropdownList={subMenu.element? (subMenu.element.map((data)=>{
-                  return (
-                    <Link to={data.link} className={classes.dropdownLink} key={data.id} style={{fontSize:'14px'}}>
-                    {data.label}
-                  </Link>
-                  )
-                })):[]}
-              />
-          </ListItem>
-        ))
-      }
       <ListItem className={classes.listItem}>
         <Button
           color="white"

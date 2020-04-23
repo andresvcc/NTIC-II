@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import Fade from '@material-ui/core/Fade';
+import RoomIcon from '@material-ui/icons/Room';
 
 import {
   Button,
@@ -11,10 +12,17 @@ function Pointer(props) {
   const { data, classes, animated } = props;
   return (
     <Fade
-      in={animated}
-      style={{ transitionDelay: animated ? '100ms' : '0ms' }}
+      in
+      style={{ transitionDelay: animated ? '300ms' : '0ms' }}
     >
-      <img src={`${__API__}/placeholder.svg`} width={18} height={18} alt="" />
+      <span
+        role="button"
+        tabIndex="0"
+        onClick={() => { console.log('click sur', data.id); }}
+        onKeyUp={() => console.log('ass')}
+      >
+        <RoomIcon className={classes.markerPoint} />
+      </span>
       {/* <Avatar style={{ background: 'gray', fontSize: '14px' }}>1</Avatar> */}
     </Fade>
   );
@@ -39,15 +47,16 @@ function Polygon(props) {
 
   return (
     <Fade
-      in={animated}
-      style={{ transitionDelay: animated ? '100ms' : '0ms' }}
+      in
+      style={{ transitionDelay: animated ? '300ms' : '0ms' }}
     >
-      <Avatar style={{
-        background: 'gray',
-        fontSize: '14px',
-        width: area >= 40 ? 40 : area,
-        height: area >= 40 ? 40 : area,
-      }}
+      <Avatar
+        style={{
+          width: area >= 40 ? 40 : area,
+          height: area >= 40 ? 40 : area,
+        }}
+        className={classes.markerPolygon}
+        onClick={() => { console.log('click sur', data.id); }}
       >
         {data.markers.length}
       </Avatar>
