@@ -67,7 +67,7 @@ export default function AlertDialog(props) {
                 alignItems="center"
               >
                 {logo ? (
-                  <Avatar alt="logo" src={`${__API__}/logo.png`} />
+                  <Avatar alt="logo" src={`${__API__}/logo.svg`} />
                 ) : ''}
 
                 {logo ? (

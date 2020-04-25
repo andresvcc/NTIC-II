@@ -26,7 +26,7 @@ export default function HeaderElement(props) {
         color="dark"
         routes={dashboardRoutes}
         brand=""
-        urlIcon={`${__API__}/logo.png`}
+        urlIcon={`${__API__}/logo.svg`}
         rightLinks={<HeaderLinks color="black" menu={menuNavegation} />}
         fixed
       />

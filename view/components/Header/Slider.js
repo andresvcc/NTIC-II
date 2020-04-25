@@ -63,8 +63,8 @@ export default function InputSlider() {
   };
 
   const handleBlur = () => {
-    if (value < 900) {
-      setValue(900);
+    if (value < 800) {
+      setValue(800);
     } else if (value > 2020) {
       setValue(2020);
     }
@@ -83,7 +83,7 @@ export default function InputSlider() {
             onBlur={handleBlur}
             inputProps={{
               step: 10,
-              min: 900,
+              min: 800,
               max: 2020,
               type: 'number',
               'aria-labelledby': 'input-slider',
@@ -93,11 +93,11 @@ export default function InputSlider() {
         <Grid item xs>
           <PrettoSlider
             step={10}
-            min={900}
+            min={800}
             max={2020}
             valueLabelDisplay="off"
             aria-label="pretto slider"
-            value={typeof value === 'number' ? value : 900}
+            value={typeof value === 'number' ? value : 800}
             onChange={handleSliderChange}
             aria-labelledby="input-slider"
           />

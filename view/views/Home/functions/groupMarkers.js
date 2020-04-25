@@ -2,6 +2,7 @@ import {
   toLatLon, toLatitudeLongitude, headingDistanceTo, moveTo, insidePolygon
 } from 'geolocation-utils';
 
+
 // calculer le centre d'un polygon
 function getPolygonCentroid(pts) {
   const nPts = pts.length;
@@ -43,13 +44,13 @@ function getPolygonCentroid(pts) {
   return [(x / f), (y / f)];
 }
 
-function polygonGenerator(markers) {
+function polygonGenerator(markers, index) {
   const centroid = getPolygonCentroid(markers);
 
   const newPolygon = {
     type: 'polygon',
     size: markers.length,
-    id: `p${markers[0].id}`,
+    id: `p${index}`,
     pos: centroid,
     markers
   };
@@ -70,6 +71,14 @@ function plusProche(point, markers, distanceMinGroup) {
   return { point, proches };
 }
 
+function removeItemFromArr(arr, item) {
+  const i = arr.indexOf(item);
+
+  if (i !== -1) {
+    arr.splice(i, 1);
+  }
+}
+
 export default function groupMarkers(markers, distanceMinGroup) {
   const polygonGroup = [];
   const newMarkers = {
@@ -85,7 +94,7 @@ export default function groupMarkers(markers, distanceMinGroup) {
 
   polygonGroup.sort((a, b) => a.proches[0].distance - b.proches[0].distance);
 
-  polygonGroup.forEach((point) => {
+  polygonGroup.forEach((point, index) => {
     if (!newMarkers.listId.includes(point.point.id)) {
       const newPolygon = [point.point];
       newMarkers.listId.push(point.point.id);
@@ -98,14 +107,11 @@ export default function groupMarkers(markers, distanceMinGroup) {
         }
       });
 
-      const generator = polygonGenerator(newPolygon);
+      const generator = polygonGenerator(newPolygon, index);
+
       if (generator.markers.length > 1) newMarkers.markers.push(generator);
       else {
-        newMarkers.markers.push({
-          type: 'point',
-          id: generator.id,
-          pos: generator.pos,
-        });
+        removeItemFromArr(newMarkers.listId, generator.id);
       }
     }
   });

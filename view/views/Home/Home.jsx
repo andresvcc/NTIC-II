@@ -17,7 +17,16 @@ import {
 } from '../elements';
 
 import styles from './homeStyle';
-import VerticalMenu from './sections/VerticalMenu';
+
+const ColoredLine = ({ color }) => (
+  <hr
+    style={{
+      color,
+      backgroundColor: color,
+      height: 5
+    }}
+  />
+);
 
 const useStyles = makeStyles(styles);
 

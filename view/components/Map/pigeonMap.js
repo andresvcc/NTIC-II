@@ -67,20 +67,20 @@ export default function PigeonMap(props) {
         <Map
           provider={mapTilerProvider}
           limitBounds="edge"
-          attribution="cartodb-basemaps"
+          attribution="utilise la cartographie de cartodb-basemaps"
           center={dataMap.center}
-          attributionPrefix="PigeonMap"
+          attributionPrefix="UnigeMap"
           zoom={dataMap.zoom}
-          defaultZoom={16}
+          defaultZoom={5}
           onBoundsChanged={handleBoundsChange}
-          height={window.innerHeight}
+          height={window.innerHeight - 5}
           boxClassname="pigeon-filters"
           onAnimationStart={handleAnimationStart}
           onAnimationStop={handleAnimationStop}
-          minZoom={3}
-          maxZoom={18}
+          minZoom={5}
+          maxZoom={17}
           animated
-          onClick={handleMapClick}
+          // onClick={handleMapClick}
           dprs={[1, 2]}
         >
           {children}

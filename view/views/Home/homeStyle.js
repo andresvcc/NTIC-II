@@ -27,10 +27,9 @@ const style = {
   },
   bodyDiv: {
     position: 'relative',
-    zIndex: '1000',
+    zIndex: '10',
     background: 'white',
     width: '100%',
-    height: '100%',
   },
   title: {
     maxWidth: '50%',
@@ -47,24 +46,18 @@ const style = {
   markerPoint: {
     width: 22,
     height: 22,
-    color: 'gray',
+    color: '#FF3399',
     '&:hover': {
       width: 26,
       height: 26,
       position: 'relative',
       top: '-4px',
       left: '-2px',
-      color: '#208080',
+      color: '#EE0078',
     }
   },
   markerPolygon: {
-    background: 'gray',
-    fontSize: '12px',
-    bolder: 'solid 2px black',
-    '&:hover': {
-      background: '#208080',
-      border: '1px solid black',
-    }
+
   }
 };
 

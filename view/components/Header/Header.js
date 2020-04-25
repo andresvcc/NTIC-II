@@ -77,7 +77,7 @@ export default function Header(props) {
       alignItems="center"
     >
       <Avatar alt="logo" src={urlIcon} style={{ width: '60px', height: '60px' }} />
-      <p className={classes.title}>{brand}</p>
+      <p className={classes.title}>Cartographie des manuscrit</p>
     </Grid>
   );
 
