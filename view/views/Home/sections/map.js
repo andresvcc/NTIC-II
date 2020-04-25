@@ -109,7 +109,7 @@ const LineDraw = ({
           id="arrow"
           markerWidth="10"
           markerHeight="10"
-          refX="20"
+          refX="22"
           refY="5"
           orient="auto-start-reverse"
           viewBox={`0 0 ${30 + zoom / 2} ${30 + zoom / 2}`}
@@ -208,7 +208,7 @@ export default function MapDisplay(props) {
 
         {
           <LineDraw
-            coordsArray={grapheGenerator([['m1', 'm31'], ['m1', 'm14'], ['m2', 'm3'], ['m1', 'm20'], ['m1', 'm17']], parcheminsData)}
+            coordsArray={grapheGenerator([['m1', 'm31'], ['m1', 'm14'], ['m2', 'm3'], ['m1', 'm20'], ['m20', 'm11'], ['m11', 'm19'], ['m19', 'm21'], ['m1', 'm17'], ['m1', 'm27']], parcheminsData)}
           />
         }
       </Map>

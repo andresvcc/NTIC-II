@@ -10,29 +10,30 @@ import {
 } from '../../component';
 
 import PointerMaker from './pointer';
+import PointerMaker2 from './pointer2';
 import GroupPointerMarker from './groupPointer';
 
 function Pointer2(props) {
   const { data, classes, animated } = props;
-  const [color, setColor] = useState('#808080');
+  const [color, setColor] = useState('#E5097F');
   const [size, setSize] = useState(0);
   const [num, setNum] = useState(2);
 
 
   const mouseEnter = () => {
-    setColor('#208080');
+    setColor('#AD005D');
     setSize(5);
   };
 
   const mouseLeave = () => {
-    setColor('#808080');
+    setColor('#E5097F');
     setSize(0);
   };
 
   return (
     <Fade
       in
-      style={{ transitionDelay: animated ? '300ms' : '0ms' }}
+      style={{ transitionDelay: animated ? '500ms' : '250ms' }}
     >
       <span
         role="button"
@@ -40,14 +41,14 @@ function Pointer2(props) {
         onMouseEnter={() => mouseEnter(5)}
         onMouseLeave={() => mouseLeave(0)}
         style={{
-          width: 26 + size,
-          height: 33 + size,
+          width: 23 + size,
+          height: 30 + size,
           position: 'absolute',
-          top: -12 - size,
+          top: -10 - size,
           left: -2 - size / 2
         }}
       >
-        <PointerMaker
+        <PointerMaker2
           num={num}
           onClick={() => { console.log(data.id); setNum(num + 1); }}
           size={size}
@@ -90,7 +91,7 @@ function Pointer(props) {
   return (
     <Fade
       in
-      style={{ transitionDelay: animated ? '300ms' : '0ms' }}
+      style={{ transitionDelay: animated ? '500ms' : '250ms' }}
     >
       <span
         role="button"
@@ -98,10 +99,10 @@ function Pointer(props) {
         onMouseEnter={() => mouseEnter(5)}
         onMouseLeave={() => mouseLeave(0)}
         style={{
-          width: 26 + size,
-          height: 33 + size,
+          width: 29 + size,
+          height: 36 + size,
           position: 'absolute',
-          top: -12 - size,
+          top: -16 - size,
           left: -2 - size / 2
         }}
       >
@@ -149,7 +150,7 @@ function PointerGroup(props) {
   return (
     <Fade
       in
-      style={{ transitionDelay: animated ? '300ms' : '0ms' }}
+      style={{ transitionDelay: animated ? '500ms' : '250ms' }}
     >
       <span
         role="button"
@@ -223,7 +224,7 @@ function Polygon(props) {
   return (
     <Fade
       in
-      style={{ transitionDelay: animated ? '300ms' : '0ms' }}
+      style={{ transitionDelay: animated ? '500ms' : '250ms' }}
     >
       <Avatar
         style={{

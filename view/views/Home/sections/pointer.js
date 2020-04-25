@@ -16,8 +16,8 @@ export default function PointerMaker(props) {
 
   return (
     <svg
-      width={`${26 + size}px`}
-      height={`${33 + size}px`}
+      width={`${29 + size}px`}
+      height={`${36 + size}px`}
       version="1.1"
       style={{
         shapeRendering: 'geometricPrecision',
@@ -26,25 +26,35 @@ export default function PointerMaker(props) {
         fillRule: 'evenodd',
         clipRule: 'evenodd',
       }}
-      viewBox="0 0 1270 1693"
+      viewBox="0 0 1693 2117"
     >
       <defs>
         <style type="text/css">
           {`
             @font-face { font-family:"Arial";src:url("#FontID0") format(svg)}
-            .fil0 {fill:#FEFEFE}
-            .fil1 {fill:${color}}
-            .fnt0 {font-weight:bold;font-size:${num < 10 ? 490 : 440}px;}
+            .pointer1Fil1 {fill:#FEFEFE}
+            .pointer1Fil0 {fill:${color}}
+            .pointer1Fnt0 {font-weight:bold;font-size:580px;}
           `}
         </style>
       </defs>
       <g id="Layer_x0020_1" onClick={() => { onClick(); }} style={{ cursor: 'pointer' }}>
         <metadata id="CorelCorpID_0Corel-Layer" />
-        <ellipse className="fil0" cx="612" cy="962" rx="342" ry="336" />
-        <path style={{ fill: color }} d="M896 590l0 0c-158,-167 -415,-167 -573,0l0 0c-142,151 -158,436 -38,606l324 496 324 -496c121,-170 105,-455 -37,-606zm-147 314l59 0 0 150 -59 0 0 -150zm-112 0l59 0 0 150 -59 0 0 -150zm-112 0l60 0 0 150 -60 0 0 -150zm-111 0l59 0 0 150 -59 0 0 -150zm414 -46l0 -16 -434 0 0 16c0,8 6,15 15,15l404 0c8,0 15,-7 15,-15l0 0zm20 228l-474 0c-9,0 -15,7 -15,15l0 42c0,9 6,16 15,16l474 0c9,0 15,-7 15,-16l0 -42c0,-8 -6,-15 -15,-15l0 0zm-474 -275l474 0c7,0 13,-5 15,-12 1,-7 -1,-14 -7,-17l-237 -155c-5,-3 -11,-3 -16,0l-237 155c-6,3 -8,10 -7,17 2,7 8,12 15,12l0 0zm227 -94l20 0c8,0 15,7 15,15 0,9 -7,16 -15,16l-20 0c-8,0 -15,-7 -15,-16 0,-8 7,-15 15,-15l0 0z" />
-        <path className="fil1" d="M891 -8c207,0 375,165 375,369 0,204 -168,369 -375,369 -207,0 -375,-165 -375,-369 0,-204 168,-369 375,-369z" />
-        <path className="fil0" d="M890 31c182,0 330,145 330,325 0,179 -148,325 -330,325 -182,0 -330,-146 -330,-325 0,-180 148,-325 330,-325z" />
-        <text x={num < 10 ? 750 : 600} y="546" className="fil1 fnt0">{num || 10}</text>
+
+        <path className="pointer1Fil0" d="M1151 612l0 0c-228,-228 -598,-228 -827,0l0 0c-205,206 -228,593 -54,826l468 675 467 -675c175,-233 151,-620 -54,-826z" />
+        <g id="_80108840">
+          <path className="pointer1Fil1" d="M968 969l101 0 0 242 -101 0 0 -242zm0 0z" />
+          <path className="pointer1Fil1" d="M776 969l101 0 0 242 -101 0 0 -242zm0 0z" />
+          <path className="pointer1Fil1" d="M584 969l101 0 0 242 -101 0 0 -242zm0 0z" />
+          <path className="pointer1Fil1" d="M392 969l102 0 0 242 -102 0 0 -242zm0 0z" />
+          <path className="pointer1Fil1" d="M1103 892l0 -25 -745 0 0 25c0,14 12,26 26,26l694 0c14,0 25,-12 25,-26l0 0zm0 0z" />
+          <path className="pointer1Fil1" d="M1138 1262l-814 0c-14,0 -26,11 -26,25l0 68c0,14 12,25 26,25l814 0c14,0 25,-11 25,-25l0 -68c0,-14 -11,-25 -25,-25l0 0zm0 0z" />
+          <path className="pointer1Fil1" d="M324 816l814 0c11,0 21,-7 24,-18 3,-11 -1,-23 -11,-28l-407 -251c-8,-5 -18,-5 -26,0l-408 251c-9,5 -14,17 -11,28 3,11 13,18 25,18l0 0zm390 -152l34 0c14,0 25,12 25,26 0,14 -11,25 -25,25l-34 0c-14,0 -26,-11 -26,-25 0,-14 12,-26 26,-26l0 0zm0 0z" />
+        </g>
+        <ellipse className="pointer1Fil0" cx="1225" cy="469" rx="464" ry="456" />
+        <ellipse className="pointer1Fil1" cx="1225" cy="469" rx="408" ry="402" />
+
+        <text x={num < 10 ? 1050 : 862} y="680" className="pointer1Fil0 pointer1Fnt0">{num || 10}</text>
       </g>
     </svg>
   );
