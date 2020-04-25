@@ -28,8 +28,8 @@ function zoomCalGroup(zoom) {
                     : zoom >= 9 ? { radio: 9000, area: [5600, 3400] }
                       : zoom >= 8 ? { radio: 12000, area: [13000, 3800] }
                         : zoom >= 7 ? { radio: 28000, area: [26000, 12600] }
-                          : zoom >= 6 ? { radio: 46000, area: [52000, 20000] }
-                            : zoom >= 5 ? { radio: 140000, area: [90000, 40000] }
+                          : zoom >= 6 ? { radio: 46000, area: [32000, 20000] }
+                            : zoom >= 5 ? { radio: 140000, area: [80000, 40000] }
                               : zoom >= 4 ? { radio: 140000, area: [200000, 40000] }
                                 : zoom >= 3 ? { radio: 200000, area: [400000, 160000] }
                                   : { radio: 360000, area: [800000, 160000] };
@@ -171,6 +171,7 @@ export default function MapDisplay(props) {
         {<LineDraw zoom={dataMap.zoom} coordsArray={[{ color: 'blue', arr: [parcheminsData[0], parcheminsData[1]] }, { color: 'red', arr: [parcheminsData[0], parcheminsData[2]] }, { arr: [parcheminsData[0], parcheminsData[3]] }, { arr: [parcheminsData[0], parcheminsData[parcheminsData.length - 1]] }]} />}
 
       </Map>
+      {dataMap.zoom}
     </div>
   );
 }
