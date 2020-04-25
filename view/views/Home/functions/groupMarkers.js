@@ -50,7 +50,7 @@ function polygonGenerator(markers, index) {
   const newPolygon = {
     type: 'polygon',
     size: markers.length,
-    id: `p${index}`,
+    id: `p${index}-${markers.length}`,
     pos: centroid,
     markers
   };
@@ -69,14 +69,6 @@ function plusProche(point, markers, distanceMinGroup) {
   proches.sort((a, b) => a.distance - b.distance);
 
   return { point, proches };
-}
-
-function removeItemFromArr(arr, item) {
-  const i = arr.indexOf(item);
-
-  if (i !== -1) {
-    arr.splice(i, 1);
-  }
 }
 
 export default function groupMarkers(markers, distanceMinGroup) {
@@ -111,12 +103,17 @@ export default function groupMarkers(markers, distanceMinGroup) {
 
       if (generator.markers.length > 1) newMarkers.markers.push(generator);
       else {
-        removeItemFromArr(newMarkers.listId, generator.id);
+        const i = newMarkers.listId.indexOf(generator.markers[0].id);
+        if (i !== -1) {
+          newMarkers.listId.splice(i, 1);
+        }
       }
     }
   });
 
   const solitaryPoint = markers.filter((value) => !newMarkers.listId.includes(value.id));
+  // console.log(solitaryPoint);
+  // console.log(newMarkers);
   const finalNewMarkers = newMarkers.markers.concat(solitaryPoint);
 
   return finalNewMarkers;

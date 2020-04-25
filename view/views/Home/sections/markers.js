@@ -12,6 +12,61 @@ import {
 import PointerMaker from './pointer';
 import GroupPointerMarker from './groupPointer';
 
+function Pointer2(props) {
+  const { data, classes, animated } = props;
+  const [color, setColor] = useState('#808080');
+  const [size, setSize] = useState(0);
+  const [num, setNum] = useState(2);
+
+
+  const mouseEnter = () => {
+    setColor('#208080');
+    setSize(5);
+  };
+
+  const mouseLeave = () => {
+    setColor('#808080');
+    setSize(0);
+  };
+
+  return (
+    <Fade
+      in
+      style={{ transitionDelay: animated ? '300ms' : '0ms' }}
+    >
+      <span
+        role="button"
+        tabIndex="0"
+        onMouseEnter={() => mouseEnter(5)}
+        onMouseLeave={() => mouseLeave(0)}
+        style={{
+          width: 26 + size,
+          height: 33 + size,
+          position: 'absolute',
+          top: -12 - size,
+          left: -2 - size / 2
+        }}
+      >
+        <PointerMaker
+          num={num}
+          onClick={() => { console.log(data.id); setNum(num + 1); }}
+          size={size}
+          color={color}
+        />
+      </span>
+    </Fade>
+  );
+}
+
+Pointer2.defaultProps = {
+  classes: {},
+};
+
+Pointer2.propTypes = {
+  classes: PropTypes.any,
+  data: PropTypes.object,
+  animated: PropTypes.bool
+};
 
 //----
 
@@ -52,7 +107,7 @@ function Pointer(props) {
       >
         <PointerMaker
           num={num}
-          onClick={() => { console.log(data.id); setNum(num + 1); }}
+          onClick={() => { console.log(data); setNum(num + 1); }}
           size={size}
           color={color}
         />
@@ -111,7 +166,7 @@ function PointerGroup(props) {
       >
         <GroupPointerMarker
           num={data.markers.length}
-          onClick={() => { console.log(data.id); }}
+          onClick={() => { console.log(data); }}
           size={size + contains}
           color={color}
         />
@@ -214,6 +269,7 @@ export default function Marker(props) {
 
   if (data.type === 'polygon') { return (<PointerGroup data={data} classes={classes} animated={animated} />); }
   if (data.type === 'point') { return (<Pointer data={data} classes={classes} animated={animated} />); }
+  if (data.type === 'point2') { return (<Pointer2 data={data} classes={classes} animated={animated} />); }
   return (<Polygon data={data} classes={classes} animated={animated} />);
 }
 

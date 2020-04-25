@@ -31,7 +31,6 @@ export default function PigeonMap(props) {
     setCookie('name', newName, { path: '/' });
   }
 
-  const [animating, setAnimating] = useState(false);
   const [dataMap, setData] = useState(initial);
 
   // event map zoom and move
@@ -48,12 +47,8 @@ export default function PigeonMap(props) {
     console.log('Map clicked!', latLng, pixel);
   };
 
-  useEffect(() => {
-    if (animating === false) animatedAction(animating);
-  }, [animating]);
-
-  const handleAnimationStart = () => setAnimating(true);
-  const handleAnimationStop = () => setAnimating(false);
+  const handleAnimationStart = () => animatedAction(true);
+  const handleAnimationStop = () => animatedAction(false);
 
   useEffect(() => {
     if (dataMap.initial === false) {
@@ -71,16 +66,15 @@ export default function PigeonMap(props) {
           center={dataMap.center}
           attributionPrefix="UnigeMap"
           zoom={dataMap.zoom}
-          defaultZoom={5}
           onBoundsChanged={handleBoundsChange}
           height={window.innerHeight - 5}
           boxClassname="pigeon-filters"
           onAnimationStart={handleAnimationStart}
           onAnimationStop={handleAnimationStop}
-          minZoom={5}
-          maxZoom={17}
+          minZoom={3}
+          maxZoom={14}
           animated
-          // onClick={handleMapClick}
+          onClick={handleMapClick}
           dprs={[1, 2]}
         >
           {children}
@@ -95,7 +89,7 @@ PigeonMap.defaultProps = {
   setDataMap: () => true,
   initial: {
     center: [46.21200441225172, 6.146450212922588],
-    zoom: 16,
+    zoom: 5,
     bounds: { ne: Array(2), sw: Array(2) },
     initial: false
   }
