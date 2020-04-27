@@ -1,6 +1,7 @@
 
 const initialState = {
-  test: 'test message'
+  test: 'test message',
+  barreTemporelle: 800
 };
 
 

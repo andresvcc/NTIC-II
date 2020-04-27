@@ -89,7 +89,7 @@ PigeonMap.defaultProps = {
   setDataMap: () => true,
   initial: {
     center: [46.21200441225172, 6.146450212922588],
-    zoom: 5,
+    zoom: 3,
     bounds: { ne: Array(2), sw: Array(2) },
     initial: false
   }

@@ -10,6 +10,7 @@ import groupFonction from '../functions/groupMarkers';
 
 import {
   Map,
+  redux,
 } from '../../component';
 
 import Marker from './markers';
@@ -31,7 +32,7 @@ function zoomCalGroup(zoom) {
                           : zoom >= 6 ? { radio: 46000, area: [32000, 20000] }
                             : zoom >= 5 ? { radio: 140000, area: [80000, 40000] }
                               : zoom >= 4 ? { radio: 240000, area: [200000, 40000] }
-                                : zoom >= 3 ? { radio: 480000, area: [400000, 160000] }
+                                : zoom >= 3 ? { radio: 340000, area: [250000, 40000] }
                                   : { radio: 960000, area: [800000, 160000] };
 
   return valueDis;
@@ -50,6 +51,7 @@ const LineDraw = ({
     center, zoom, bounds, width, height
   }, latLngToPixel, coordsArray, animated
 }) => {
+  const [reduxStates, dispatch] = redux();
   const update = () => {
     const lines = [];
     coordsArray.some((parcour, index) => {
@@ -99,16 +101,16 @@ const LineDraw = ({
       setFleches([]);
       const timer = setTimeout(() => {
         setFleches(update());
-      }, 300);
+      }, 100);
       return () => clearTimeout(timer);
     } else if (zoom <= 23) {
       setFleches([]);
       const timer = setTimeout(() => {
         setFleches(update());
-      }, 1000);
+      }, 300);
       return () => clearTimeout(timer);
     }
-  }, [bounds.ne]);
+  }, [bounds.ne, reduxStates.barreTemporelle]);
 
   return (
     <svg
@@ -188,17 +190,21 @@ function findL(id, arr) {
     }
     return false;
   });
+
   return elemn;
 }
 
 function grapheGenerator(fleches, arr) {
-  const fl = fleches.map((fleche) => {
+  const fl = [];
+  fleches.map((fleche) => {
     const p1 = findL(fleche[0], arr);
     const p2 = findL(fleche[1], arr);
-    return {
+    if (p1 === undefined || p2 === undefined) return fleche;
+    fl.push({
       color: `${p2.type !== 'polygon' ? '#e5167f' : '#6d01b8'}`,
       arr: [p1, p2]
-    };
+    });
+    return fleche;
   });
   return fl;
 }
@@ -208,21 +214,35 @@ export default function MapDisplay(props) {
     classes
   } = props;
 
+  const [reduxStates, dispatch] = redux();
+
   const [parcheminsData, setParcheminsData] = useState(parchemins);
   const [animated, setAnimated] = useState(false);
+  const [dataMap, setDataMap] = useState({});
 
 
   const update = (data) => {
+    const yearFilter = [];
+    parchemins.map((value) => {
+      if (value.yearMin <= reduxStates.barreTemporelle && value.yearMax >= reduxStates.barreTemporelle) {
+        yearFilter.push(value);
+      }
+      return value;
+    });
     const distanceCal = zoomCalGroup(data.zoom).radio;
-    const newMapData = groupFonction(parchemins, distanceCal);
+    const newMapData = groupFonction(yearFilter, distanceCal);
     setParcheminsData(newMapData);
   };
+
+  useEffect(() => {
+    update(dataMap);
+  }, [reduxStates.barreTemporelle, dataMap]);
 
   return (
     <div className={classes.root}>
       <Map
         animatedAction={(data) => setAnimated(data)}
-        setDataMap={(data) => update(data)}
+        setDataMap={(data) => setDataMap(data)}
       >
 
         {
@@ -235,11 +255,11 @@ export default function MapDisplay(props) {
 
         {
           <LineDraw
-            coordsArray={grapheGenerator([['m1', 'm24'], ['m1', 'm31'], ['m1', 'm14'], ['m2', 'm3'], ['m1', 'm20'], ['m20', 'm11'], ['m11', 'm19'], ['m19', 'm21'], ['m1', 'm17'], ['m1', 'm27'], ['m32', 'm33']], parcheminsData)}
+            coordsArray={grapheGenerator([['m1', 'm2'], ['m1', 'm10'], ['m1', 'm8'], ['m2', 'm7'], ['m1', 'm16']], parcheminsData)}
           />
         }
       </Map>
-
+      {dataMap.zoom}
     </div>
   );
 }

@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import Input from '@material-ui/core/Input';
-import VolumeUp from '@material-ui/icons/VolumeUp';
+import redux from '../redux/redux';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -51,6 +50,7 @@ const PrettoSlider = withStyles({
 })(Slider);
 
 export default function InputSlider() {
+  const [reduxStates, dispatch] = redux();
   const classes = useStyles();
   const [value, setValue] = React.useState(1550);
 
@@ -69,6 +69,10 @@ export default function InputSlider() {
       setValue(2020);
     }
   };
+
+  useEffect(() => {
+    dispatch({ state: 'barreTemporelle', value });
+  }, [value]);
 
   return (
     <div className={classes.root}>
