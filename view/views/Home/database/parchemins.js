@@ -244,6 +244,13 @@ const markers = [
     yearMin: 1750,
     yearMax: 2020
   },
+  {
+    type: 'point',
+    id: 'm36',
+    pos: [45.074193996359135, 7.669408123972659],
+    yearMin: 1750,
+    yearMax: 2020
+  },
 ];
 
 export default markers;

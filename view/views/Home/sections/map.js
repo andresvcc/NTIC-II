@@ -32,7 +32,7 @@ function zoomCalGroup(zoom) {
                           : zoom >= 6 ? { radio: 46000, area: [32000, 20000] }
                             : zoom >= 5 ? { radio: 140000, area: [80000, 40000] }
                               : zoom >= 4 ? { radio: 240000, area: [200000, 40000] }
-                                : zoom >= 3 ? { radio: 340000, area: [250000, 40000] }
+                                : zoom >= 3 ? { radio: 440000, area: [650000, 40000] }
                                   : { radio: 960000, area: [800000, 160000] };
 
   return valueDis;
