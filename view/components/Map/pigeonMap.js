@@ -72,7 +72,7 @@ export default function PigeonMap(props) {
           onAnimationStart={handleAnimationStart}
           onAnimationStop={handleAnimationStop}
           minZoom={3}
-          maxZoom={14}
+          maxZoom={17}
           animated
           onClick={handleMapClick}
           dprs={[1, 2]}

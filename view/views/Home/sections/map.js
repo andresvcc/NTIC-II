@@ -37,6 +37,14 @@ function zoomCalGroup(zoom) {
   return valueDis;
 }
 
+function usePrevious(value) {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
+
 const LineDraw = ({
   mapState: {
     center, zoom, bounds, width, height
@@ -79,11 +87,28 @@ const LineDraw = ({
   };
 
   const [fleches, setFleches] = useState([]);
+  const prevBounds = usePrevious(bounds);
 
   useEffect(() => {
-    setFleches(update());
-  }, [bounds]);
-
+    if (zoom < 6) {
+      setFleches(update());
+    } else if (zoom < 10) {
+      setFleches([]);
+      setFleches(update());
+    } else if (zoom < 14) {
+      setFleches([]);
+      const timer = setTimeout(() => {
+        setFleches(update());
+      }, 300);
+      return () => clearTimeout(timer);
+    } else if (zoom <= 23) {
+      setFleches([]);
+      const timer = setTimeout(() => {
+        setFleches(update());
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [bounds.ne]);
 
   return (
     <svg
@@ -115,6 +140,7 @@ const LineDraw = ({
           viewBox={`0 0 ${30 + zoom / 2} ${30 + zoom / 2}`}
         >
           <path
+            className="bar"
             d="M 0 0 L 10 5 L 0 10 z"
             fill="#6d00b8"
           />
@@ -129,6 +155,7 @@ const LineDraw = ({
           viewBox="0 0 30 30"
         >
           <path
+            className="bar"
             d="M 0 0 L 10 5 L 0 10 z"
             fill="#e5167f"
           />
@@ -169,7 +196,7 @@ function grapheGenerator(fleches, arr) {
     const p1 = findL(fleche[0], arr);
     const p2 = findL(fleche[1], arr);
     return {
-      color: 'blue',
+      color: `${p2.type !== 'polygon' ? '#e5167f' : '#6d01b8'}`,
       arr: [p1, p2]
     };
   });
@@ -208,7 +235,7 @@ export default function MapDisplay(props) {
 
         {
           <LineDraw
-            coordsArray={grapheGenerator([['m1', 'm31'], ['m1', 'm14'], ['m2', 'm3'], ['m1', 'm20'], ['m20', 'm11'], ['m11', 'm19'], ['m19', 'm21'], ['m1', 'm17'], ['m1', 'm27']], parcheminsData)}
+            coordsArray={grapheGenerator([['m1', 'm24'], ['m1', 'm31'], ['m1', 'm14'], ['m2', 'm3'], ['m1', 'm20'], ['m20', 'm11'], ['m11', 'm19'], ['m19', 'm21'], ['m1', 'm17'], ['m1', 'm27'], ['m32', 'm33']], parcheminsData)}
           />
         }
       </Map>

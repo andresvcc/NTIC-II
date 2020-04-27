@@ -32,7 +32,7 @@ export default function PointerMaker(props) {
         <style type="text/css">
           {`
             .marker {fill:#FEFEFE}
-            .markerFil0 {fill:${color}}
+            .markerFil0 {fill:${color};stroke:#FEFEFE;stroke-width:33.86;}
           `}
         </style>
       </defs>
