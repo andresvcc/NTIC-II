@@ -198,7 +198,7 @@ const data1 = {
       library: '53',
       description: 'not description',
       photo: null,
-      attribute: [{year: 1550, library: '53'}]
+      attribute: [{ year: 1550, library: '53' }]
     },
     {
       anderson_id: '6',

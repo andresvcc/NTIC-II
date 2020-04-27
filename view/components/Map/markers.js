@@ -234,9 +234,9 @@ function Polygon(props) {
         }}
         onMouseEnter={() => mouseEnter()}
         onMouseLeave={() => mouseLeave()}
-        onClick={() => { console.log('click sur', data.id); }}
+        onClick={() => { console.log('click sur', data); }}
       >
-        {data.markers.length}
+        {data.markers.length || 'NaN'}
       </Avatar>
     </Fade>
   );

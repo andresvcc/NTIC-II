@@ -20,6 +20,8 @@ import Scroll from '../components/Scroll/Scroll';
 import Table from '../components/Table/table';
 import SubTable from '../components/Table/subTable';
 import Map from '../components/Map/pigeonMap';
+import Marker from '../components/Map/markers';
+import LineDraw from '../components/Map/LineDraw';
 
 export {
   redux,
@@ -43,5 +45,7 @@ export {
   Scroll,
   Table,
   SubTable,
-  Map
+  Map,
+  Marker,
+  LineDraw
 };

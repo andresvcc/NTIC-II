@@ -1,10 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import SvgIcon from '@material-ui/core/SvgIcon';
-
-import {
-  Button,
-} from '../../component';
-
 
 export default function PointerMaker(props) {
   const {
