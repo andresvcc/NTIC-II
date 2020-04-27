@@ -198,7 +198,7 @@ const data1 = {
       library: '53',
       description: 'not description',
       photo: null,
-      attribute: [{ name: 'intervale', value: 'value', id: 0 }, { name: 'name_data', value: 'value2', id: 1 }]
+      attribute: [{year: 1550, library: '53'}]
     },
     {
       anderson_id: '6',

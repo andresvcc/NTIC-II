@@ -2,6 +2,13 @@ import {
   toLatLon, toLatitudeLongitude, headingDistanceTo, moveTo, insidePolygon
 } from 'geolocation-utils';
 
+const center = (arr) => {
+  const x = arr.map((xy) => xy[0]);
+  const y = arr.map((xy) => xy[1]);
+  const cx = (Math.min(...x) + Math.max(...x)) / 2;
+  const cy = (Math.min(...y) + Math.max(...y)) / 2;
+  return [cx, cy];
+};
 
 // calculer le centre d'un polygon
 function getPolygonCentroid(pts) {
@@ -23,25 +30,11 @@ function getPolygonCentroid(pts) {
     return medium;
   }
 
-  let twicearea = 0;
-  let x = 0;
-  let y = 0;
-  let p1;
-  let p2;
-  let f;
+  const gg = pts.map((val) => [val.pos[0], val.pos[1]]);
 
-  // eslint-disable-next-line
-  for (let i = 0, j = nPts - 1; i < nPts; j = i++) {
-    p1 = pts[i].pos;
-    p2 = pts[j].pos;
-    f = p1[0] * p2[1] - p2[0] * p1[1];
-    twicearea += f;
-    x += (p1[0] + p2[0]) * f;
-    y += (p1[1] + p2[1]) * f;
-  }
+  const res = center(gg);
 
-  f = twicearea * 3;
-  return [(x / f), (y / f)];
+  return res;
 }
 
 function polygonGenerator(markers, index) {
