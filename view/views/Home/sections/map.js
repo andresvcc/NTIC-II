@@ -58,10 +58,11 @@ export default function MapDisplay(props) {
 
         {
           <LineDraw
-            coordsArray={grapheGenerator([['m1', 'm2'], ['m1', 'm10'], ['m1', 'm8'], ['m2', 'm7'], ['m1', 'm16']], parcheminsData)}
+            coordsArray={grapheGenerator([['m11', 'm12'], ['m34', 'm2'], ['m1', 'm32'], ['m32', 'm24'], ['m1', 'm2'], ['m1', 'm10'], ['m1', 'm8'], ['m2', 'm7'], ['m1', 'm16']], parcheminsData)}
           />
         }
       </Map>
+      {dataMap.zoom}
     </div>
   );
 }

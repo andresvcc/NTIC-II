@@ -52,7 +52,7 @@ const PrettoSlider = withStyles({
 export default function InputSlider() {
   const [reduxStates, dispatch] = redux();
   const classes = useStyles();
-  const [value, setValue] = React.useState(1550);
+  const [value, setValue] = React.useState(2020);
 
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);

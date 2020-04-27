@@ -17,8 +17,8 @@ export default function zoomCalGroup(zoom) {
     case 6: return 46000;
     case 5: return 140000;
     case 4: return 240000;
-    case 3: return 440000;
-    case 2: return 960000;
+    case 3: return 640000;
+    case 2: return 1260000;
     default: return 0;
   }
 }
