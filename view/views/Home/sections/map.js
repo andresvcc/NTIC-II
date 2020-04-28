@@ -8,7 +8,7 @@ import {
   Map,
   redux,
   Marker,
-  LineDraw
+  LineDraw,
 } from '../../component';
 
 import grapheGenerator from '../functions/grapheGenerator';

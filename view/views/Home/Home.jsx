@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import {
@@ -7,9 +7,6 @@ import {
 
 import Map from './sections/map';
 
-import {
-  GridRow,
-} from '../component';
 
 import {
   Header,
@@ -17,16 +14,6 @@ import {
 } from '../elements';
 
 import styles from './homeStyle';
-
-const ColoredLine = ({ color }) => (
-  <hr
-    style={{
-      color,
-      backgroundColor: color,
-      height: 5
-    }}
-  />
-);
 
 const useStyles = makeStyles(styles);
 

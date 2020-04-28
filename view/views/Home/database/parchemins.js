@@ -251,6 +251,55 @@ const markers = [
     yearMin: 1750,
     yearMax: 2020
   },
+  {
+    type: 'point',
+    id: 'm37',
+    pos: [25.28271475766479, 4.155904839643142],
+    yearMin: 1850,
+    yearMax: 2020
+  },
+  {
+    type: 'point',
+    id: 'm38',
+    pos: [40.64585775729326, -4.237649847856915],
+    yearMin: 1790,
+    yearMax: 2020
+  },
+  {
+    type: 'point',
+    id: 'm39',
+    pos: [47.10815827025245, 13.428325690047501],
+    yearMin: 860,
+    yearMax: 2020
+  },
+  {
+    type: 'point',
+    id: 'm40',
+    pos: [46.53683494913792, 18.8335991275475],
+    yearMin: 900,
+    yearMax: 2020
+  },
+  {
+    type: 'point',
+    id: 'm41',
+    pos: [49.85378665686578, 31.019497087922588],
+    yearMin: 900,
+    yearMax: 2020
+  },
+  {
+    type: 'point',
+    id: 'm42',
+    pos: [39.11498119383523, 30.667934587922588],
+    yearMin: 980,
+    yearMax: 1550
+  },
+  {
+    type: 'point',
+    id: 'm43',
+    pos: [42.57113189257402, -7.652377912077412],
+    yearMin: 1000,
+    yearMax: 1650
+  },
 ];
 
 export default markers;

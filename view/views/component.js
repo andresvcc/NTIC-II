@@ -22,6 +22,7 @@ import SubTable from '../components/Table/subTable';
 import Map from '../components/Map/pigeonMap';
 import Marker from '../components/Map/markers';
 import LineDraw from '../components/Map/LineDraw';
+// import ScreenCapture from '../components/ScreenCapture/ScreenCapture';
 
 export {
   redux,
@@ -47,5 +48,6 @@ export {
   SubTable,
   Map,
   Marker,
-  LineDraw
+  LineDraw,
+  // ScreenCapture
 };
