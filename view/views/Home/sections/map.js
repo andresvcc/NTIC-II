@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Overlay from 'pigeon-overlay';
-import parchemins from '../database/parchemins';
+import librairies from '../database/librairies';
 import groupFonction from '../functions/groupMarkers';
 
 import {
@@ -20,14 +20,13 @@ export default function MapDisplay(props) {
   } = props;
 
   const [reduxStates, dispatch] = redux();
-  const [parcheminsData, setParcheminsData] = useState(parchemins);
+  const [librairiesData, setLibrairiesData] = useState(librairies);
   const [animated, setAnimated] = useState(false);
   const [dataMap, setDataMap] = useState({});
 
-
   const update = (data) => {
     const yearFilter = [];
-    parchemins.map((value) => {
+    librairies.map((value) => {
       if (value.yearMin <= reduxStates.barreTemporelle && value.yearMax >= reduxStates.barreTemporelle) {
         yearFilter.push(value);
       }
@@ -35,7 +34,7 @@ export default function MapDisplay(props) {
     });
     const distanceCal = zoomCalGroup(data.zoom);
     const newMapData = groupFonction(yearFilter, distanceCal);
-    setParcheminsData(newMapData);
+    setLibrairiesData(newMapData);
   };
 
   useEffect(() => {
@@ -49,16 +48,15 @@ export default function MapDisplay(props) {
         setDataMap={(data) => setDataMap(data)}
       >
         {
-          parcheminsData.map((data) => (
+          librairiesData.map((data) => (
             <Overlay anchor={data.pos} offset={[10, data.type === 'polygon' ? 10 : 20]} key={data.id}>
               <Marker data={data} animated={animated} classes={classes} />
             </Overlay>
           ))
         }
-
         {
           <LineDraw
-            coordsArray={grapheGenerator([['m11', 'm12'], ['m34', 'm2'], ['m1', 'm32'], ['m32', 'm24'], ['m1', 'm2'], ['m1', 'm10'], ['m1', 'm8'], ['m2', 'm7'], ['m1', 'm16']], parcheminsData)}
+            coordsArray={grapheGenerator([['m11', 'm12'], ['m34', 'm2'], ['m1', 'm32'], ['m32', 'm24'], ['m1', 'm2'], ['m1', 'm10'], ['m1', 'm8'], ['m2', 'm7'], ['m1', 'm16']], librairiesData)}
           />
         }
       </Map>
