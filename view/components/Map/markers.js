@@ -75,7 +75,6 @@ function Pointer(props) {
 
   const mouseEnter = () => {
     setColor('#AD005D');
-    console.log(data);
     setSize(5);
   };
 
