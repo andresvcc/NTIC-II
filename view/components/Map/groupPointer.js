@@ -25,10 +25,10 @@ export default function PointerMaker(props) {
       <defs>
         <style type="text/css">
           {`
-              .fil0 {fill:#FEFEFE}
-              .fil1 {fill:${color}}
-              .fnt0 {font-weight:bold;font-size:550px;}
-            `}
+            .fil0 {fill:#FEFEFE}
+            .fil1 {fill:${color}}
+            .fnt0 {font-weight:bold;font-size:550px;}
+          `}
         </style>
       </defs>
       <g id="Layer_x0020_1" onClick={() => { onClick(); }} style={{ cursor: 'pointer' }}>

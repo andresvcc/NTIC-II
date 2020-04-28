@@ -68,13 +68,14 @@ Pointer2.propTypes = {
 
 function Pointer(props) {
   const { data, classes, animated } = props;
-  const [color, setColor] = useState('#E5097F');
+  const [colord, setColor] = useState('#E5097F');
   const [size, setSize] = useState(0);
   const [num, setNum] = useState(2);
 
 
   const mouseEnter = () => {
     setColor('#AD005D');
+    console.log(data);
     setSize(5);
   };
 
@@ -105,7 +106,7 @@ function Pointer(props) {
           num={num}
           onClick={() => { console.log(data); setNum(num + 1); }}
           size={size}
-          color={color}
+          color={colord}
         />
       </span>
     </Fade>
