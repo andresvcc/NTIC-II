@@ -66,7 +66,6 @@ export default function MaterialTableMaster(props) {
 
       }}
 
-      // defaultMinColWidth={-200}
 
       icons={icons}
       actions={actions}
