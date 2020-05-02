@@ -40,7 +40,7 @@ export default function MaterialTableMaster(props) {
   return (
     <MaterialTable
       className={className}
-      title="Editable Example"
+      title=""
       columns={data.columns}
       data={data.data}
       detailPanel={data.detailPanel}
@@ -66,9 +66,11 @@ export default function MaterialTableMaster(props) {
 
       }}
 
+      // defaultMinColWidth={-200}
+
       icons={icons}
       actions={actions}
-      editable={editable}
+      // editable={editable}
       components={components}
     />
   );

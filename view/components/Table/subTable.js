@@ -51,8 +51,8 @@ export default function SubTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rowData.attribute.map((row) => (
-            <TableRow key={row.id}>
+          {rowData.attribute.map((row, index) => (
+            <TableRow key={`${row.id + index + 1}`}>
               <TableCell>
                 <EditIcon />
                 <DeleteOutlineIcon className={classes.deleteIcon} />

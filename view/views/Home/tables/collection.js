@@ -11,35 +11,21 @@ import {
 } from '../../component';
 
 const data1 = {
-  action: (event, rowData) => console.log(rowData),
   columns: [
     {
-      sorting: false,
-      filtering: false,
-      grouping: false,
-      title: 'View',
-      field: 'photo',
-      render: (rowData) => (
-        <Button
-          onClick={() => console.log(rowData)}
-          style={{
-            padding: '5px', objectFit: 'fill', background: 'transparent', border: 'none', width: '90%', height: '90%'
-          }}
-        >
-          <img
-            style={{ height: 50, width: '100%', objectFit: 'cover' }}
-            src={`${__API__}/${rowData.photo || 'notPhoto.png'}`}
-            alt={`${rowData.name_product} ${rowData.photo}`}
-          />
-        </Button>
-      ),
+      title: 'ID',
+      field: 'anderson_id',
+      width: '10%',
     },
-    { title: 'ID', field: 'anderson_id' },
-    { title: 'Date', field: 'date' },
-    { title: 'Datesort', field: 'datesort' },
+    {
+      title: 'Date',
+      field: 'date',
+      width: '10%',
+    },
     {
       title: 'Town',
       field: 'town',
+      width: '30%',
       lookup: {
         1: 'Antwerpen',
         2: 'Ascoli Piceno',
@@ -113,6 +99,7 @@ const data1 = {
     {
       title: 'Library',
       field: 'library',
+      width: '40%',
       lookup: {
         1: 'Archivio Storico Civico e Biblioteca Trivulziana',
         2: 'Badische Landesbibliothek',
@@ -187,6 +174,10 @@ const data1 = {
         71: 'Württembergische Landesbibliothek',
       },
     },
+    {
+      width: '10%',
+      sorting: false
+    }
   ],
   data: [
     {
@@ -2656,25 +2647,14 @@ const data1 = {
   ],
   detailPanel: [
     {
-      icon: 'settings',
       openIcon: 'close',
       tooltip: 'Show Both',
-      render: (rowData) => (
-        <div key={rowData.product} style={{ padding: '20px' }}>
+      render: (rowData, index) => (
+        <div key={index + 1} style={{ padding: '20px' }}>
           <Grid container spacing={3}>
             <Grid item xs={5}>
               <div style={{ position: 'relative' }}>
-                <Paper elevation={2} style={{ minHeight: '11.3vh', padding: '20px', paddingBottom: '40px' }}>
-                  {rowData.description}
-                  <Button
-                    textColor="white"
-                    color="black"
-                    size="xs"
-                    style={{ position: 'absolute', bottom: '5px', right: '5px' }}
-                  >
-                    <EditIcon />
-                  </Button>
-                </Paper>
+                <Paper elevation={2} style={{ minHeight: '11.3vh', padding: '20px', paddingBottom: '40px' }} />
               </div>
 
             </Grid>
@@ -2707,12 +2687,14 @@ export default function TableArticles(props) {
   };
 
   return (
-    <Table
-      data={data1}
-      onAddRow={addRow}
-      onEditRow={editRow}
-      onDelRow={delRow}
-    />
+    <div style={{ maxHeight: '100px' }}>
+      <Table
+        data={data1}
+        onAddRow={addRow}
+        onEditRow={editRow}
+        onDelRow={delRow}
+      />
+    </div>
   );
 }
 

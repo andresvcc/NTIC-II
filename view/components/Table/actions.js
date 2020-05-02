@@ -34,12 +34,6 @@ const dataToFormat = (BD) => {
 
 
 const actionsSet = (classes, data, filterClick, groupClick) => [
-  (rowDatax) => ({
-    icon: 'list',
-    tooltip: 'Extension',
-    onClick: (event, rowData) => { if (data.action !== undefined) data.action(event, rowData); },
-    disabled: rowDatax.setParameters === false
-  }),
   {
     icon: () => (
       <div className={classes.fab} style={{ background: '#2678b5' }}>

@@ -2,13 +2,15 @@ const tableStyle = {
   '@global': {
     '.MuiTableCell-alignLeft': {
       textAlign: 'center',
+      padding: '0px',
     },
     '.MuiTableCell-alignRight': {
       textAlign: 'center',
+      padding: '0px',
     },
     '.tooltip .tooltiptext': {
-      color: 'red !important'
-    }
+
+    },
   },
   imageIcon: {
     height: '100%'
