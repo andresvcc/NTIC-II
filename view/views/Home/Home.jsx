@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 
 import Map from './sections/map';
-import VerticalMenu from './sections/VerticalMenu';
+import VerticalMenu from './sections/slide';
 
 import {
   Header,
@@ -25,9 +25,10 @@ export default function Home() {
       <CssBaseline />
       <Header title="UNIGE" classes={classes} />
 
+
       <Body classes={classes}>
-        <Map classes={classes} />
         <VerticalMenu />
+        <Map classes={classes} />
       </Body>
     </div>
   );
