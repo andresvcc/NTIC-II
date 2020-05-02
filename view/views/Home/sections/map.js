@@ -60,7 +60,6 @@ export default function MapDisplay(props) {
           />
         }
       </Map>
-      {dataMap.zoom}
     </div>
   );
 }

@@ -1,116 +1,93 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import makeStyles from '@material-ui/core/styles/makeStyles';
+import React, { useEffect, useState } from 'react';
+import PropsTypes from 'prop-types';
 
-import {
-  Button
-} from '@material-ui/core';
+function styleInit(config) {
+  return {
+    width: config.width || 150,
+    height: config.height || 50,
+    background: config.background || '#DDD',
+    color: config.color || '#444',
+    border: config.border || '2px solid #cacaca',
+    cursor: 'pointer',
+    verticalAlign: 'middle',
+    textAlign: 'center',
+    userSelect: 'none',
+    display: config.display || 'flex',
+    justifyContent: config.justifyContent || 'center',
+    alignItems: config.alignItems || 'center',
+    borderRadius: '15px',
+    outline: 'none',
+    fontSize: config.fontSize || 14,
+    margin: config.margin || 5,
+  };
+}
 
-import {
-  buttonStyle,
-  confStyleColor,
-  getTypeColor,
-  getType
-} from './buttonStyle';
-
-
-const ButtonComponet = React.forwardRef((props, ref) => {
+export default function Button(props) {
   const {
-    children,
-    className,
-    color,
-    type,
-    round,
-    square,
-    transparent,
-    size,
-    style,
     onClick,
-    onHover,
-    width,
-    height,
-    border,
-    textColor,
-    background,
+    style,
+    className,
+    config,
+    children,
+    hover,
+    clickDown,
+    clickUp,
     ...rest
   } = props;
 
-  const colorX = getTypeColor({ color });
-  const typeX = getType({ type, colorX });
+  const [configurations, setConfiguration] = useState(styleInit(config));
+  const [hoverAction, setHover] = useState(styleInit(false));
 
-  const useStyles = makeStyles((theme) => ({
-    ...buttonStyle(theme, width, height, border, textColor, background)
-  }));
+  useEffect(() => {
+    if (hover !== undefined) {
+      hover({
+        style, hoverAction, configurations, setConfiguration
+      });
+    }
+  }, [hoverAction]);
 
-  const confStyle = makeStyles((theme) => ({
-    ...confStyleColor(color, theme, width, height, border, textColor, background)
-  }));
+  const clickDownHandle = () => {
+    if (clickDown !== undefined) clickDown({ style, configurations, setConfiguration });
+  };
 
-  const confClasses = confStyle();
-  const classes = useStyles();
+  const clickUpHandle = () => {
+    if (clickUp !== undefined) clickUp({ style, configurations, setConfiguration });
+  };
 
-  const btnClasses = classNames({
-    [confClasses.transparent]: transparent,
-    [confClasses[size]]: size,
-    [confClasses.square]: square,
-    [confClasses.round]: round,
-    [confClasses[colorX]]: color,
-    [confClasses[typeX]]: type,
-    [classes.button]: true,
-    [classes[colorX]]: color,
-    [classes[typeX]]: type,
-    [className]: className,
-  });
+  const clickHandle = () => {
+    if (onClick !== undefined) onClick({ style, configurations, setConfiguration });
+  };
 
   return (
-    <div>
-      <Button
-        onMouseEnter={onHover}
-        onClick={onClick}
-        style={style}
-        className={btnClasses}
-        // onMouseEnter={() => console.log('aqui')}
-        {...rest}
-      >
-        {children}
-      </Button>
+    <div
+      className={className}
+      role="button"
+      onClick={clickHandle}
+      tabIndex={0}
+      onKeyPress={clickHandle}
+      onMouseDown={clickDownHandle}
+      onMouseUp={clickUpHandle}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={configurations}
+      {...rest}
+    >
+      {children}
     </div>
   );
-});
+}
 
-ButtonComponet.defaultProps = {
-  width: 'auto',
-  height: 'auto',
-  border: 'none',
-  textColor: 'white',
-  onHover: () => null,
+Button.defaultProps = {
+  config: {},
 };
 
-ButtonComponet.propTypes = {
-  color: PropTypes.string,
-  type: PropTypes.oneOf([
-    'text',
-    'border',
-    'borderFilling',
-    'gradient',
-    'gradientBorder',
-    'hoverColor'
-  ]),
-  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl']),
-  children: PropTypes.node,
-  className: PropTypes.string,
-  round: PropTypes.bool,
-  square: PropTypes.bool,
-  transparent: PropTypes.bool,
-  style: PropTypes.object,
-  onClick: PropTypes.any,
-  onHover: PropTypes.any,
-  width: PropTypes.string,
-  height: PropTypes.string,
-  border: PropTypes.string,
-  textColor: PropTypes.string,
-  background: PropTypes.string
+Button.propsTypes = {
+  onClick: PropsTypes.func,
+  style: PropsTypes.object,
+  className: PropsTypes.any,
+  config: PropsTypes.any,
+  children: PropsTypes.any,
+  hover: PropsTypes.func,
+  clickDown: PropsTypes.func,
+  clickUp: PropsTypes.func,
 };
-
-export default ButtonComponet;
