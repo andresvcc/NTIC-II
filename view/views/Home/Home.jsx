@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 
 import Map from './sections/map';
-
+import VerticalMenu from './sections/VerticalMenu';
 
 import {
   Header,
@@ -27,6 +27,7 @@ export default function Home() {
 
       <Body classes={classes}>
         <Map classes={classes} />
+        <VerticalMenu />
       </Body>
     </div>
   );

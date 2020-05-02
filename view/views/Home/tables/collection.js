@@ -22,12 +22,12 @@ const data1 = {
       render: (rowData) => (
         <Button
           onClick={() => console.log(rowData)}
-          type="text"
-          style={{ padding: '5px' }}
-          square
+          style={{
+            padding: '5px', objectFit: 'fill', background: 'transparent', border: 'none', width: '90%', height: '90%'
+          }}
         >
           <img
-            style={{ height: 90, width: '100%', objectFit: 'cover' }}
+            style={{ height: 50, width: '100%', objectFit: 'cover' }}
             src={`${__API__}/${rowData.photo || 'notPhoto.png'}`}
             alt={`${rowData.name_product} ${rowData.photo}`}
           />

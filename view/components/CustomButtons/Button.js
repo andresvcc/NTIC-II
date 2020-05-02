@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropsTypes from 'prop-types';
 
-function styleInit(config) {
+function styleInit(config, style) {
   return {
     width: config.width || 150,
     height: config.height || 50,
@@ -19,6 +19,7 @@ function styleInit(config) {
     outline: 'none',
     fontSize: config.fontSize || 14,
     margin: config.margin || 5,
+    ...style
   };
 }
 
@@ -35,7 +36,7 @@ export default function Button(props) {
     ...rest
   } = props;
 
-  const [configurations, setConfiguration] = useState(styleInit(config));
+  const [configurations, setConfiguration] = useState(styleInit(config, style));
   const [hoverAction, setHover] = useState(styleInit(false));
 
   useEffect(() => {
