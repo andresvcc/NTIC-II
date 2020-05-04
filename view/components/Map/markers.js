@@ -191,8 +191,9 @@ function Polygon(props) {
   } = props;
 
   const sizeL = 16;
+  const sizeArea = 22;
 
-  const [area, setArea] = useState(18 + data.markers.length);
+  const [area, setArea] = useState(sizeArea);
   const [color, setColor] = useState('#AB0275');
   const [border, setBorder] = useState(0);
   const [limitSIze, setLimitSize] = useState(0);
@@ -207,14 +208,14 @@ function Polygon(props) {
   const mouseLeave = () => {
     setBorder(0);
     setLimitSize(0);
-    setArea(18 + data.markers.length);
+    setArea(sizeArea);
   };
 
   useEffect(() => {
     setBorder(0);
     setColor('#AB0275');
     setLimitSize(0);
-    setArea(18 + data.markers.length);
+    setArea(sizeArea);
   }, [data, animated]);
 
   return (
@@ -237,7 +238,7 @@ function Polygon(props) {
         onMouseLeave={() => mouseLeave()}
         onClick={() => { dispatch({ state: 'greetingStatus', value: true }); console.log(data.id); }}
       >
-        {data.markers.length || 'NaN'}
+        {data.markers ? data.markers.length : 1}
       </Avatar>
     </Fade>
   );

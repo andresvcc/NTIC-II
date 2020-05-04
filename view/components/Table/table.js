@@ -74,7 +74,7 @@ export default function MaterialTableMaster(props) {
         },
         toolbarButtonAlignment: 'left',
         pageSize: 15,
-        pageSizeOptions: [15, 10, 5],
+        pageSizeOptions: [15, 20, 30],
         doubleHorizontalScroll: false,
         addRowPosition: newRowPosition,
       }}
