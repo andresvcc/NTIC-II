@@ -69,7 +69,8 @@ module.exports = {
     alias: {
       '@material-ui/core': '@material-ui/core/esm',
       '@material-ui/icons': '@material-ui/icons/esm',
-      'react-dom': '@hot-loader/react-dom'
+      'react-dom': '@hot-loader/react-dom',
+      moment$: path.resolve(__dirname, 'node_modules/moment/moment.js')
     }
   },
   devServer: {
