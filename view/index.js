@@ -10,12 +10,9 @@ import { responsiveFontSizes } from '@material-ui/core/styles';
 import { CookiesProvider } from 'react-cookie';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 
-import { ToastContainer, toast } from 'react-toastify';
 import routerController from './GlobalFunction/routerController';
 import routes from './routes';
 import theme from './styles/theme';
-
-import 'react-toastify/dist/ReactToastify.css';
 
 const themeResposive = responsiveFontSizes(theme, { factor: 6, breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'] });
 
@@ -34,7 +31,6 @@ if ('serviceWorker' in navigator) {
 
 ReactDOM.render(
   <ThemeProvider theme={themeResposive}>
-    <ToastContainer />
     <CssBaseline />
     <BrowserRouter>
       <CookiesProvider>
