@@ -32,7 +32,7 @@ const style = {
     width: '100%',
   },
   title: {
-    maxWidth: '50%',
+    // maxWidth: '50%',
     color: 'white',
     fontWeight: 'bolder',
     fontSize: '5rem',

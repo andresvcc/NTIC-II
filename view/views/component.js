@@ -34,6 +34,6 @@ export {
   Map,
   Marker,
   LineDraw,
-  Slider
+  Slider,
   // ScreenCapture
 };

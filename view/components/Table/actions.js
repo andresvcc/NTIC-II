@@ -32,7 +32,6 @@ const dataToFormat = (BD) => {
   return res;
 };
 
-
 const actionsSet = (classes, data, filterClick, groupClick) => [
   {
     icon: () => (
@@ -44,7 +43,9 @@ const actionsSet = (classes, data, filterClick, groupClick) => [
     ),
     tooltip: 'group',
     isFreeAction: true,
-    onClick: groupClick
+    onClick: () => {
+      groupClick();
+    }
   },
   {
     icon: () => (

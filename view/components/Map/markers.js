@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import Fade from '@material-ui/core/Fade';
 
-
+import redux from '../redux/redux';
 import PointerMaker from './pointer';
 import PointerMaker2 from './pointer2';
 import GroupPointerMarker from './groupPointer';
@@ -13,7 +13,7 @@ function Pointer2(props) {
   const [color, setColor] = useState('#E5097F');
   const [size, setSize] = useState(0);
   const [num, setNum] = useState(2);
-
+  const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
     setColor('#AD005D');
@@ -45,7 +45,7 @@ function Pointer2(props) {
       >
         <PointerMaker2
           num={num}
-          onClick={() => { console.log(data.id); setNum(num + 1); }}
+          onClick={() => { dispatch({ state: 'greetingStatus', value: true }); console.log(data.id); setNum(num + 1); }}
           size={size}
           color={color}
         />
@@ -71,7 +71,7 @@ function Pointer(props) {
   const [colord, setColor] = useState('#E5097F');
   const [size, setSize] = useState(0);
   const [num, setNum] = useState(2);
-
+  const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
     setColor('#AD005D');
@@ -103,7 +103,7 @@ function Pointer(props) {
       >
         <PointerMaker
           num={num}
-          onClick={() => { console.log(data); setNum(num + 1); }}
+          onClick={() => { dispatch({ state: 'greetingStatus', value: true }); console.log(data.id); setNum(num + 1); }}
           size={size}
           color={colord}
         />
@@ -128,7 +128,7 @@ function PointerGroup(props) {
   const { data, classes, animated } = props;
   const [color, setColor] = useState('#6D00B8');
   const [size, setSize] = useState(0);
-
+  const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
     setColor('#5A1D83');
@@ -162,7 +162,7 @@ function PointerGroup(props) {
       >
         <GroupPointerMarker
           num={data.markers.length}
-          onClick={() => { console.log(data); }}
+          onClick={() => { dispatch({ state: 'greetingStatus', value: true }); console.log(data.id); }}
           size={size + contains}
           color={color}
         />
@@ -196,6 +196,7 @@ function Polygon(props) {
   const [color, setColor] = useState('#AB0275');
   const [border, setBorder] = useState(0);
   const [limitSIze, setLimitSize] = useState(0);
+  const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
     setBorder(sizeL / 4);
@@ -234,7 +235,7 @@ function Polygon(props) {
         }}
         onMouseEnter={() => mouseEnter()}
         onMouseLeave={() => mouseLeave()}
-        onClick={() => { console.log('click sur', data); }}
+        onClick={() => { dispatch({ state: 'greetingStatus', value: true }); console.log(data.id); }}
       >
         {data.markers.length || 'NaN'}
       </Avatar>

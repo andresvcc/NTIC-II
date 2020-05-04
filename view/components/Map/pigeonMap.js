@@ -62,9 +62,9 @@ export default function PigeonMap(props) {
         <Map
           provider={mapTilerProvider}
           limitBounds="edge"
-          attribution="utilise la cartographie de cartodb-basemaps"
+          attribution={false}
           center={dataMap.center}
-          attributionPrefix="UnigeMap"
+          attributionPrefix={false}
           zoom={dataMap.zoom}
           onBoundsChanged={handleBoundsChange}
           height={window.innerHeight - 5}

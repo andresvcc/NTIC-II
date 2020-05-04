@@ -13,6 +13,11 @@ import {
 const data1 = {
   columns: [
     {
+      title: '',
+      width: '10%',
+      sorting: false
+    },
+    {
       title: 'ID',
       field: 'anderson_id',
       width: '10%',
@@ -175,7 +180,8 @@ const data1 = {
       },
     },
     {
-      width: '10%',
+      title: '',
+      width: '100%',
       sorting: false
     }
   ],
@@ -2648,7 +2654,8 @@ const data1 = {
   detailPanel: [
     {
       openIcon: 'close',
-      tooltip: 'Show Both',
+      icon: 'toc',
+      tooltip: 'Voir plus',
       render: (rowData, index) => (
         <div key={index + 1} style={{ padding: '20px' }}>
           <Grid container spacing={3}>
@@ -2687,14 +2694,13 @@ export default function TableArticles(props) {
   };
 
   return (
-    <div style={{ maxHeight: '100px' }}>
-      <Table
-        data={data1}
-        onAddRow={addRow}
-        onEditRow={editRow}
-        onDelRow={delRow}
-      />
-    </div>
+    <Table
+      data={data1}
+      onAddRow={addRow}
+      onEditRow={editRow}
+      onDelRow={delRow}
+      onRowClick={(event, rowData, togglePanel) => togglePanel()}
+    />
   );
 }
 
