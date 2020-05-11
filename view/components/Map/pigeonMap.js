@@ -74,7 +74,7 @@ export default function PigeonMap(props) {
           minZoom={3}
           maxZoom={17}
           animated
-          onClick={handleMapClick}
+          // onClick={handleMapClick}
           dprs={[1, 2]}
         >
           {children}

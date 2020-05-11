@@ -12,7 +12,6 @@ function Pointer2(props) {
   const { data, classes, animated } = props;
   const [color, setColor] = useState('#E5097F');
   const [size, setSize] = useState(0);
-  const [num, setNum] = useState(2);
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
@@ -23,6 +22,11 @@ function Pointer2(props) {
   const mouseLeave = () => {
     setColor('#E5097F');
     setSize(0);
+  };
+
+  const handleClick = () => {
+    dispatch({ state: 'greetingStatus', value: true });
+    console.log(data);
   };
 
   return (
@@ -44,8 +48,7 @@ function Pointer2(props) {
         }}
       >
         <PointerMaker2
-          num={num}
-          onClick={() => { dispatch({ state: 'greetingStatus', value: true }); console.log(data.id); setNum(num + 1); }}
+          onClick={handleClick}
           size={size}
           color={color}
         />
@@ -70,7 +73,6 @@ function Pointer(props) {
   const { data, classes, animated } = props;
   const [colord, setColor] = useState('#E5097F');
   const [size, setSize] = useState(0);
-  const [num, setNum] = useState(2);
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
@@ -81,6 +83,11 @@ function Pointer(props) {
   const mouseLeave = () => {
     setColor('#E5097F');
     setSize(0);
+  };
+
+  const handleClick = () => {
+    dispatch({ state: 'greetingStatus', value: true });
+    console.log(data.manuscrit.length);
   };
 
   return (
@@ -102,8 +109,8 @@ function Pointer(props) {
         }}
       >
         <PointerMaker
-          num={num}
-          onClick={() => { dispatch({ state: 'greetingStatus', value: true }); console.log(data.id); setNum(num + 1); }}
+          num={data.manuscrit.length}
+          onClick={handleClick}
           size={size}
           color={colord}
         />
@@ -140,6 +147,11 @@ function PointerGroup(props) {
     setSize(0);
   };
 
+  const handleClick = () => {
+    dispatch({ state: 'greetingStatus', value: true });
+    console.log(data.id);
+  };
+
   const contains = data.markers.length < 10 ? data.markers.length : 9;
 
   return (
@@ -162,7 +174,7 @@ function PointerGroup(props) {
       >
         <GroupPointerMarker
           num={data.markers.length}
-          onClick={() => { dispatch({ state: 'greetingStatus', value: true }); console.log(data.id); }}
+          onClick={handleClick}
           size={size + contains}
           color={color}
         />
@@ -218,6 +230,11 @@ function Polygon(props) {
     setArea(sizeArea);
   }, [data, animated]);
 
+  const handleClick = () => {
+    dispatch({ state: 'greetingStatus', value: true });
+    console.log(data.id);
+  };
+
   return (
     <Fade
       in
@@ -236,7 +253,7 @@ function Polygon(props) {
         }}
         onMouseEnter={() => mouseEnter()}
         onMouseLeave={() => mouseLeave()}
-        onClick={() => { dispatch({ state: 'greetingStatus', value: true }); console.log(data.id); }}
+        onClick={handleClick}
       >
         {data.markers ? data.markers.length : 1}
       </Avatar>
@@ -266,8 +283,8 @@ export default function Marker(props) {
   } = props;
 
   if (data.type === 'polygon') { return (<PointerGroup data={data} classes={classes} animated={animated} />); }
-  if (data.type === 'library') { return (<Pointer data={data} classes={classes} animated={animated} />); }
-  if (data.type === 'point2') { return (<Pointer2 data={data} classes={classes} animated={animated} />); }
+  if (data.manuscrit.length > 0) { return (<Pointer data={data} classes={classes} animated={animated} />); }
+  if (data.manuscrit.length <= 0) { return (<Pointer2 data={data} classes={classes} animated={animated} />); }
   return (<Polygon data={data} classes={classes} animated={animated} />);
 }
 

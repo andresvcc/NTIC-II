@@ -47,7 +47,7 @@ export default function PointerMaker(props) {
         </g>
         <ellipse style={{ fill: color }} cx="1225" cy="469" rx="464" ry="456" />
         <ellipse className="pointer1Fil1" cx="1225" cy="469" rx="408" ry="402" />
-        <text x={num < 10 ? 1050 : 862} y="680" className="pointer1Fil0 pointer1Fnt0">{num || 10}</text>
+        <text x={num < 10 ? 1050 : 862} y="680" className="pointer1Fil0 pointer1Fnt0">{num || 0}</text>
       </g>
     </svg>
   );
