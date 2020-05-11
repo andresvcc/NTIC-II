@@ -266,7 +266,7 @@ export default function Marker(props) {
   } = props;
 
   if (data.type === 'polygon') { return (<PointerGroup data={data} classes={classes} animated={animated} />); }
-  if (data.type === 'librairies') { return (<Pointer data={data} classes={classes} animated={animated} />); }
+  if (data.type === 'library') { return (<Pointer data={data} classes={classes} animated={animated} />); }
   if (data.type === 'point2') { return (<Pointer2 data={data} classes={classes} animated={animated} />); }
   return (<Polygon data={data} classes={classes} animated={animated} />);
 }

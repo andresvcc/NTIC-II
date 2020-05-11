@@ -5,12 +5,11 @@ import PropTypes from 'prop-types';
 
 const data = {
   labels: [
-    'Style',
-    'Parts',
-    'Moto'
+    'Dir1',
+    'Dir2',
   ],
   datasets: [{
-    data: [20, 50, 30],
+    data: [20, 80],
     backgroundColor: [
       '#1196CC',
       '#115ECC',
@@ -44,18 +43,26 @@ export default function Test(props) {
 
   return (
     <div className={className} {...rest}>
-      <p style={{
-        margin: '2px',
-        textAlign: 'center',
-        color: 'white',
-        fontFamily: '"Black Ops One", cursive',
-        background: '#00000080',
-        fontSize: '2rem'
+      <div style={{
+        position: 'absolute', width: '50px', top: '-8px'
       }}
       >
-        Categories
-      </p>
-      <Doughnut data={data} legend={option} elements={{ point: { pointStyle: 'triangle' } }} reverse />
+        <p style={{
+          textAlign: 'center',
+          color: 'white',
+          background: '#00000080',
+          fontSize: '12px'
+        }}
+        >
+          villes
+        </p>
+      </div>
+      <div style={{
+        position: 'absolute', width: '150px', left: '-30px', top: '25px'
+      }}
+      >
+        <Doughnut data={data} legend={option} elements={{ point: { pointStyle: 'triangle' } }} reverse />
+      </div>
     </div>
   );
 }

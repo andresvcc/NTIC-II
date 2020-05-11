@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Overlay from 'pigeon-overlay';
-import librairies from '../database/librairies';
+import Owner from '../database/owner';
 import groupFonction from '../functions/groupMarkers';
 
 import {
@@ -20,18 +20,19 @@ export default function MapDisplay(props) {
   } = props;
 
   const [reduxStates, dispatch] = redux();
-  const [librairiesData, setLibrairiesData] = useState(librairies);
+  const [librairiesData, setLibrairiesData] = useState(Owner);
   const [animated, setAnimated] = useState(false);
   const [dataMap, setDataMap] = useState({});
 
   const update = (data) => {
     const yearFilter = [];
-    librairies.map((value) => {
-      if (value.yearMin <= reduxStates.barreTemporelle && value.yearMax >= reduxStates.barreTemporelle) {
+    Owner.map((value) => {
+      if (value.start <= reduxStates.barreTemporelle && value.end >= reduxStates.barreTemporelle) {
         yearFilter.push(value);
       }
       return value;
     });
+
     const distanceCal = zoomCalGroup(data.zoom);
     const newMapData = groupFonction(yearFilter, distanceCal);
     setLibrairiesData(newMapData);
