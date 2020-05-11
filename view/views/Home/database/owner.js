@@ -1,1285 +1,928 @@
-import axios from 'axios';
 
-const countries = ['Bélgica', 'france'];
-
-const villes = [
+const Owner = [
   {
-    name: 'Antwerpen',
+    type: 'library',
     id: 0,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [51.219448, 4.402464],
-
+    name: 'Archivio Storico Civico e Biblioteca Trivulziana',
+    address: 'Piazza Castello, 20121 Milano MI, Italia',
+    pos: [
+      45.46962,
+      9.18043
+    ],
+    city: 38,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Ascoli Piceno',
+    type: 'library',
     id: 1,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [42.855400, 13.574980]
+    name: 'Badische Landesbibliothek',
+    address: 'Erbprinzenstraße 17, 76133 Karlsruhe, Alemania',
+    pos: [
+      49.0084,
+      8.3983
+    ],
+    city: 31,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Augsburg',
+    type: 'library',
     id: 2,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [48.370544, 10.897790]
+    name: 'Bayerische Staatsbibliothek',
+    address: 'Ludwigstraße 16, 80539 München, Alemania',
+    pos: [
+      48.14711,
+      11.58006
+    ],
+    city: 40,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Baltimore MD',
+    type: 'library',
     id: 3,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [39.290386, -76.612190]
+    name: 'Biblioteca Ambrosiana',
+    address: 'Piazza Pio XI, 2, 20123 Milano MI, Italia',
+    pos: [
+      45.46363,
+      9.18603
+    ],
+    city: 38,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Bergamo',
+    type: 'library',
     id: 4,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [45.698265, 9.677270]
+    name: 'Biblioteca Angelica',
+    address: 'Piazza di S. Agostino, 8, 00186 Roma RM, Italia',
+    pos: [
+      41.90071,
+      12.47445
+    ],
+    city: 53,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Berlin',
+    type: 'library',
     id: 5,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [52.520008, 13.404954]
+    name: 'Biblioteca Apostolica Vaticana',
+    address: 'VA, 00120, Ciudad del Vaticano',
+    pos: [
+      41.90397,
+      12.45755
+    ],
+    city: 60,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Bern',
+    type: 'library',
     id: 6,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [46.947975, 7.447447]
+    name: 'Biblioteca Civica "Angelo Mai"',
+    address: 'Piazza Vecchia, 15, 24129 Bergamo BG, Italia',
+    pos: [
+      45.70437,
+      9.66321
+    ],
+    city: 1,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Bologna',
+    type: 'library',
     id: 7,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [44.494888, 11.342616]
+    name: 'Biblioteca Comunale "Giulio Gabrielli"',
+    address: 'Piazza Arringo, 6, 63100 Ascoli Piceno AP, Italia',
+    pos: [
+      42.85335,
+      13.577
+    ],
+    city: 1,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Bruxelles',
+    type: 'library',
     id: 8,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [50.850346, 4.351721]
+    name: 'Biblioteca Comunale Augusta',
+    address: 'Via delle Prome, 15, 06122 Perugia PG, Italia',
+    pos: [
+      43.11369,
+      12.39053
+    ],
+    city: 49,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Bryn Mawr PA',
+    type: 'library',
     id: 9,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [40.023026, -75.315178]
+    name: 'Biblioteca Comunale Rilliana',
+    address: 'Piazza della Repubblica, 1, 52014 Poppi AR, Italia',
+    pos: [
+      43.72262,
+      11.7672
+    ],
+    city: 50,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Cambridge',
+    type: 'library',
     id: 10,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [52.205338, 0.121817]
+    name: 'Biblioteca del Museo Correr',
+    address: 'Piazza San Marco, 52, 30170 Venezia VE, Italia',
+    pos: [
+      45.43373,
+      12.33852
+    ],
+    city: 61,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Carpentras',
+    type: 'library',
     id: 11,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [44.052368, 5.047320]
+    name: 'Biblioteca Durazzo Giustiniani',
+    address: 'Via XXV Aprile, 12, 16123 Genova GE, Italia',
+    pos: [
+      44.40942,
+      8.93484
+    ],
+    city: 26,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Cesena',
+    type: 'library',
     id: 12,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [44.138760, 12.239120]
+    name: 'Biblioteca Estense Universitaria',
+    address: 'Largo Porta Sant\'Agostino, 337, 41121 Modena MO, Italia',
+    pos: [
+      44.64825,
+      10.92104
+    ],
+    city: 39,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Chicago IL',
+    type: 'library',
     id: 13,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [41.878113, -87.629799]
+    name: 'Biblioteca Malatestiana',
+    address: 'Via Cesare Montalti, 47521 Cesena FC, Italia',
+    pos: [
+      44.13888,
+      12.23904
+    ],
+    city: 12,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Colmar',
+    type: 'library',
     id: 14,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [48.080620, 7.359950]
+    name: 'Biblioteca Medicea Laurenziana',
+    address: 'Piazza San Lorenzo, 9, 50123 Firenze FI, Italia',
+    pos: [
+      43.77527,
+      11.2543
+    ],
+    city: 25,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Cologny',
+    type: 'library',
     id: 15,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [46.215851, 6.180890]
+    name: 'Biblioteca Nazionale "Vittorio Emanuele III"',
+    address: 'Piazza del Plebiscito, 1, 80132 Napoli NA, Italia',
+    pos: [
+      40.83505,
+      14.24845
+    ],
+    city: 1,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Darmstadt',
+    type: 'library',
     id: 16,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [49.872826, 8.651193]
+    name: 'Biblioteca Nazionale Braidense',
+    address: 'Via Brera, 28, 20121 Milano MI, Italia',
+    pos: [
+      45.47225,
+      9.18768
+    ],
+    city: 38,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Dijon',
+    type: 'library',
     id: 17,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [47.327209, 5.044040]
+    name: 'Biblioteca Nazionale Centrale',
+    address: 'Piazza dei Cavalleggeri, 1, 50122 Firenze FI, Italia',
+    pos: [
+      43.76698,
+      11.26219
+    ],
+    city: 25,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Dresden',
+    type: 'library',
     id: 18,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [51.050407, 13.737262]
+    name: 'Biblioteca Nazionale Marciana',
+    address: 'Piazza San Marco, 7, 30124 Venezia VE, Italia',
+    pos: [
+      45.43424,
+      12.33805
+    ],
+    city: 61,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Düsseldorf',
+    type: 'library',
     id: 19,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [51.227741, 6.773456]
+    name: 'Biblioteca Palatina',
+    address: 'Piazza della Pilotta, 3, 43121 Parma PR, Italia',
+    pos: [
+      44.80464,
+      10.32584
+    ],
+    city: 48,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Erfurt',
+    type: 'library',
     id: 20,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [50.984768, 11.029880]
+    name: 'Biblioteca privada del Marqués de Campofranco',
+    address: '93010 Caltanissetta, Italia',
+    pos: [
+      37.68308,
+      13.83265
+    ],
+    city: 46,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'El Escorial',
+    type: 'library',
     id: 21,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [40.585079, -4.129520]
+    name: 'Biblioteca Riccardiana',
+    address: 'Via de\' Ginori, 10, 50123 Firenze FI, Italia',
+    pos: [
+      43.77555,
+      11.25537
+    ],
+    city: 25,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Eton',
+    type: 'library',
     id: 22,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [34.824162, -84.761726]
+    name: 'Biblioteca Universitaria',
+    address: 'Calle Libreros, 30, 37008 Salamanca, España',
+    pos: [
+      40.96157,
+      -5.66729
+    ],
+    city: 54,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Eugene OR',
+    type: 'library',
     id: 23,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [44.052071, -123.086754]
+    name: 'Biblioteca Vallicelliana',
+    address: 'Via della Chiesa Nuova, 18, 00186 Roma RM, Italia',
+    pos: [
+      41.89864,
+      12.46946
+    ],
+    city: 53,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Evanston IL',
+    type: 'library',
     id: 24,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [42.052158, -87.687866]
+    name: 'Biblioteka Jagiellonska',
+    address: 'aleja Adama Mickiewicza 22, 30-059 Kraków, Polonia',
+    pos: [
+      50.06146,
+      19.9231
+    ],
+    city: 33,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Firenze',
+    type: 'library',
     id: 25,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [43.769562, 11.255814]
+    name: 'Biblioteka Muzeum Narodowego w Krakowie',
+    address: 'swietego Marka 17+31-018 Kraków, Polonia',
+    pos: [
+      50.06377,
+      19.93953
+    ],
+    city: 33,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Genova',
+    type: 'library',
     id: 26,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [44.407059, 8.933990]
+    name: 'Biblioteka Narodowa',
+    address: 'aleja Niepodległosci 213, 02-086 Warszawa, Polonia',
+    pos: [
+      52.21373,
+      21.00461
+    ],
+    city: 62,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Göteborg',
+    type: 'library',
     id: 27,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [57.708870, 11.974560]
+    name: 'Biblioteka Uniwersytecka',
+    address: 'Fryderyka Joliot-Curie 12, 50-383 Wrocław, Polonia',
+    pos: [
+      51.11037,
+      17.05294
+    ],
+    city: 66,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Gravenhage',
+    type: 'library',
     id: 28,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [52.080189, 4.310130]
+    name: 'Bibliotheca Bodmeriana',
+    address: 'Route Martin-Bodmer 19-21, 1223 Cologny',
+    pos: [
+      46.21527,
+      6.18063
+    ],
+    city: 15,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Helsinki',
+    type: 'library',
     id: 29,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [60.169857, 24.938379]
+    name: 'Bibliothek des Heinrich-Suso-Gymnasium',
+    address: 'Neuhauser Str. 1, 78464 Konstanz, Alemania',
+    pos: [
+      47.66932,
+      9.18717
+    ],
+    city: 32,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Holkham Hall',
+    type: 'library',
     id: 30,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [52.431990, 0.781410]
+    name: 'Bibliothèque de l’Université libre',
+    address: 'Bâtiment A, Campus du Solbosch, Avenue F. Roosevelt 50, 1050 Brussel, Bélgica',
+    pos: [
+      50.81172,
+      4.38109
+    ],
+    city: 8,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Karlsruhe',
+    type: 'library',
     id: 31,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [49.006889, 8.403653]
+    name: 'Bibliothèque Municipale',
+    address: '5 Rue de l\'École de Droit, 21000 Dijon, Francia',
+    pos: [
+      47.31933,
+      5.0423
+    ],
+    city: 17,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Konstanz',
+    type: 'library',
     id: 32,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [47.661942, 9.172430]
+    name: 'Bibliothèque Nationale de France',
+    address: 'Quai François Mauriac, 75706 Paris, Francia',
+    pos: [
+      48.83398,
+      2.37751
+    ],
+    city: 47,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Kraków',
+    type: 'library',
     id: 33,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [50.064651, 19.944981]
+    name: 'Bibliothèque Royale de Belgique',
+    pos: [
+      50.84366,
+      4.35535
+    ],
+    address: 'Boulevard de l\'Empereur 4, 1000 Bruxelles, Bélgica',
+    city: 8,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Leiden',
+    type: 'library',
     id: 34,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [52.160114, 4.497010]
+    name: 'Bibliothèque-Musée Inguimbertine',
+    address: '180 Place Aristide Briand, 84200 Carpentras, Francia',
+    pos: [
+      44.05199,
+      5.0481
+    ],
+    city: 11,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Lincoln',
+    type: 'library',
     id: 35,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [37.346134, -95.262955]
+    name: 'Bodleian Library',
+    address: 'Broad St, Oxford OX1 3BG, Reino Unido',
+    pos: [
+      51.75419,
+      -1.25812
+    ],
+    city: 44,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'London',
+    type: 'library',
     id: 36,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [51.507351, -0.127758]
+    name: 'British Library',
+    address: '8 Midland Rd, London NW1 2DB, Reino Unido',
+    pos: [
+      51.56965,
+      -0.00711
+    ],
+    city: 36,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Mainz',
+    type: 'library',
     id: 37,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [49.992863, 8.247253]
+    name: 'Bryn Mawr College, Canaday Library',
+    address: '101 N Merion Ave, Bryn Mawr, PA 19010, Estados Unidos',
+    pos: [
+      40.02553,
+      -75.3133
+    ],
+    city: 9,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Milano',
+    type: 'library',
     id: 38,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [39.082520, -94.582306]
+    name: 'Burgerbibliothek',
+    address: 'Münstergasse 63, 3000 Bern',
+    pos: [
+      46.94735,
+      7.44837
+    ],
+    city: 6,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Modena',
+    type: 'library',
     id: 39,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [44.647129, 10.925227]
+    name: 'Cathedral Library',
+    address: '8 College Yard, Worcester WR1 2LA, Reino Unido',
+    pos: [
+      52.18902,
+      -2.22153
+    ],
+    city: 65,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'München',
+    type: 'library',
     id: 40,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [48.135124, 11.581981]
+    name: 'Corpus Christi College, Parker Library',
+    address: 'Trumpington St, Cambridge CB2 1RH, Reino Unido',
+    pos: [
+      52.20078,
+      0.11929
+    ],
+    city: 44,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Napoli',
+    type: 'library',
     id: 41,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [40.839981, 14.252540]
+    name: 'College Library',
+    address: 'Venusstraat 35, 2000 Antwerpen, Bélgica',
+    pos: [
+      51.22275,
+      4.40895
+    ],
+    city: 1,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Nottingham',
+    type: 'library',
     id: 42,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [52.954784, -1.158109]
+    name: 'University Library, National Library of Finland',
+    address: 'Unioninkatu 36, 00170 Helsinki, Finlandia',
+    pos: [
+      60.17033,
+      24.94956
+    ],
+    city: 1,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Oldenburg',
+    type: 'library',
     id: 43,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [53.136719, 8.216540]
+    name: 'Herzog August Bibliothek',
+    address: 'Lessingpl. 1, 38304 Wolfenbüttel, Alemania',
+    pos: [
+      52.16185,
+      10.48335
+    ],
+    city: 64,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Oxford',
+    type: 'library',
     id: 44,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [51.752022, -1.257726]
+    name: 'Hessische Landes- und Hochschulbibliothek',
+    address: 'Magdalenenstraße 8, 64289 Darmstadt, Alemania',
+    pos: [
+      49.87677,
+      8.65808
+    ],
+    city: 16,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Padova',
+    type: 'library',
     id: 45,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [45.406433, 11.876761]
+    name: 'Koninklijke Bibliotheek',
+    address: 'Prins Willem-Alexanderhof 5, 2595 BE Den Haag, Países Bajos',
+    pos: [
+      52.08125,
+      4.32589
+    ],
+    city: 1,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Palma de Mallorca',
+    type: 'library',
     id: 46,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [38.924549, -0.220690]
+    name: 'Landesbibliothek',
+    address: 'Pferdemarkt 15, 26121 Oldenburg, Alemania',
+    pos: [
+      53.14686,
+      8.21497
+    ],
+    city: 43,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Paris',
+    type: 'library',
     id: 47,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [48.856613, 2.352222]
+    name: 'library',
+    address: 'paris',
+    pos: [
+      48.856613,
+      2.352222
+    ],
+    city: 1,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Parma',
+    type: 'library',
     id: 48,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [44.801483, 10.327904]
+    name: 'Library of the Earl of Leicester',
+    address: 'Wood St, Earl Shilton, Leicester LE9 7NE, Reino Unido',
+    pos: [
+      52.57524,
+      -1.32037
+    ],
+    city: 30,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Perugia',
+    type: 'library',
     id: 49,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [43.110718, 12.390828]
+    name: 'Libreria antiquaria Pregliasco',
+    address: 'Via Accademia Albertina, 3 bis, 10123 Torino TO, Italia',
+    pos: [
+      45.0673,
+      7.6899
+    ],
+    city: 58,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Poppi',
+    type: 'library',
     id: 50,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [43.732769, 11.764030]
+    name: '36 College',
+    address: 'Via Faleria, 4, 63100 Ascoli Piceno AP, Italia',
+    pos: [
+      42.8511,
+      13.59647
+    ],
+    city: 1,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Praha',
+    type: 'library',
     id: 51,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [50.075539, 14.437800]
+    name: 'Martinus-Bibliothek',
+    address: 'Grebenstraße 8, 55116 Mainz, Alemania',
+    pos: [
+      49.99781,
+      8.27431
+    ],
+    city: 37,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Princeton NJ',
+    type: 'library',
     id: 52,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [40.351978, -74.660744]
+    name: 'Museum Plantin-Moretus',
+    address: 'Vrijdagmarkt 22-23, 2000 Antwerpen, Bélgica',
+    pos: [
+      51.21862,
+      4.39809
+    ],
+    city: 0,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Roma',
+    type: 'library',
     id: 53,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [41.902782, 12.496365]
+    name: 'Národní Knihovna Ceské Republiky',
+    address: 'Klementinum 190, 110 00 Josefov, Chequia',
+    pos: [
+      40.4855,
+      -86.20346
+    ],
+    city: 51,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Salamanca',
+    type: 'library',
     id: 54,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [40.970104, -5.663540]
+    name: 'Northwestern University Library',
+    address: '1970 Campus Dr, Evanston, IL 60201, Estados Unidos',
+    pos: [
+      42.05331,
+      -87.67391
+    ],
+    city: 24,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Sankt Florian',
+    type: 'library',
     id: 55,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [48.205660, 14.379550]
+    name: 'Österreichische Nationalbibliothek',
+    address: 'Josefsplatz 1, 1015 Wien, Austria',
+    pos: [
+      48.20599,
+      16.3673
+    ],
+    city: 63,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Schlägl',
+    type: 'library',
     id: 56,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [48.646260, 13.971210]
+    name: 'Real Biblioteca del Monasterio de San Lorenzo',
+    address: 'Av Juan de Borbón y Battemberg, s/n, 28200 San Lorenzo de El Escorial, Madrid, España',
+    pos: [
+      40.59037,
+      -4.1475
+    ],
+    city: 21,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Stuttgart',
+    type: 'library',
     id: 57,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [48.775845, 9.182932]
+    name: 'Sächsische Landesbibliothek – Staats- und Universitätsbibliothek',
+    address: 'Zellescher Weg 18, 01069 Dresden, Alemania',
+    pos: [
+      51.02867,
+      13.73687
+    ],
+    city: 18,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Torino',
+    type: 'library',
     id: 58,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [45.068371, 7.683070]
+    name: 'Staats- und Stadtbibliothek',
+    address: 'Schaezlerstraße 25, 86152 Augsburg, Alemania',
+    pos: [
+      48.36952,
+      10.89057
+    ],
+    city: 2,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Trier',
+    type: 'library',
     id: 59,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [49.749992, 6.637143]
+    name: 'Staatsbibliothek zu 6 – Preußischer Kulturbesitz',
+    address: 'Potsdamer Straße 33, 10785 Berlin, Alemania',
+    pos: [
+      52.50826,
+      13.37141
+    ],
+    city: 1,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Città del Vaticano',
+    type: 'library',
     id: 60,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [41.902229, 12.458100]
+    name: 'Stadtbibliothek',
+    address: 'Weberbach 25, 54290 Trier, Alemania',
+    pos: [
+      49.75156,
+      6.64125
+    ],
+    city: 59,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Venezia',
+    type: 'library',
     id: 61,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [45.434341, 12.338780]
+    name: 'Stiftsbibliothek',
+    address: 'Schlägl 1, 4160 Schlägl, Austria',
+    pos: [
+      48.63649,
+      13.96777
+    ],
+    city: 56,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Warsawa',
+    type: 'library',
     id: 62,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [52.234982, 21.008490]
+    name: 'Universitätsbibliothek (Landes- und Stadtbibliothek)',
+    address: '40225 Düsseldorf, Alemania',
+    pos: [
+      51.20263,
+      6.78056
+    ],
+    city: 19,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Wien',
+    type: 'library',
     id: 63,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [48.208176, 16.373819]
+    name: 'Universiteitsbibliotheek',
+    address: 'Witte Singel 27, 2311 BG Leiden, Países Bajos',
+    pos: [
+      52.15731,
+      4.48145
+    ],
+    city: 34,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Wolfenbüttel',
+    type: 'library',
     id: 64,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [52.164040, 10.540848]
+    name: 'Universitetsbibliotek',
+    address: 'Västra Hamngatan 25, Pedagogen hus A, 411 17 Göteborg, Suecia',
+    pos: [
+      57.70351,
+      11.96391
+    ],
+    city: 27,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Worcester',
+    type: 'library',
     id: 65,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [42.262592, -71.802292]
+    name: 'University Library',
+    address: 'One Washington Road, Princeton, NJ 08544, Estados Unidos',
+    pos: [
+      40.33982,
+      -74.64843
+    ],
+    city: 52,
+    start: 800,
+    end: 2020
   },
   {
-    name: 'Wroclaw',
+    type: 'library',
     id: 66,
-    type: 'city',
-    country: 1,
-    start: null,
-    end: 2020,
-    pos: [51.107883, 17.038538]
+    name: 'University Library (Wollaton Library Collection)',
+    address: 'Bramcote La, Nottingham NG8 2NA, Reino Unido',
+    pos: [
+      52.94841,
+      -1.2286
+    ],
+    city: 42,
+    start: 800,
+    end: 2020
+  },
+  {
+    type: 'library',
+    id: 67,
+    name: 'University of Oregon, Knight Library',
+    address: '1501 Kincaid St, Eugene, OR 97403, Estados Unidos',
+    pos: [
+      44.04381,
+      -123.07857
+    ],
+    city: 23,
+    start: 800,
+    end: 2020
+  },
+  {
+    type: 'library',
+    id: 68,
+    name: 'Walters Art Museum',
+    address: '600 N Charles St, Baltimore, MD 21201, Estados Unidos',
+    pos: [
+      39.29656,
+      -76.61601
+    ],
+    city: 3,
+    start: 800,
+    end: 2020
+  },
+  {
+    type: 'library',
+    id: 69,
+    name: 'Wissenschaftliche Allgemeinbibliothek',
+    address: 'Dompl. 1, 99084 Erfurt, Alemania',
+    pos: [
+      50.97374,
+      11.02243
+    ],
+    city: 20,
+    start: 800,
+    end: 2020
+  },
+  {
+    type: 'library',
+    id: 70,
+    name: 'Württembergische Landesbibliothek',
+    address: 'Konrad-Adenauer-Straße 8, 70173 Stuttgart, Alemania',
+    pos: [
+      48.77722,
+      9.18533
+    ],
+    city: 57,
+    start: 800,
+    end: 2020
   }
 ];
-
-
-const Owner = [{
-  type: 'library',
-  id: 0,
-  name: 'Archivio Storico Civico e Biblioteca Trivulziana',
-  address: 'Piazza Castello, 20121 Milano MI, Italia',
-  pos: [0, 0],
-  city: 38,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 1,
-  name: 'Badische Landesbibliothek',
-  address: 'Erbprinzenstraße 17, 76133 Karlsruhe, Alemania',
-  pos: [0, 0],
-  city: 31,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 2,
-  name: 'Bayerische Staatsbibliothek',
-  address: 'Ludwigstraße 16, 80539 München, Alemania',
-  pos: [0, 0],
-  city: 40,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 3,
-  name: 'Biblioteca Ambrosiana',
-  address: 'Piazza Pio XI, 2, 20123 Milano MI, Italia',
-  pos: [0, 0],
-  city: 38,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 4,
-  name: 'Biblioteca Angelica',
-  address: 'Piazza di S. Agostino, 8, 00186 Roma RM, Italia',
-  pos: [0, 0],
-  city: 53,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 5,
-  name: 'Biblioteca Apostolica Vaticana',
-  address: 'VA, 00120, Ciudad del Vaticano',
-  pos: [0, 0],
-  city: 60,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 6,
-  name: 'Biblioteca Civica "Angelo Mai"',
-  address: 'Piazza Vecchia, 15, 24129 Bergamo BG, Italia',
-  pos: [0, 0],
-  city: 1,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 7,
-  name: 'Biblioteca Comunale "Giulio Gabrielli"',
-  address: 'Piazza Arringo, 6, 63100 Ascoli Piceno AP, Italia',
-  pos: [0, 0],
-  city: 1,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 8,
-  name: 'Biblioteca Comunale Augusta',
-  address: 'Via delle Prome, 15, 06122 Perugia PG, Italia',
-  pos: [0, 0],
-  city: 49,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 9,
-  name: 'Biblioteca Comunale Rilliana',
-  address: 'Piazza della Repubblica, 1, 52014 Poppi AR, Italia',
-  pos: [0, 0],
-  city: 50,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 10,
-  name: 'Biblioteca del Museo Correr',
-  address: 'Piazza San Marco, 52, 30170 Venezia VE, Italia',
-  pos: [0, 0],
-  city: 61,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 11,
-  name: 'Biblioteca Durazzo Giustiniani',
-  address: 'Via XXV Aprile, 12, 16123 Genova GE, Italia',
-  pos: [0, 0],
-  city: 26,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 12,
-  name: 'Biblioteca Estense Universitaria',
-  address: 'Largo Porta Sant\'Agostino, 337, 41121 Modena MO, Italia',
-  pos: [0, 0],
-  city: 39,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 13,
-  name: 'Biblioteca Malatestiana',
-  address: 'Via Cesare Montalti, 47521 Cesena FC, Italia',
-  pos: [0, 0],
-  city: 12,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 14,
-  name: 'Biblioteca Medicea Laurenziana',
-  address: 'Piazza San Lorenzo, 9, 50123 Firenze FI, Italia',
-  pos: [0, 0],
-  city: 25,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 15,
-  name: 'Biblioteca Nazionale "Vittorio Emanuele III"',
-  address: 'Piazza del Plebiscito, 1, 80132 Napoli NA, Italia',
-  pos: [0, 0],
-  city: 1,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 16,
-  name: 'Biblioteca Nazionale Braidense',
-  address: 'Via Brera, 28, 20121 Milano MI, Italia',
-  pos: [0, 0],
-  city: 38,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 17,
-  name: 'Biblioteca Nazionale Centrale',
-  address: 'Piazza dei Cavalleggeri, 1, 50122 Firenze FI, Italia',
-  pos: [0, 0],
-  city: 25,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 18,
-  name: 'Biblioteca Nazionale Marciana',
-  address: 'Piazza San Marco, 7, 30124 Venezia VE, Italia',
-  pos: [0, 0],
-  city: 61,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 19,
-  name: 'Biblioteca Palatina',
-  address: 'Piazza della Pilotta, 3, 43121 Parma PR, Italia',
-  pos: [0, 0],
-  city: 48,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 20,
-  name: 'Biblioteca privada del Marqués de Campofranco',
-  address: '93010 Caltanissetta, Italia',
-  pos: [0, 0],
-  city: 46,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 21,
-  name: 'Biblioteca Riccardiana',
-  address: 'Via de\' Ginori, 10, 50123 Firenze FI, Italia',
-  pos: [0, 0],
-  city: 25,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 22,
-  name: 'Biblioteca Universitaria',
-  address: 'Calle Libreros, 30, 37008 Salamanca, España',
-  pos: [0, 0],
-  city: 54,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 23,
-  name: 'Biblioteca Vallicelliana',
-  address: 'Via della Chiesa Nuova, 18, 00186 Roma RM, Italia',
-  pos: [0, 0],
-  city: 53,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 24,
-  name: 'Biblioteka Jagiellonska',
-  address: 'aleja Adama Mickiewicza 22, 30-059 Kraków, Polonia',
-  pos: [0, 0],
-  city: 33,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 25,
-  name: 'Biblioteka Muzeum Narodowego w Krakowie',
-  address: 'Świętego Marka 17, 31-018 Kraków, Polonia',
-  pos: [0, 0],
-  city: 33,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 26,
-  name: 'Biblioteka Narodowa',
-  address: 'aleja Niepodległości 213, 02-086 Warszawa, Polonia',
-  pos: [0, 0],
-  city: 62,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 27,
-  name: 'Biblioteka Uniwersytecka',
-  address: 'Fryderyka Joliot-Curie 12, 50-383 Wrocław, Polonia',
-  pos: [0, 0],
-  city: 66,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 28,
-  name: 'Bibliotheca Bodmeriana',
-  address: 'Route Martin-Bodmer 19-21, 1223 Cologny',
-  pos: [0, 0],
-  city: 15,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 29,
-  name: 'Bibliothek des Heinrich-Suso-Gymnasium',
-  address: 'Neuhauser Str. 1, 78464 Konstanz, Alemania',
-  pos: [0, 0],
-  city: 32,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 30,
-  name: 'Bibliothèque de l’Université libre',
-  address: 'Bâtiment A, Campus du Solbosch, Avenue F. Roosevelt 50, 1050 Brussel, Bélgica',
-  pos: [0, 0],
-  city: 8,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 31,
-  name: 'Bibliothèque Municipale',
-  address: '5 Rue de l\'École de Droit, 21000 Dijon, Francia',
-  pos: [0, 0],
-  city: 17,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 32,
-  name: 'Bibliothèque Nationale de France',
-  address: 'Quai François Mauriac, 75706 Paris, Francia',
-  pos: [0, 0],
-  city: 47,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 33,
-  name: 'Bibliothèque Royale de Belgique',
-  pos: [0, 0],
-  address: 'Boulevard de l\'Empereur 4, 1000 Bruxelles, Bélgica',
-  city: 8,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 34,
-  name: 'Bibliothèque-Musée Inguimbertine',
-  address: '180 Place Aristide Briand, 84200 Carpentras, Francia',
-  pos: [0, 0],
-  city: 11,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 35,
-  name: 'Bodleian Library',
-  address: 'Broad St, Oxford OX1 3BG, Reino Unido',
-  pos: [0, 0],
-  city: 44,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 36,
-  name: 'British Library',
-  address: '8 Midland Rd, London NW1 2DB, Reino Unido',
-  pos: [0, 0],
-  city: 36,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 37,
-  name: 'Bryn Mawr College, Canaday Library',
-  address: '101 N Merion Ave, Bryn Mawr, PA 19010, Estados Unidos',
-  pos: [0, 0],
-  city: 9,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 38,
-  name: 'Burgerbibliothek',
-  address: 'Münstergasse 63, 3000 Bern',
-  pos: [0, 0],
-  city: 6,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 39,
-  name: 'Cathedral Library',
-  address: '8 College Yard, Worcester WR1 2LA, Reino Unido',
-  pos: [0, 0],
-  city: 65,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 40,
-  name: 'Corpus Christi College, Parker Library',
-  address: 'Trumpington St, Cambridge CB2 1RH, Reino Unido',
-  pos: [0, 0],
-  city: 44,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 41,
-  name: 'College Library',
-  address: 'Venusstraat 35, 2000 Antwerpen, Bélgica',
-  pos: [0, 0],
-  city: 1,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 42,
-  name: 'University Library, National Library of Finland',
-  address: 'Unioninkatu 36, 00170 Helsinki, Finlandia',
-  pos: [0, 0],
-  city: 1,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 43,
-  name: 'Herzog August Bibliothek',
-  address: 'Lessingpl. 1, 38304 Wolfenbüttel, Alemania',
-  pos: [0, 0],
-  city: 64,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 44,
-  name: 'Hessische Landes- und Hochschulbibliothek',
-  address: 'Magdalenenstraße 8, 64289 Darmstadt, Alemania',
-  pos: [0, 0],
-  city: 16,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 45,
-  name: 'Koninklijke Bibliotheek',
-  address: 'Prins Willem-Alexanderhof 5, 2595 BE Den Haag, Países Bajos',
-  pos: [0, 0],
-  city: 1,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 46,
-  name: 'Landesbibliothek',
-  address: 'Pferdemarkt 15, 26121 Oldenburg, Alemania',
-  pos: [0, 0],
-  city: 43,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 47,
-  name: 'library',
-  address: 'paris',
-  pos: [0, 0],
-  city: 1,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 48,
-  name: 'Library of the Earl of Leicester',
-  address: 'Wood St, Earl Shilton, Leicester LE9 7NE, Reino Unido',
-  pos: [0, 0],
-  city: 30,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 49,
-  name: 'Libreria antiquaria Pregliasco',
-  address: 'Via Accademia Albertina, 3 bis, 10123 Torino TO, Italia',
-  pos: [0, 0],
-  city: 58,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 50,
-  name: '36 College',
-  address: 'Via Faleria, 4, 63100 Ascoli Piceno AP, Italia',
-  pos: [0, 0],
-  city: 1,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 51,
-  name: 'Martinus-Bibliothek',
-  address: 'Grebenstraße 8, 55116 Mainz, Alemania',
-  pos: [0, 0],
-  city: 37,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 52,
-  name: 'Museum Plantin-Moretus',
-  address: 'Vrijdagmarkt 22-23, 2000 Antwerpen, Bélgica',
-  pos: [0, 0],
-  city: 0,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 53,
-  name: 'Národní Knihovna Ceské Republiky',
-  address: 'Klementinum 190, 110 00 Josefov, Chequia',
-  pos: [0, 0],
-  city: 51,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 54,
-  name: 'Northwestern University Library',
-  address: '1970 Campus Dr, Evanston, IL 60201, Estados Unidos',
-  pos: [0, 0],
-  city: 24,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 55,
-  name: 'Österreichische Nationalbibliothek',
-  address: 'Josefsplatz 1, 1015 Wien, Austria',
-  pos: [0, 0],
-  city: 63,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 56,
-  name: 'Real Biblioteca del Monasterio de San Lorenzo',
-  address: 'Av Juan de Borbón y Battemberg, s/n, 28200 San Lorenzo de El Escorial, Madrid, España',
-  pos: [0, 0],
-  city: 21,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 57,
-  name: 'Sächsische Landesbibliothek – Staats- und Universitätsbibliothek',
-  address: 'Zellescher Weg 18, 01069 Dresden, Alemania',
-  pos: [0, 0],
-  city: 18,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 58,
-  name: 'Staats- und Stadtbibliothek',
-  address: 'Schaezlerstraße 25, 86152 Augsburg, Alemania',
-  pos: [0, 0],
-  city: 2,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 59,
-  name: 'Staatsbibliothek zu 6 – Preußischer Kulturbesitz',
-  address: 'Potsdamer Straße 33, 10785 Berlin, Alemania',
-  pos: [0, 0],
-  city: 1,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 60,
-  name: 'Stadtbibliothek',
-  address: 'Weberbach 25, 54290 Trier, Alemania',
-  pos: [0, 0],
-  city: 59,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 61,
-  name: 'Stiftsbibliothek',
-  address: 'Schlägl 1, 4160 Schlägl, Austria',
-  pos: [0, 0],
-  city: 56,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 62,
-  name: 'Universitätsbibliothek (Landes- und Stadtbibliothek)',
-  address: '40225 Düsseldorf, Alemania',
-  pos: [0, 0],
-  city: 19,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 63,
-  name: 'Universiteitsbibliotheek',
-  address: 'Witte Singel 27, 2311 BG Leiden, Países Bajos',
-  pos: [0, 0],
-  city: 34,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 64,
-  name: 'Universitetsbibliotek',
-  address: 'Västra Hamngatan 25, Pedagogen hus A, 411 17 Göteborg, Suecia',
-  pos: [0, 0],
-  city: 27,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 65,
-  name: 'University Library',
-  address: 'One Washington Road, Princeton, NJ 08544, Estados Unidos',
-  pos: [0, 0],
-  city: 52,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 66,
-  name: 'University Library (Wollaton Library Collection)',
-  address: 'Bramcote La, Nottingham NG8 2NA, Reino Unido',
-  pos: [0, 0],
-  city: 42,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 67,
-  name: 'University of Oregon, Knight Library',
-  address: '1501 Kincaid St, Eugene, OR 97403, Estados Unidos',
-  pos: [0, 0],
-  city: 23,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 68,
-  name: 'Walters Art Museum',
-  address: '600 N Charles St, Baltimore, MD 21201, Estados Unidos',
-  pos: [0, 0],
-  city: 3,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 69,
-  name: 'Wissenschaftliche Allgemeinbibliothek',
-  address: 'Dompl. 1, 99084 Erfurt, Alemania',
-  pos: [45.9638147829382, 6.3122978007208985],
-  city: 20,
-  start: null,
-  end: 2020
-}, {
-  type: 'library',
-  id: 70,
-  name: 'Württembergische Landesbibliothek',
-  address: 'Konrad-Adenauer-Straße 8, 70173 Stuttgart, Alemania',
-  pos: [46.33350892647935, 23.636684587922588],
-  city: 57,
-  start: null,
-  end: 2020
-}];
-
-
-const manuscrit = [
-  {
-    type: 'manuscrit',
-    anderson_id: 3,
-    town: 1,
-    ms_name: '3_ANTWERPEN',
-    description: 'not description',
-    photo: null,
-    intervalles: [{
-      datation: 'XIII', yearMin: 1250, yearMax: 1300, library: Owner[0]
-    }, {
-      datation: 'XIII-XIV/2', yearMin: 1300, yearMax: 1350, library: Owner[1]
-    }, {
-      datation: 'XV', yearMin: 1550, yearMax: 1600, library: Owner[2]
-    }]
-  },
-  {
-    type: 'manuscrit',
-    anderson_id: 3,
-    town: 1,
-    ms_name: '3_ANTWERPEN',
-    description: 'not description',
-    photo: null,
-    intervalles: [{
-      datation: 'XIII', yearMin: 1300, yearMax: 1400, library: Owner[1]
-    }]
-  },
-];
-
 
 export default Owner;

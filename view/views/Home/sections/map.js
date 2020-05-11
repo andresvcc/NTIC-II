@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Overlay from 'pigeon-overlay';
-import Owner from '../database/owner';
+import JsonDB from '../database/databaseController';
 import groupFonction from '../functions/groupMarkers';
 
 import {
@@ -18,6 +18,10 @@ export default function MapDisplay(props) {
   const {
     classes
   } = props;
+
+  const {
+    Owner
+  } = JsonDB;
 
   const [reduxStates, dispatch] = redux();
   const [librairiesData, setLibrairiesData] = useState(Owner);
