@@ -30,12 +30,30 @@ export default function MapDisplay(props) {
 
   const update = (data) => {
     const yearFilter = [];
+    /*
     Owner.map((value) => {
       if (value.start <= reduxStates.barreTemporelle && value.end >= reduxStates.barreTemporelle) {
         yearFilter.push(value);
       }
       return value;
     });
+ */
+
+
+    Owner.map((value, indexOwner) => {
+      if (value.start <= reduxStates.barreTemporelle && value.end >= reduxStates.barreTemporelle) {
+        value.manuscrit.map((_manuscrit) => {
+          _manuscrit.intervalles.map((intervale) => {
+            if (intervale.current && reduxStates.barreTemporelle === 2020) yearFilter.push({ ...value, id: indexOwner });
+            else if (intervale.start <= reduxStates.barreTemporelle && intervale.end >= reduxStates.barreTemporelle) yearFilter.push({ ...value, id: indexOwner });
+            return intervale;
+          });
+          return _manuscrit;
+        });
+      }
+      return value;
+    });
+
 
     const distanceCal = zoomCalGroup(data.zoom);
     const newMapData = groupFonction(yearFilter, distanceCal);
@@ -53,15 +71,15 @@ export default function MapDisplay(props) {
         setDataMap={(data) => setDataMap(data)}
       >
         {
-          librairiesData.map((data) => (
-            <Overlay anchor={data.pos} offset={[10, data.type === 'polygon' ? 10 : 20]} key={data.id}>
+          librairiesData.map((data, index) => (
+            <Overlay anchor={data.pos} offset={[10, data.type === 'polygon' ? 10 : 20]} key={`${index + 1}-${data.id}`}>
               <Marker data={data} animated={animated} classes={classes} />
             </Overlay>
           ))
         }
         {
           <LineDraw
-            coordsArray={grapheGenerator([['m11', 'm12'], ['m34', 'm2'], ['m1', 'm32'], ['m32', 'm24'], ['m1', 'm2'], ['m1', 'm10'], ['m1', 'm8'], ['m2', 'm7'], ['m1', 'm16']], librairiesData)}
+            coordsArray={grapheGenerator([[18, 42], [42, 20], [20, 22]], librairiesData)}
           />
         }
       </Map>

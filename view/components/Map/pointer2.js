@@ -32,7 +32,7 @@ export default function PointerMaker(props) {
       </defs>
       <g id="Layer_x0020_1" onClick={() => { onClick(); }} style={{ cursor: 'pointer' }}>
         <metadata id="CorelCorpID_0Corel-Layer" />
-        <path className="markerFil0" d="M1053 184l0 0c-229,-228 -599,-228 -827,0l0 0c-205,205 -229,593 -54,825l467 675 468 -675c174,-232 151,-620 -54,-825z" />
+        <path className="markerFil0" style={{ fill: color }} d="M1053 184l0 0c-229,-228 -599,-228 -827,0l0 0c-205,205 -229,593 -54,825l467 675 468 -675c174,-232 151,-620 -54,-825z" />
         <g id="_83897768">
           <path className="marker" d="M870 540l101 0 0 243 -101 0 0 -243zm0 0z" />
           <path className="marker" d="M678 540l101 0 0 243 -101 0 0 -243zm0 0z" />

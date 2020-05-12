@@ -133,17 +133,17 @@ Pointer.propTypes = {
 
 function PointerGroup(props) {
   const { data, classes, animated } = props;
-  const [color, setColor] = useState('#6D00B8');
+  const [color, setColor] = useState('#E5097F');
   const [size, setSize] = useState(0);
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
-    setColor('#5A1D83');
+    setColor('#AD005D');
     setSize(5);
   };
 
   const mouseLeave = () => {
-    setColor('#6D00B8');
+    setColor('#E5097F');
     setSize(0);
   };
 

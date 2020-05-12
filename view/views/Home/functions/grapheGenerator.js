@@ -28,7 +28,8 @@ export default function grapheGenerator(fleches, arr) {
     const p2 = findL(fleche[1], arr);
     if (p1 === undefined || p2 === undefined) return fleche;
     fl.push({
-      color: `${p2.type !== 'polygon' ? '#e5167f' : '#6d01b8'}`,
+      // color: `${p2.type !== 'polygon' ? '#e5167f' : '#6d01b8'}`,
+      color: '#6d01b8',
       arr: [p1, p2]
     });
     return fleche;

@@ -115,7 +115,7 @@ const LineDraw = ({
           <path
             className="bar"
             d="M 0 0 L 10 5 L 0 10 z"
-            fill="#ff57b2"
+            fill="#be61ff"
           />
         </marker>
       </defs>

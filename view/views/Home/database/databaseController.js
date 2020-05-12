@@ -9,11 +9,9 @@ const manuscritGenerator = () => {
   manuscrits.forEach((manuscrit) => {
     manuscrit.intervalles.forEach((interval) => {
       manuscritsProcede.push({
-        id: `${interval.yearMin}-${interval.yearMax}/${interval.library}/${manuscrit.anderson_id}`,
         type: manuscrit.type,
         ...interval,
         ...manuscrit
-
       });
     });
   });
