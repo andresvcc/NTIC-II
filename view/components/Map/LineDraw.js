@@ -63,7 +63,7 @@ const LineDraw = ({
       setFleches([]);
       const timer = setTimeout(() => {
         setFleches(update());
-      }, 300);
+      }, 150);
       return () => clearTimeout(timer);
     }
   }, [bounds.ne, reduxStates.barreTemporelle]);
