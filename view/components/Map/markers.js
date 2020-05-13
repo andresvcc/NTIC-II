@@ -136,6 +136,16 @@ function PointerGroup(props) {
   const [color, setColor] = useState('#E5097F');
   const [size, setSize] = useState(0);
   const [reduxState, dispatch] = redux();
+  const [manuscritsNumber, setNumber] = useState(0);
+
+  useEffect(() => {
+    let number = 0;
+    data.markers.forEach((element) => {
+      number += element.manuscrit.length;
+    });
+
+    setNumber(number);
+  }, [data.markers]);
 
   const mouseEnter = () => {
     setColor('#AD005D');
@@ -173,7 +183,7 @@ function PointerGroup(props) {
         }}
       >
         <GroupPointerMarker
-          num={data.markers.length}
+          num={manuscritsNumber > 99 ? 99 : manuscritsNumber}
           onClick={handleClick}
           size={size + contains}
           color={color}

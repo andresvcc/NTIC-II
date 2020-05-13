@@ -1,9 +1,13 @@
+import 'babel-polyfill';
 import React, { useEffect, useState, Fragment } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-
+import { fade, makeStyles } from '@material-ui/core/styles';
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
 import {
   CssBaseline,
 } from '@material-ui/core';
+import SearchBar from '../Elements/Header/SearchBar';
+
 
 import Map from './sections/map';
 import VerticalMenu from './sections/slide';
@@ -15,15 +19,28 @@ import {
 
 import styles from './homeStyle';
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles((theme) => ({
+  ...styles(theme, fade)
+}));
 
 export default function Home() {
   const classes = useStyles();
+  const [search, setSearch] = useState(undefined);
+
+  const changeSearch = (event) => {
+    setSearch(event.target.value);
+    // console.log(event.target.value);
+  };
+
 
   return (
     <div className={classes.root}>
       <CssBaseline />
       <Header title="UNIGE" classes={classes} />
+
+      <div className={classes.gTbox}>
+        <SearchBar />
+      </div>
 
 
       <Body classes={classes}>

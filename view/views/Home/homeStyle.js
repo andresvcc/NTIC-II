@@ -1,4 +1,4 @@
-const style = {
+const style = (theme, fade) => ({
   root: {
 
   },
@@ -58,8 +58,16 @@ const style = {
   },
   markerPolygon: {
 
+  },
+  gTbox: {
+    position: 'absolute',
+    top: '80px',
+    left: '15px',
+    zIndex: 999,
+    width: '300px',
+    height: '50px',
   }
-};
+});
 
 export default style;
 

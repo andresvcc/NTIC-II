@@ -53,7 +53,7 @@ export default function MapDisplay(props) {
         }
         {
           <LineDraw
-            coordsArray={grapheGenerator([[18, 42], [42, 20], [20, 22]], reduxStates.librairiesData)}
+            coordsArray={grapheGenerator([/* [18, 42], [42, 20], [20, 22] */], reduxStates.librairiesData)}
           />
         }
       </Map>

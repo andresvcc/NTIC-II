@@ -72,7 +72,7 @@ export default function TableArticles(props) {
 
 
   const data1 = {
-    columns: dataRows.length <= 0 ? [] : [
+    columns: [
       {
         title: 'ID',
         field: 'id',
