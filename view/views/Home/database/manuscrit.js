@@ -11,7 +11,12 @@ const manuscrits = [
         current: true,
         library: 52,
         libraryName: 'Museum Plantin-Moretus'
-      }
+      }, {
+        datation: 'XIII',
+        start: 1250,
+        end: 2019,
+        library: 1
+      },
     ]
   },
   {
@@ -39,7 +44,7 @@ const manuscrits = [
         libraryName: 'Biblioteca Comunale "Giulio Gabrielli"'
       }
     ]
-  },
+  }, /*
   {
     anderson_id: 15,
     ms_name: '15_3',
@@ -2912,7 +2917,7 @@ const manuscrits = [
         libraryName: 'Biblioteka Uniwersytecka'
       }
     ]
-  }
+  } */
 ];
 
 

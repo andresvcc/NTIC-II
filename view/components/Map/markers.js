@@ -25,10 +25,10 @@ function Pointer2(props) {
   };
 
   const handleClick = () => {
-    dispatch({ state: 'greetingStatus', value: true });
+    // dispatch({ state: 'greetingStatus', value: true });
     console.log(data);
   };
-
+  
   return (
     <Fade
       in
@@ -86,8 +86,8 @@ function Pointer(props) {
   };
 
   const handleClick = () => {
-    dispatch({ state: 'greetingStatus', value: true });
-    console.log(data.manuscrit.length);
+    // dispatch({ state: 'greetingStatus', value: true });
+    console.log(data);
   };
 
   return (
@@ -148,7 +148,7 @@ function PointerGroup(props) {
   };
 
   const handleClick = () => {
-    dispatch({ state: 'greetingStatus', value: true });
+    // dispatch({ state: 'greetingStatus', value: true });
     console.log(data.id);
   };
 
@@ -231,7 +231,7 @@ function Polygon(props) {
   }, [data, animated]);
 
   const handleClick = () => {
-    dispatch({ state: 'greetingStatus', value: true });
+    // dispatch({ state: 'greetingStatus', value: true });
     console.log(data.id);
   };
 

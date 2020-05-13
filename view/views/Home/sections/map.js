@@ -45,7 +45,12 @@ export default function MapDisplay(props) {
         value.manuscrit.map((_manuscrit) => {
           _manuscrit.intervalles.map((intervale) => {
             if (intervale.current && reduxStates.barreTemporelle === 2020) yearFilter.push({ ...value, id: indexOwner });
-            else if (intervale.start <= reduxStates.barreTemporelle && intervale.end >= reduxStates.barreTemporelle) yearFilter.push({ ...value, id: indexOwner });
+            else if (intervale.start <= reduxStates.barreTemporelle && intervale.end >= reduxStates.barreTemporelle) {
+              yearFilter.push({
+                ...value,
+                id: indexOwner,
+              });
+            }
             return intervale;
           });
           return _manuscrit;

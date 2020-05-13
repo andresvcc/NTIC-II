@@ -2,10 +2,8 @@ import cities from './cities';
 import manuscrits from './manuscrit';
 import Owner from './owner';
 
-
 const manuscritGenerator = () => {
   const manuscritsProcede = [];
-
   manuscrits.forEach((manuscrit) => {
     manuscrit.intervalles.forEach((interval) => {
       manuscritsProcede.push({
