@@ -149,7 +149,7 @@ function PointerGroup(props) {
 
   const handleClick = () => {
     // dispatch({ state: 'greetingStatus', value: true });
-    console.log(data.id);
+    console.log(data);
   };
 
   const contains = data.markers.length < 10 ? data.markers.length : 9;
@@ -232,7 +232,7 @@ function Polygon(props) {
 
   const handleClick = () => {
     // dispatch({ state: 'greetingStatus', value: true });
-    console.log(data.id);
+    console.log(data);
   };
 
   return (

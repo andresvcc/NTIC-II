@@ -144,8 +144,6 @@ export default function TableArticles(props) {
     console.log('addRow', data);
   };
 
-  console.log(data1);
-
   return (
     <Table
       data={data1}
