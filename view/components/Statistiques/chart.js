@@ -4,10 +4,10 @@ import { Line, defaults } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 
 const data = {
-  labels: ['xii', 'ix', 'x', 'xi', 'xii', 'xiii'],
+  labels: ['8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'],
   datasets: [
     {
-      label: 'Parts',
+      label: 'Century',
       fill: false,
       lineTension: 0.1,
       borderColor: 'rgba(75,192,192,1)',
@@ -24,7 +24,7 @@ const data = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 5,
-      data: [10, 15, 15, 20, 20, 25],
+      data: [8, 15, 15, 20, 20, 25, 12, 7, 15, 11, 8, 4, 1],
     }
   ]
 };

@@ -128,7 +128,7 @@ export default function SimpleSlide() {
               </GridItem>
               <GridItem xs={4}>
                 <Paper style={{ height: '100%', ...blockDroitStyle }}>
-                  Informations Supp
+                  Additional Information
                 </Paper>
               </GridItem>
             </GridContainer>

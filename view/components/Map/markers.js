@@ -28,7 +28,7 @@ function Pointer2(props) {
     // dispatch({ state: 'greetingStatus', value: true });
     console.log(data);
   };
-  
+
   return (
     <Fade
       in

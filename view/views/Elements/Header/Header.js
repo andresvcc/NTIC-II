@@ -38,9 +38,15 @@ export default function HeaderElement(props) {
       <AppBar position="static">
         <Toolbar>
           <Avatar alt="logo" src={`${__API__}/logo.svg`} style={{ width: '60px', height: '60px' }} />
-          <Typography variant="h6" className={classes.title}>
-            Cartographie Des Manuscrit
-          </Typography>
+          {
+            window.innerWidth < 560 ? (
+              <span style={{ color: 'transparent' }}>CDM</span>
+            ) : (
+              <Typography variant="h6" className={classes.title}>
+                Cartographie Des Manuscrit
+              </Typography>
+            )
+          }
           <Slider />
           <MenuButton />
         </Toolbar>

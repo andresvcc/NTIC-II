@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 const data = {
   labels: [
-    'Dir1',
-    'Dir2',
+    'long time',
+    'short time',
   ],
   datasets: [{
     data: [20, 80],
@@ -54,7 +54,7 @@ export default function Test(props) {
           fontSize: '12px'
         }}
         >
-          villes
+          Duration
         </p>
       </div>
       <div style={{

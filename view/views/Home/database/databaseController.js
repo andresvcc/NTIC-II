@@ -2,51 +2,50 @@ import cities from './cities';
 import manuscrits from './manuscrit';
 import Owner from './owner';
 
-const manuscritGenerator = () => {
-  const manuscritsProcede = [];
+const intervaleGenerator = () => {
+  const manuscritInterval = [];
+
   manuscrits.forEach((manuscrit) => {
     manuscrit.intervalles.forEach((interval) => {
-      manuscritsProcede.push({
-        type: manuscrit.type,
-        ...interval,
-        ...manuscrit
+      manuscritInterval.push({
+        type: 'intervale',
+        anderson_id: manuscrit.anderson_id,
+        library: interval.library,
+        start: interval.current ? 2010 : interval.start || null,
+        end: interval.current ? 2020 : interval.end || null,
       });
     });
   });
 
-  return manuscritsProcede;
+  return manuscritInterval;
 };
 
+const OwnerGenerator = (year) => {
+  const intervales = intervaleGenerator();
+  const ownerFinal = [];
 
-const OwnerGenerator = () => {
-  const manuscrit = manuscritGenerator();
-
-  Owner.map((value) => {
-    value.manuscrit = manuscrit.filter((_manuscrit) => _manuscrit.library === value.id && _manuscrit.current);
-    value.city = cities[value.city];
-    return value;
-  });
-
-  return Owner;
-};
-
-const citiesGenerator = () => {
-  const owners = OwnerGenerator();
-  const Cities = [];
-  cities.forEach((value) => {
-    Cities.push({
-      ...value,
-      Owner: owners.filter((_owners) => _owners.city.id === value.id)
+  Owner.forEach((value) => {
+    const manuscrit = intervales.filter((_intervale) => {
+      const library = _intervale.library === value.id;
+      const yearIntervale = _intervale.start < year && _intervale.end >= year;
+      return library && yearIntervale;
     });
+
+    if (manuscrit.length > 0) {
+      ownerFinal.push({
+        manuscrit,
+        ...value,
+        city: cities[value.city]
+      });
+    }
   });
 
-  return Cities;
+  return ownerFinal;
 };
+
 
 const jsonDB = {
-  manuscrits: manuscritGenerator(),
-  cities: citiesGenerator(),
-  Owner: OwnerGenerator(),
+  Owner: OwnerGenerator,
 };
 
 export default jsonDB;
