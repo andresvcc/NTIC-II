@@ -43,7 +43,7 @@ export default function HeaderElement(props) {
               <span style={{ color: 'transparent' }}>CDM</span>
             ) : (
               <Typography variant="h6" className={classes.title}>
-                Cartographie Des Manuscrit
+                Digital Statius : the Achilleid
               </Typography>
             )
           }
