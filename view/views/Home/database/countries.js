@@ -40,7 +40,9 @@ const countries = [{
   lng: '44.6736646'
 }, {
   id: 8,
-  country: 'Aruba'
+  country: 'Aruba',
+  lat: '12.521110',
+  lng: '-69.968338'
 }, {
   id: 9,
   country: 'Australia',
@@ -179,7 +181,9 @@ const countries = [{
   lng: '33.1451285'
 }, {
   id: 37,
-  country: 'Czech Republic'
+  country: 'Czech Republic',
+  lat: '49.817493',
+  lng: '15.472962'
 }, {
   id: 38,
   country: 'Denmark',
@@ -242,7 +246,8 @@ const countries = [{
   id: 50,
   country: 'Germany',
   lat: '51.0834196',
-  lng: '10.4234469'
+  lng: '10.4234469',
+  altnames: ['German']
 }, {
   id: 51,
   country: 'Ghana',
@@ -260,7 +265,9 @@ const countries = [{
   lng: '-42.8125967'
 }, {
   id: 54,
-  country: 'Guadeloupe'
+  country: 'Guadeloupe',
+  lat: '16.264999',
+  lng: '-61.550999'
 },
 {
   id: 55,
@@ -291,7 +298,9 @@ const countries = [{
   lng: '-86.0755145'
 }, {
   id: 61,
-  country: 'Hong Kong'
+  country: 'Hong Kong',
+  lat: '22.396427',
+  lng: '114.109497'
 },
 {
   id: 62,
@@ -342,7 +351,8 @@ const countries = [{
   id: 71,
   country: 'Italy',
   lat: '42.6384261',
-  lng: '12.674297'
+  lng: '12.674297',
+  altnames: ['Italian']
 }, {
   id: 72,
   country: 'Jamaica',
@@ -543,16 +553,24 @@ const countries = [{
   lng: '-7.8896263'
 }, {
   id: 114,
-  country: 'Puerto Rico'
+  country: 'Puerto Rico',
+  lat: '18.220833',
+  lng: '-66.590149'
 }, {
   id: 115,
-  country: 'Republic of Korea'
+  country: 'Republic of Korea',
+  lat: '1.067720',
+  lng: '22.916981'
 }, {
   id: 116,
-  country: 'Republic of Lithuania'
+  country: 'Republic of Lithuania',
+  lat: '55.454855',
+  lng: '23.923203'
 }, {
   id: 117,
-  country: 'Republic of Moldova'
+  country: 'Republic of Moldova',
+  lat: '47.024200',
+  lng: '28.831829'
 }, {
   id: 118,
   country: 'Romania',
@@ -630,7 +648,9 @@ const countries = [{
   lng: '-56.0771187'
 }, {
   id: 133,
-  country: 'Swaziland'
+  country: 'Esuatini',
+  lat: '-26.586330',
+  lng: '31.498896'
 }, {
   id: 134,
   country: 'Sweden',
@@ -691,7 +711,7 @@ const countries = [{
   lng: '-3.2765753'
 }, {
   id: 146,
-  country: 'United States',
+  country: 'US',
   lat: '39.7837304',
   lng: '-100.4458825'
 }, {
@@ -719,6 +739,17 @@ const countries = [{
   country: 'Zimbabwe',
   lat: '-18.4554963',
   lng: '29.7468414'
+}, {
+  id: 152,
+  country: 'Vaticano',
+  lat: '41.902229',
+  lng: '12.458100'
+},
+{
+  id: 153,
+  country: 'England',
+  lat: '52.355518',
+  lng: '-1.174320'
 }];
 
 export default countries;

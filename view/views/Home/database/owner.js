@@ -922,7 +922,29 @@ const Owner = [
     city: 57,
     start: 800,
     end: 2020
-  }
+  },
+  {
+    type: 'library',
+    id: 71,
+    name: 'Lakeland Public Library',
+    address: '100 Lake Morton Dr, Lakeland, FL 33801, Estados Unidos',
+    pos: [
+      28.037420,
+      -81.949570
+    ],
+    city: 57,
+    start: 800,
+    end: 2020
+  },
+  {
+    type: 'library',
+    id: 71,
+    name: 'St. Jacques',
+    ville: 67,
+    start: 800,
+    end: 2020,
+  },
+
 ];
 
 export default Owner;

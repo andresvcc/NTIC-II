@@ -28,6 +28,7 @@
     "lodash": "^4.17.15",
     "material-table": "^1.57.2",
     "moment": "^2.24.0",
+    "nominatim-browser": "^2.0.2",
     "pigeon-maps": "^0.14.0",
     "pigeon-marker": "^0.3.4",
     "pigeon-overlay": "^0.2.3",
@@ -75,7 +76,7 @@
     "webpack": "^4.41.5",
     "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1",
+    "webpack-dev-server": "^3.11.0",
     "workbox-webpack-plugin": "^4.3.1"
   }
 }
