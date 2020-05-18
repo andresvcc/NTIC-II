@@ -11,6 +11,7 @@
 
 # Installation
 ```bash
+$ npx npm-force-resolutions
 $ npm install
 ```
 
@@ -43,3 +44,4 @@ Deployment du Server Shop: http://localhost:4000
 ```
 
 --
+
