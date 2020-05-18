@@ -19,7 +19,7 @@
     "@material-ui/icons": "^4.5.1",
     "@material-ui/lab": "^4.0.0-alpha.53",
     "@material-ui/styles": "^4.5.0",
-    "axios": "^0.19.0",
+    "axios": "^0.19.2",
     "babel-polyfill": "^6.26.0",
     "bcrypt": "^3.0.6",
     "chart.js": "^2.9.3",
@@ -28,7 +28,6 @@
     "lodash": "^4.17.15",
     "material-table": "^1.57.2",
     "moment": "^2.24.0",
-    "nominatim-browser": "^2.0.2",
     "pigeon-maps": "^0.14.0",
     "pigeon-marker": "^0.3.4",
     "pigeon-overlay": "^0.2.3",
@@ -78,5 +77,9 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.11.0",
     "workbox-webpack-plugin": "^4.3.1"
+  },
+  "resolutions": {
+    "yargs-parser": "^13.1.2",
+    "http-proxy": "^1.18.1"
   }
 }
