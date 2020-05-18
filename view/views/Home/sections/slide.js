@@ -33,21 +33,25 @@ export default function SimpleSlide() {
 
   const handleChange = () => {
     dispatch({ state: 'greetingStatus', value: false });
+    // console.log('handleChange');
   };
 
-  const maximize = () => {
+  const maximize = async () => {
     setDefaultSIze(window.innerHeight - 64);
-    dispatch({ state: 'pageSize', value: 20 });
+    await dispatch({ state: 'pageSize', value: 20 });
+    // console.log('maximize');
   };
 
-  const minimize = () => {
+  const minimize = async () => {
     setDefaultSIze(410);
-    dispatch({ state: 'pageSize', value: 5 });
+    await dispatch({ state: 'pageSize', value: 5 });
+    // console.log('minimize');
   };
 
   useEffect(() => {
     setDefaultSIze(410);
     dispatch({ state: 'pageSize', value: 5 });
+    // console.log('useEffect');
   }, [reduxState.greetingStatus]);
 
   const contentProps = useSpring({
@@ -123,13 +127,8 @@ export default function SimpleSlide() {
             </div>
             <div style={{ width: '70%' }} />
             <GridContainer style={{ background: 'white', height: window.innerHeight - 64 }}>
-              <GridItem xs={8}>
+              <GridItem xs={12}>
                 <VerticalMenu />
-              </GridItem>
-              <GridItem xs={4}>
-                <Paper style={{ height: '100%', ...blockDroitStyle }}>
-                  Additional Information
-                </Paper>
               </GridItem>
             </GridContainer>
           </div>

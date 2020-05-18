@@ -63,7 +63,7 @@ const style = (theme, fade) => ({
     position: 'absolute',
     top: '80px',
     left: '15px',
-    zIndex: 999,
+    zIndex: 11,
     width: '300px',
     height: '50px',
   }

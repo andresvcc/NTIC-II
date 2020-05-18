@@ -41,6 +41,7 @@ export default function TableArticles(props) {
   const [dataRows, setData] = useState([]);
 
   useEffect(() => {
+    // console.log(stateRedux);
     const spliterData = [];
 
     stateRedux.librairiesData.forEach((element) => {
@@ -50,6 +51,7 @@ export default function TableArticles(props) {
             id: markers.id,
             name: markers.name,
             owner: markers.type,
+            country: markers.city.country_name,
             manuscrit: markers.manuscrit,
             city: markers.city.name,
             total: markers.manuscrit.length
@@ -60,6 +62,7 @@ export default function TableArticles(props) {
           id: element.id,
           name: element.name,
           owner: element.type,
+          country: element.city.country_name,
           manuscrit: element.manuscrit,
           city: element.city.name,
           total: element.manuscrit.length
@@ -81,16 +84,21 @@ export default function TableArticles(props) {
       {
         title: 'Name',
         field: 'name',
-        width: '45%',
+        width: '35%',
       },
       {
         title: 'Owner',
         field: 'owner',
-        width: '20%',
+        width: '10%',
       },
       {
         title: 'City',
         field: 'city',
+        width: '20%',
+      },
+      {
+        title: 'Country',
+        field: 'country',
         width: '20%',
       },
       {

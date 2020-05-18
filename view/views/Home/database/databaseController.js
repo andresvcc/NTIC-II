@@ -1,6 +1,7 @@
 import cities from './cities';
 import manuscrits from './manuscrit';
 import Owner from './owner';
+import countries from './countries';
 
 const intervaleGenerator = () => {
   const manuscritInterval = [];
@@ -35,7 +36,8 @@ const OwnerGenerator = (year) => {
       ownerFinal.push({
         manuscrit,
         ...value,
-        city: cities[value.city]
+        city: cities[value.city],
+        country: countries[cities[value.city].country] || undefined
       });
     }
   });

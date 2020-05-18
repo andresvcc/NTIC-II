@@ -1,755 +1,760 @@
 const countries = [{
+  type: 'country',
   id: 0,
-  country: 'Afghanistan',
-  lat: '33.7680065',
-  lng: '66.2385139'
+  name: 'Afghanistan',
+  pos: [33.7680065, 66.2385139]
 }, {
+  type: 'country',
   id: 1,
-  country: 'Albania',
-  lat: '41.000028',
-  lng: '19.9999619'
+  name: 'Albania',
+  pos: [41.000028, 19.9999619]
 }, {
+  type: 'country',
   id: 2,
-  country: 'Algeria',
-  lat: '28.0000272',
-  lng: '2.9999825'
+  name: 'Algeria',
+  pos: [28.0000272, 2.9999825]
 }, {
+  type: 'country',
   id: 3,
-  country: 'Andorra',
-  lat: '42.5407167',
-  lng: '1.5732033'
+  name: 'Andorra',
+  pos: [42.5407167, 1.5732033]
 }, {
+  type: 'country',
   id: 4,
-  country: 'Angola',
-  lat: '-11.8775768',
-  lng: '17.5691241'
+  name: 'Angola',
+  pos: [-11.8775768, 17.5691241]
 }, {
+  type: 'country',
   id: 5,
-  country: 'Antigua and Barbuda',
-  lat: '17.2234721',
-  lng: '-61.9554608'
+  name: 'Antigua and Barbuda',
+  pos: [17.2234721, -61.9554608]
 }, {
+  type: 'country',
   id: 6,
-  country: 'Argentina',
-  lat: '-34.9964963',
-  lng: '-64.9672817'
+  name: 'Argentina',
+  pos: [-34.9964963, -64.9672817]
 }, {
+  type: 'country',
   id: 7,
-  country: 'Armenia',
-  lat: '40.7696272',
-  lng: '44.6736646'
+  name: 'Armenia',
+  pos: [40.7696272, 44.6736646]
 }, {
+  type: 'country',
   id: 8,
-  country: 'Aruba',
-  lat: '12.521110',
-  lng: '-69.968338'
+  name: 'Aruba',
+  pos: [12.52111, -69.968338]
 }, {
+  type: 'country',
   id: 9,
-  country: 'Australia',
-  lat: '-24.7761086',
-  lng: '134.755'
+  name: 'Australia',
+  pos: [-24.7761086, 134.755]
 }, {
+  type: 'country',
   id: 10,
-  country: 'Austria',
-  lat: '47.2000338',
-  lng: '13.199959'
+  name: 'Austria',
+  pos: [47.2000338, 13.199959]
 }, {
+  type: 'country',
   id: 11,
-  country: 'Azerbaijan',
-  lat: '40.3936294',
-  lng: '47.7872508'
+  name: 'Azerbaijan',
+  pos: [40.3936294, 47.7872508]
 }, {
+  type: 'country',
   id: 12,
-  country: 'Bahamas'
+  name: 'Bahamas'
 }, {
+  type: 'country',
   id: 13,
-  country: 'Bahrain',
-  lat: '26.1551249',
-  lng: '50.5344606'
+  name: 'Bahrain',
+  pos: [26.1551249, 50.5344606]
 }, {
+  type: 'country',
   id: 14,
-  country: 'Bangladesh',
-  lat: '24.4768783',
-  lng: '90.2932426'
+  name: 'Bangladesh',
+  pos: [24.4768783, 90.2932426]
 }, {
+  type: 'country',
   id: 15,
-  country: 'Barbados',
-  lat: '13.1500331',
-  lng: '-59.5250305'
+  name: 'Barbados',
+  pos: [13.1500331, -59.5250305]
 }, {
+  type: 'country',
   id: 16,
-  country: 'Belarus',
-  lat: '53.4250605',
-  lng: '27.6971358'
+  name: 'Belarus',
+  pos: [53.4250605, 27.6971358]
 }, {
+  type: 'country',
   id: 17,
-  country: 'Belgium',
-  lat: '50.6402809',
-  lng: '4.6667145'
+  name: 'Belgium',
+  pos: [50.6402809, 4.6667145]
 }, {
+  type: 'country',
   id: 18,
-  country: 'Belize',
-  lat: '16.8259793',
-  lng: '-88.7600927'
+  name: 'Belize',
+  pos: [16.8259793, -88.7600927]
 }, {
+  type: 'country',
   id: 19,
-  country: 'Bolivia',
-  lat: '-17.0568696',
-  lng: '-64.9912286'
+  name: 'Bolivia',
+  pos: [-17.0568696, -64.9912286]
 }, {
+  type: 'country',
   id: 20,
-  country: 'Bosnia and Herzegovina',
-  lat: '44.3053476',
-  lng: '17.5961467'
+  name: 'Bosnia and Herzegovina',
+  pos: [44.3053476, 17.5961467]
 }, {
+  type: 'country',
   id: 21,
-  country: 'Botswana',
-  lat: '-23.1681782',
-  lng: '24.5928742'
+  name: 'Botswana',
+  pos: [-23.1681782, 24.5928742]
 }, {
+  type: 'country',
   id: 22,
-  country: 'Brazil',
-  lat: '-10.3333333',
-  lng: '-53.2'
+  name: 'Brazil',
+  pos: [-10.3333333, -53.2]
 }, {
+  type: 'country',
   id: 23,
-  country: 'Brunei',
-  lat: '4.4137155',
-  lng: '114.5653908'
+  name: 'Brunei',
+  pos: [4.4137155, 114.5653908]
 }, {
+  type: 'country',
   id: 24,
-  country: 'Bulgaria',
-  lat: '42.6073975',
-  lng: '25.4856617'
+  name: 'Bulgaria',
+  pos: [42.6073975, 25.4856617]
 }, {
+  type: 'country',
   id: 25,
-  country: 'Cambodia',
-  lat: '13.5066394',
-  lng: '104.869423'
+  name: 'Cambodia',
+  pos: [13.5066394, 104.869423]
 }, {
+  type: 'country',
   id: 26,
-  country: 'Cameroon',
-  lat: '4.6125522',
-  lng: '13.1535811'
+  name: 'Cameroon',
+  pos: [4.6125522, 13.1535811]
 }, {
+  type: 'country',
   id: 27,
-  country: 'Canada',
-  lat: '61.0666922',
-  lng: '-107.9917071'
+  name: 'Canada',
+  pos: [61.0666922, -107.9917071]
 }, {
+  type: 'country',
   id: 28,
-  country: 'Cayman Islands',
-  lat: '19.5417212',
-  lng: '-80.5667132'
+  name: 'Cayman Islands',
+  pos: [19.5417212, -80.5667132]
 }, {
+  type: 'country',
   id: 29,
-  country: 'Chile',
-  lat: '-31.7613365',
-  lng: '-71.3187697'
+  name: 'Chile',
+  pos: [-31.7613365, -71.3187697]
 }, {
+  type: 'country',
   id: 30,
-  country: 'China',
-  lat: '35.000074',
-  lng: '104.999927'
+  name: 'China',
+  pos: [35.000074, 104.999927]
 }, {
+  type: 'country',
   id: 31,
-  country: 'Colombia',
-  lat: '2.8894434',
-  lng: '-73.783892'
+  name: 'Colombia',
+  pos: [2.8894434, -73.783892]
 }, {
+  type: 'country',
   id: 32,
-  country: 'Congo'
+  name: 'Congo'
 }, {
+  type: 'country',
   id: 33,
-  country: 'Costa Rica',
-  lat: '10.2735633',
-  lng: '-84.0739102'
+  name: 'Costa Rica',
+  pos: [10.2735633, -84.0739102]
 }, {
+  type: 'country',
   id: 34,
-  country: 'Croatia',
-  lat: '45.5643442',
-  lng: '17.0118954'
+  name: 'Croatia',
+  pos: [45.5643442, 17.0118954]
 }, {
+  type: 'country',
   id: 35,
-  country: 'Cuba',
-  lat: '23.0131338',
-  lng: '-80.8328748'
+  name: 'Cuba',
+  pos: [23.0131338, -80.8328748]
 }, {
+  type: 'country',
   id: 36,
-  country: 'Cyprus',
-  lat: '34.9823018',
-  lng: '33.1451285'
+  name: 'Cyprus',
+  pos: [34.9823018, 33.1451285]
 }, {
+  type: 'country',
   id: 37,
-  country: 'Czech Republic',
-  lat: '49.817493',
-  lng: '15.472962'
+  name: 'Czech Republic',
+  pos: [49.817493, 15.472962]
 }, {
+  type: 'country',
   id: 38,
-  country: 'Denmark',
-  lat: '55.670249',
-  lng: '10.3333283'
+  name: 'Denmark',
+  pos: [55.670249, 10.3333283]
 }, {
+  type: 'country',
   id: 39,
-  country: 'Dominican Republic',
-  lat: '19.0974031',
-  lng: '-70.3028026'
+  name: 'Dominican Republic',
+  pos: [19.0974031, -70.3028026]
 }, {
+  type: 'country',
   id: 40,
-  country: 'Ecuador',
-  lat: '-1.3397668',
-  lng: '-79.3666965'
+  name: 'Ecuador',
+  pos: [-1.3397668, -79.3666965]
 }, {
+  type: 'country',
   id: 41,
-  country: 'Egypt',
-  lat: '26.2540493',
-  lng: '29.2675469'
+  name: 'Egypt',
+  pos: [26.2540493, 29.2675469]
 }, {
+  type: 'country',
   id: 42,
-  country: 'El Salvador',
-  lat: '13.8000382',
-  lng: '-88.9140683'
+  name: 'El Salvador',
+  pos: [13.8000382, -88.9140683]
 }, {
+  type: 'country',
   id: 43,
-  country: 'Estonia',
-  lat: '58.71971295',
-  lng: '24.507544106789936'
+  name: 'Estonia',
+  pos: [58.71971295, 24.507544106789936]
 }, {
+  type: 'country',
   id: 44,
-  country: 'Faroe Islands',
-  lat: '62.0448724',
-  lng: '-7.0322972'
+  name: 'Faroe Islands',
+  pos: [62.0448724, -7.0322972]
 }, {
+  type: 'country',
   id: 45,
-  country: 'Finland',
-  lat: '63.2467777',
-  lng: '25.9209164'
+  name: 'Finland',
+  pos: [63.2467777, 25.9209164]
 }, {
+  type: 'country',
   id: 46,
-  country: 'France',
-  lat: '46.603354',
-  lng: '1.8883335'
+  name: 'France',
+  pos: [46.603354, 1.8883335]
 }, {
+  type: 'country',
   id: 47,
-  country: 'French Polynesia'
+  name: 'French Polynesia'
 }, {
+  type: 'country',
   id: 48,
-  country: 'Gabon',
-  lat: '-0.8999695',
-  lng: '11.6899699'
+  name: 'Gabon',
+  pos: [-0.8999695, 11.6899699]
 }, {
+  type: 'country',
   id: 49,
-  country: 'Georgia',
-  lat: '41.6809707',
-  lng: '44.0287382'
+  name: 'Georgia',
+  pos: [41.6809707, 44.0287382]
 }, {
+  type: 'country',
   id: 50,
-  country: 'Germany',
-  lat: '51.0834196',
-  lng: '10.4234469',
-  altnames: ['German']
+  name: 'Germany',
+  pos: [51.0834196, 10.4234469]
 }, {
+  type: 'country',
   id: 51,
-  country: 'Ghana',
-  lat: '8.0300284',
-  lng: '-1.0800271'
+  name: 'Ghana',
+  pos: [8.0300284, -1.0800271]
 }, {
+  type: 'country',
   id: 52,
-  country: 'Greece',
-  lat: '38.9953683',
-  lng: '21.9877132'
+  name: 'Greece',
+  pos: [38.9953683, 21.9877132]
 }, {
+  type: 'country',
   id: 53,
-  country: 'Greenland',
-  lat: '77.6192349',
-  lng: '-42.8125967'
+  name: 'Greenland',
+  pos: [77.6192349, -42.8125967]
 }, {
+  type: 'country',
   id: 54,
-  country: 'Guadeloupe',
-  lat: '16.264999',
-  lng: '-61.550999'
-},
-{
+  name: 'Guadeloupe',
+  pos: [16.264999, -61.550999]
+}, {
+  type: 'country',
   id: 55,
-  country: 'Guam'
+  name: 'Guam'
 }, {
+  type: 'country',
   id: 56,
-  country: 'Guatemala',
-  lat: '15.6356088',
-  lng: '-89.8988087'
+  name: 'Guatemala',
+  pos: [15.6356088, -89.8988087]
 }, {
+  type: 'country',
   id: 57,
-  country: 'Guinea',
-  lat: '10.7226226',
-  lng: '-10.7083587'
+  name: 'Guinea',
+  pos: [10.7226226, -10.7083587]
 }, {
+  type: 'country',
   id: 58,
-  country: 'Haiti',
-  lat: '19.1399952',
-  lng: '-72.3570972'
+  name: 'Haiti',
+  pos: [19.1399952, -72.3570972]
 }, {
+  type: 'country',
   id: 59,
-  country: 'Hashemite Kingdom of Jordan'
-},
-{
+  name: 'Hashemite Kingdom of Jordan'
+}, {
+  type: 'country',
   id: 60,
-  country: 'Honduras',
-  lat: '15.2572432',
-  lng: '-86.0755145'
+  name: 'Honduras',
+  pos: [15.2572432, -86.0755145]
 }, {
+  type: 'country',
   id: 61,
-  country: 'Hong Kong',
-  lat: '22.396427',
-  lng: '114.109497'
-},
-{
+  name: 'Hong Kong',
+  pos: [22.396427, 114.109497]
+}, {
+  type: 'country',
   id: 62,
-  country: 'Hungary',
-  lat: '47.1817585',
-  lng: '19.5060937'
+  name: 'Hungary',
+  pos: [47.1817585, 19.5060937]
 }, {
+  type: 'country',
   id: 63,
-  country: 'Iceland',
-  lat: '64.9841821',
-  lng: '-18.1059013'
+  name: 'Iceland',
+  pos: [64.9841821, -18.1059013]
 }, {
+  type: 'country',
   id: 64,
-  country: 'India',
-  lat: '22.3511148',
-  lng: '78.6677428'
+  name: 'India',
+  pos: [22.3511148, 78.6677428]
 }, {
+  type: 'country',
   id: 65,
-  country: 'Indonesia',
-  lat: '-2.4833826',
-  lng: '117.8902853'
+  name: 'Indonesia',
+  pos: [-2.4833826, 117.8902853]
 }, {
+  type: 'country',
   id: 66,
-  country: 'Iran',
-  lat: '32.6475314',
-  lng: '54.5643516'
+  name: 'Iran',
+  pos: [32.6475314, 54.5643516]
 }, {
+  type: 'country',
   id: 67,
-  country: 'Iraq',
-  lat: '33.0955793',
-  lng: '44.1749775'
+  name: 'Iraq',
+  pos: [33.0955793, 44.1749775]
 }, {
+  type: 'country',
   id: 68,
-  country: 'Ireland',
-  lat: '52.865196',
-  lng: '-7.9794599'
+  name: 'Ireland',
+  pos: [52.865196, -7.9794599]
 }, {
+  type: 'country',
   id: 69,
-  country: 'Isle of Man',
-  lat: '54.1936805',
-  lng: '-4.5591148'
+  name: 'Isle of Man',
+  pos: [54.1936805, -4.5591148]
 }, {
+  type: 'country',
   id: 70,
-  country: 'Israel',
-  lat: '31.5313113',
-  lng: '34.8667654'
+  name: 'Israel',
+  pos: [31.5313113, 34.8667654]
 }, {
+  type: 'country',
   id: 71,
-  country: 'Italy',
-  lat: '42.6384261',
-  lng: '12.674297',
-  altnames: ['Italian']
+  name: 'Italy',
+  pos: [42.6384261, 12.674297]
 }, {
+  type: 'country',
   id: 72,
-  country: 'Jamaica',
-  lat: '18.1850507',
-  lng: '-77.3947693'
+  name: 'Jamaica',
+  pos: [18.1850507, -77.3947693]
 }, {
+  type: 'country',
   id: 73,
-  country: 'Japan',
-  lat: '36.5748441',
-  lng: '139.2394179'
+  name: 'Japan',
+  pos: [36.5748441, 139.2394179]
 }, {
+  type: 'country',
   id: 74,
-  country: 'Kazakhstan',
-  lat: '47.2286086',
-  lng: '65.2093197'
+  name: 'Kazakhstan',
+  pos: [47.2286086, 65.2093197]
 }, {
+  type: 'country',
   id: 75,
-  country: 'Kenya',
-  lat: '1.4419683',
-  lng: '38.4313975'
+  name: 'Kenya',
+  pos: [1.4419683, 38.4313975]
 }, {
+  type: 'country',
   id: 76,
-  country: 'Kosovo',
-  lat: '42.5869578',
-  lng: '20.9021231'
+  name: 'Kosovo',
+  pos: [42.5869578, 20.9021231]
 }, {
+  type: 'country',
   id: 77,
-  country: 'Kuwait',
-  lat: '29.2733964',
-  lng: '47.4979476'
+  name: 'Kuwait',
+  pos: [29.2733964, 47.4979476]
 }, {
+  type: 'country',
   id: 78,
-  country: 'Latvia',
-  lat: '56.8406494',
-  lng: '24.7537645'
+  name: 'Latvia',
+  pos: [56.8406494, 24.7537645]
 }, {
+  type: 'country',
   id: 79,
-  country: 'Lebanon',
-  lat: '33.8750629',
-  lng: '35.843409'
+  name: 'Lebanon',
+  pos: [33.8750629, 35.843409]
 }, {
+  type: 'country',
   id: 80,
-  country: 'Libya',
-  lat: '26.8234472',
-  lng: '18.1236723'
+  name: 'Libya',
+  pos: [26.8234472, 18.1236723]
 }, {
+  type: 'country',
   id: 81,
-  country: 'Liechtenstein',
-  lat: '47.1416307',
-  lng: '9.5531527'
+  name: 'Liechtenstein',
+  pos: [47.1416307, 9.5531527]
 }, {
+  type: 'country',
   id: 82,
-  country: 'Luxembourg',
-  lat: '49.8158683',
-  lng: '6.1296751'
+  name: 'Luxembourg',
+  pos: [49.8158683, 6.1296751]
 }, {
+  type: 'country',
   id: 83,
-  country: 'Macedonia'
+  name: 'Macedonia'
 }, {
+  type: 'country',
   id: 84,
-  country: 'Madagascar',
-  lat: '-18.7561349',
-  lng: '46.597324043086644'
+  name: 'Madagascar',
+  pos: [-18.7561349, 46.597324043086644]
 }, {
+  type: 'country',
   id: 85,
-  country: 'Malaysia',
-  lat: '4.5693754',
-  lng: '102.2656823'
+  name: 'Malaysia',
+  pos: [4.5693754, 102.2656823]
 }, {
+  type: 'country',
   id: 86,
-  country: 'Malta',
-  lat: '35.8885993',
-  lng: '14.4476911'
+  name: 'Malta',
+  pos: [35.8885993, 14.4476911]
 }, {
+  type: 'country',
   id: 87,
-  country: 'Martinique'
+  name: 'Martinique'
 }, {
+  type: 'country',
   id: 88,
-  country: 'Mauritius',
-  lat: '-20.2759451',
-  lng: '57.5703566'
+  name: 'Mauritius',
+  pos: [-20.2759451, 57.5703566]
 }, {
+  type: 'country',
   id: 89,
-  country: 'Mayotte'
+  name: 'Mayotte'
 }, {
+  type: 'country',
   id: 90,
-  country: 'Mexico',
-  lat: '22.5000485',
-  lng: '-100.0000375'
+  name: 'Mexico',
+  pos: [22.5000485, -100.0000375]
 }, {
+  type: 'country',
   id: 91,
-  country: 'Mongolia',
-  lat: '46.8250388',
-  lng: '103.8499736'
+  name: 'Mongolia',
+  pos: [46.8250388, 103.8499736]
 }, {
+  type: 'country',
   id: 92,
-  country: 'Montenegro',
-  lat: '42.9868853',
-  lng: '19.5180992'
+  name: 'Montenegro',
+  pos: [42.9868853, 19.5180992]
 }, {
+  type: 'country',
   id: 93,
-  country: 'Morocco',
-  lat: '31.1728205',
-  lng: '-7.3362482'
+  name: 'Morocco',
+  pos: [31.1728205, -7.3362482]
 }, {
+  type: 'country',
   id: 94,
-  country: 'Mozambique',
-  lat: '-19.302233',
-  lng: '34.9144977'
+  name: 'Mozambique',
+  pos: [-19.302233, 34.9144977]
 }, {
+  type: 'country',
   id: 95,
-  country: 'Myanmar [Burma]'
+  name: 'Myanmar [Burma]'
 }, {
+  type: 'country',
   id: 96,
-  country: 'Namibia',
-  lat: '-23.2335499',
-  lng: '17.3231107'
+  name: 'Namibia',
+  pos: [-23.2335499, 17.3231107]
 }, {
+  type: 'country',
   id: 97,
-  country: 'Nepal',
-  lat: '28.1083929',
-  lng: '84.0917139'
+  name: 'Nepal',
+  pos: [28.1083929, 84.0917139]
 }, {
+  type: 'country',
   id: 98,
-  country: 'Netherlands',
-  lat: '52.5001698',
-  lng: '5.7480821'
+  name: 'Netherlands',
+  pos: [52.5001698, 5.7480821]
 }, {
+  type: 'country',
   id: 99,
-  country: 'New Caledonia'
+  name: 'New Caledonia'
 }, {
+  type: 'country',
   id: 100,
-  country: 'New Zealand',
-  lat: '-41.5000831',
-  lng: '172.8344077'
+  name: 'New Zealand',
+  pos: [-41.5000831, 172.8344077]
 }, {
+  type: 'country',
   id: 101,
-  country: 'Nicaragua',
-  lat: '12.6090157',
-  lng: '-85.2936911'
+  name: 'Nicaragua',
+  pos: [12.6090157, -85.2936911]
 }, {
+  type: 'country',
   id: 102,
-  country: 'Nigeria',
-  lat: '9.6000359',
-  lng: '7.9999721'
+  name: 'Nigeria',
+  pos: [9.6000359, 7.9999721]
 }, {
+  type: 'country',
   id: 103,
-  country: 'Norway',
-  lat: '60.5000209',
-  lng: '9.0999715'
+  name: 'Norway',
+  pos: [60.5000209, 9.0999715]
 }, {
+  type: 'country',
   id: 104,
-  country: 'Oman',
-  lat: '21.0000287',
-  lng: '57.0036901'
+  name: 'Oman',
+  pos: [21.0000287, 57.0036901]
 }, {
+  type: 'country',
   id: 105,
-  country: 'Pakistan',
-  lat: '30.3308401',
-  lng: '71.247499'
+  name: 'Pakistan',
+  pos: [30.3308401, 71.247499]
 }, {
+  type: 'country',
   id: 106,
-  country: 'Palestine'
+  name: 'Palestine'
 }, {
+  type: 'country',
   id: 107,
-  country: 'Panama',
-  lat: '8.559559',
-  lng: '-81.1308434'
+  name: 'Panama',
+  pos: [8.559559, -81.1308434]
 }, {
+  type: 'country',
   id: 108,
-  country: 'Papua New Guinea',
-  lat: '-5.6816069',
-  lng: '144.2489081'
+  name: 'Papua New Guinea',
+  pos: [-5.6816069, 144.2489081]
 }, {
+  type: 'country',
   id: 109,
-  country: 'Paraguay',
-  lat: '-23.3165935',
-  lng: '-58.1693445'
+  name: 'Paraguay',
+  pos: [-23.3165935, -58.1693445]
 }, {
+  type: 'country',
   id: 110,
-  country: 'Peru',
-  lat: '-6.8699697',
-  lng: '-75.0458515'
+  name: 'Peru',
+  pos: [-6.8699697, -75.0458515]
 }, {
+  type: 'country',
   id: 111,
-  country: 'Philippines',
-  lat: '12.7503486',
-  lng: '122.7312101'
+  name: 'Philippines',
+  pos: [12.7503486, 122.7312101]
 }, {
+  type: 'country',
   id: 112,
-  country: 'Poland',
-  lat: '52.215933',
-  lng: '19.134422'
+  name: 'Poland',
+  pos: [52.215933, 19.134422]
 }, {
+  type: 'country',
   id: 113,
-  country: 'Portugal',
-  lat: '40.0332629',
-  lng: '-7.8896263'
+  name: 'Portugal',
+  pos: [40.0332629, -7.8896263]
 }, {
+  type: 'country',
   id: 114,
-  country: 'Puerto Rico',
-  lat: '18.220833',
-  lng: '-66.590149'
+  name: 'Puerto Rico',
+  pos: [18.220833, -66.590149]
 }, {
+  type: 'country',
   id: 115,
-  country: 'Republic of Korea',
-  lat: '1.067720',
-  lng: '22.916981'
+  name: 'Republic of Korea',
+  pos: [1.06772, 22.916981]
 }, {
+  type: 'country',
   id: 116,
-  country: 'Republic of Lithuania',
-  lat: '55.454855',
-  lng: '23.923203'
+  name: 'Republic of Lithuania',
+  pos: [55.454855, 23.923203]
 }, {
+  type: 'country',
   id: 117,
-  country: 'Republic of Moldova',
-  lat: '47.024200',
-  lng: '28.831829'
+  name: 'Republic of Moldova',
+  pos: [47.0242, 28.831829]
 }, {
+  type: 'country',
   id: 118,
-  country: 'Romania',
-  lat: '45.9852129',
-  lng: '24.6859225'
+  name: 'Romania',
+  pos: [45.9852129, 24.6859225]
 }, {
+  type: 'country',
   id: 119,
-  country: 'Russia',
-  lat: '64.6863136',
-  lng: '97.7453061'
+  name: 'Russia',
+  pos: [64.6863136, 97.7453061]
 }, {
+  type: 'country',
   id: 120,
-  country: 'Saint Lucia',
-  lat: '13.8250489',
-  lng: '-60.975036'
+  name: 'Saint Lucia',
+  pos: [13.8250489, -60.975036]
 }, {
+  type: 'country',
   id: 121,
-  country: 'San Marino',
-  lat: '43.9458623',
-  lng: '12.458306'
+  name: 'San Marino',
+  pos: [43.9458623, 12.458306]
 }, {
+  type: 'country',
   id: 122,
-  country: 'Saudi Arabia',
-  lat: '25.6242618',
-  lng: '42.3528328'
+  name: 'Saudi Arabia',
+  pos: [25.6242618, 42.3528328]
 }, {
+  type: 'country',
   id: 123,
-  country: 'Senegal',
-  lat: '14.4750607',
-  lng: '-14.4529612'
+  name: 'Senegal',
+  pos: [14.4750607, -14.4529612]
 }, {
+  type: 'country',
   id: 124,
-  country: 'Serbia',
-  lat: '44.1534121',
-  lng: '20.55144'
+  name: 'Serbia',
+  pos: [44.1534121, 20.55144]
 }, {
+  type: 'country',
   id: 125,
-  country: 'Singapore',
-  lat: '1.357107',
-  lng: '103.8194992'
+  name: 'Singapore',
+  pos: [1.357107, 103.8194992]
 }, {
+  type: 'country',
   id: 126,
-  country: 'Slovakia',
-  lat: '48.7411522',
-  lng: '19.4528646'
+  name: 'Slovakia',
+  pos: [48.7411522, 19.4528646]
 }, {
+  type: 'country',
   id: 127,
-  country: 'Slovenia',
-  lat: '45.8133113',
-  lng: '14.4808369'
+  name: 'Slovenia',
+  pos: [45.8133113, 14.4808369]
 }, {
+  type: 'country',
   id: 128,
-  country: 'South Africa',
-  lat: '-28.8166236',
-  lng: '24.991639'
+  name: 'South Africa',
+  pos: [-28.8166236, 24.991639]
 }, {
+  type: 'country',
   id: 129,
-  country: 'Spain',
-  lat: '39.3262345',
-  lng: '-4.8380649'
+  name: 'Spain',
+  pos: [39.3262345, -4.8380649]
 }, {
+  type: 'country',
   id: 130,
-  country: 'Sri Lanka',
-  lat: '7.5554942',
-  lng: '80.7137847'
+  name: 'Sri Lanka',
+  pos: [7.5554942, 80.7137847]
 }, {
+  type: 'country',
   id: 131,
-  country: 'Sudan',
-  lat: '14.5844444',
-  lng: '29.4917691'
+  name: 'Sudan',
+  pos: [14.5844444, 29.4917691]
 }, {
+  type: 'country',
   id: 132,
-  country: 'Suriname',
-  lat: '4.1413025',
-  lng: '-56.0771187'
+  name: 'Suriname',
+  pos: [4.1413025, -56.0771187]
 }, {
+  type: 'country',
   id: 133,
-  country: 'Esuatini',
-  lat: '-26.586330',
-  lng: '31.498896'
+  name: 'Esuatini',
+  pos: [-26.58633, 31.498896]
 }, {
+  type: 'country',
   id: 134,
-  country: 'Sweden',
-  lat: '59.6749712',
-  lng: '14.5208584'
+  name: 'Sweden',
+  pos: [59.6749712, 14.5208584]
 }, {
+  type: 'country',
   id: 135,
-  country: 'Switzerland',
-  lat: '46.7985624',
-  lng: '8.2319736'
+  name: 'Switzerland',
+  pos: [46.7985624, 8.2319736]
 }, {
+  type: 'country',
   id: 136,
-  country: 'Taiwan',
-  lat: '23.9739374',
-  lng: '120.9820179'
+  name: 'Taiwan',
+  pos: [23.9739374, 120.9820179]
 }, {
+  type: 'country',
   id: 137,
-  country: 'Tanzania',
-  lat: '-6.5247123',
-  lng: '35.7878438'
+  name: 'Tanzania',
+  pos: [-6.5247123, 35.7878438]
 }, {
+  type: 'country',
   id: 138,
-  country: 'Thailand',
-  lat: '14.8971921',
-  lng: '100.83273'
+  name: 'Thailand',
+  pos: [14.8971921, 100.83273]
 }, {
+  type: 'country',
   id: 139,
-  country: 'Trinidad and Tobago',
-  lat: '10.8677845',
-  lng: '-60.9821067'
+  name: 'Trinidad and Tobago',
+  pos: [10.8677845, -60.9821067]
 }, {
+  type: 'country',
   id: 140,
-  country: 'Tunisia',
-  lat: '33.8439408',
-  lng: '9.400138'
+  name: 'Tunisia',
+  pos: [33.8439408, 9.400138]
 }, {
+  type: 'country',
   id: 141,
-  country: 'Turkey',
-  lat: '38.9597594',
-  lng: '34.9249653'
+  name: 'Turkey',
+  pos: [38.9597594, 34.9249653]
 }, {
+  type: 'country',
   id: 142,
-  country: 'U.S. Virgin Islands'
+  name: 'U.S. Virgin Islands'
 }, {
+  type: 'country',
   id: 143,
-  country: 'Ukraine',
-  lat: '49.4871968',
-  lng: '31.2718321'
+  name: 'Ukraine',
+  pos: [49.4871968, 31.2718321]
 }, {
+  type: 'country',
   id: 144,
-  country: 'United Arab Emirates',
-  lat: '24.0002488',
-  lng: '53.9994829'
+  name: 'United Arab Emirates',
+  pos: [24.0002488, 53.9994829]
 }, {
+  type: 'country',
   id: 145,
-  country: 'United Kingdom',
-  lat: '54.7023545',
-  lng: '-3.2765753'
+  name: 'United Kingdom',
+  pos: [54.7023545, -3.2765753]
 }, {
+  type: 'country',
   id: 146,
-  country: 'US',
-  lat: '39.7837304',
-  lng: '-100.4458825'
+  name: 'US',
+  pos: [39.7837304, -100.4458825]
 }, {
+  type: 'country',
   id: 147,
-  country: 'Uruguay',
-  lat: '-32.8755548',
-  lng: '-56.0201525'
+  name: 'Uruguay',
+  pos: [-32.8755548, -56.0201525]
 }, {
+  type: 'country',
   id: 148,
-  country: 'Venezuela',
-  lat: '8.0018709',
-  lng: '-66.1109318'
+  name: 'Venezuela',
+  pos: [8.0018709, -66.1109318]
 }, {
+  type: 'country',
   id: 149,
-  country: 'Vietnam',
-  lat: '13.2904027',
-  lng: '108.4265113'
+  name: 'Vietnam',
+  pos: [13.2904027, 108.4265113]
 }, {
+  type: 'country',
   id: 150,
-  country: 'Zambia',
-  lat: '-14.5186239',
-  lng: '27.5599164'
+  name: 'Zambia',
+  pos: [-14.5186239, 27.5599164]
 }, {
+  type: 'country',
   id: 151,
-  country: 'Zimbabwe',
-  lat: '-18.4554963',
-  lng: '29.7468414'
+  name: 'Zimbabwe',
+  pos: [-18.4554963, 29.7468414]
 }, {
+  type: 'country',
   id: 152,
-  country: 'Vaticano',
-  lat: '41.902229',
-  lng: '12.458100'
-},
-{
+  name: 'Vaticano',
+  pos: [41.902229, 12.4581]
+}, {
+  type: 'country',
   id: 153,
-  country: 'England',
-  lat: '52.355518',
-  lng: '-1.174320'
+  name: 'England',
+  pos: [52.355518, -1.17432]
 }];
-
 export default countries;

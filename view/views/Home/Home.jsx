@@ -17,6 +17,10 @@ import {
   Body,
 } from '../elements';
 
+import {
+  redux
+} from '../component';
+
 import styles from './homeStyle';
 
 const useStyles = makeStyles((theme) => ({
@@ -26,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
   const classes = useStyles();
   const [search, setSearch] = useState(undefined);
+  const [stateRedux, dispatch] = redux();
 
   const changeSearch = (event) => {
     setSearch(event.target.value);
@@ -38,10 +43,13 @@ export default function Home() {
       <CssBaseline />
       <Header title="UNIGE" classes={classes} />
 
-      <div className={classes.gTbox}>
-        <SearchBar />
-      </div>
-
+      {
+        stateRedux.pageSize > 5 ? '' : (
+          <div className={classes.gTbox}>
+            <SearchBar />
+          </div>
+        )
+      }
 
       <Body classes={classes}>
         <VerticalMenu />
