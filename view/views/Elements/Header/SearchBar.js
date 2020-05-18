@@ -1,6 +1,5 @@
 /* eslint-disable no-use-before-define */
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -10,30 +9,12 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
-
 import cities from '../../Home/database/cities';
 import countries from '../../Home/database/countries';
 import owner from '../../Home/database/owner';
 
 
 // console.log(allData);
-
-
-const allCountries = countries.filter((country) => country.name !== undefined);
-const allData = allCountries.concat(cities.concat(owner));
-
-
-function sortByProperty(property) {
-  return (a, b) => {
-    if (a[property] > b[property]) return 1;
-    if (a[property] < b[property]) return -1;
-
-    return 0;
-  };
-}
-
-const allDataSort = allData.sort(sortByProperty('name'));
-
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: '2px 4px',
@@ -58,15 +39,38 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+function sortByProperty(property) {
+  return (a, b) => {
+    if (a[property] > b[property]) return 1;
+    if (a[property] < b[property]) return -1;
+
+    return 0;
+  };
+}
+
+const allCountries = countries.filter((country) => country.name !== undefined);
+const allData = allCountries.concat(cities.concat(owner));
+const allDataSort = allData.sort(sortByProperty('name'));
+
 function ComboBox() {
   const classes = useStyles();
+
+  const zoomCLikPos = (data) => {
+    if (data.pos !== undefined) {
+      console.log(data);
+    } else {
+      console.log('place not gps detected');
+    }
+  };
 
   return (
     <Autocomplete
       id="combo-box-demo"
       className={classes.autocomplete}
       options={allDataSort}
-      getOptionLabel={(option) => option.name}
+      includeInputInList
+      getOptionLabel={(option) => `${option.type}: ${option.name} `}
+      onChange={(event, value) => zoomCLikPos(value)}
       renderInput={(params) => (
         <InputBase
           className={classes.input}

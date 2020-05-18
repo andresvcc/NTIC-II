@@ -685,7 +685,7 @@ const cities = [{
 }, {
   name: 'Italy Seuis',
   id: 83,
-  type: 'city',
+  type: 'Region',
   country_name: 'Italy',
   country: 71
 }, {
@@ -765,7 +765,7 @@ const cities = [{
 }, {
   name: 'Germany',
   id: 95,
-  type: 'city',
+  type: 'Region',
   country_name: 'Germany',
   country: 50,
   pos: [54.9064856, 8.3071734]
@@ -779,7 +779,7 @@ const cities = [{
 }, {
   name: 'Eastern France',
   id: 97,
-  type: 'city',
+  type: 'Region',
   country_name: 'France',
   country: 46
 }, {

@@ -9,7 +9,7 @@ import PointerMaker2 from './pointer2';
 import GroupPointerMarker from './groupPointer';
 
 async function selectMarker(data, reduxState, dispatch) {
-  console.log(data);
+  // console.log(data);
   // dispatch({ state: 'infoBar', value: data.id });
   // console.log('marker select', data);
 }
@@ -21,15 +21,17 @@ function Pointer2(props) {
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
+    /*
     setTimeout(() => {
       dispatch({ state: 'infoBar', value: `${data.name}` });
     }, 1);
+    */
     setColor('#AD005D');
     setSize(5);
   };
 
   const mouseLeave = () => {
-    dispatch({ state: 'infoBar', value: '...' });
+    // dispatch({ state: 'infoBar', value: '...' });
     setColor('#E5097F');
     setSize(0);
   };
@@ -86,16 +88,18 @@ function Pointer(props) {
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
+    /*
     setTimeout(() => {
       dispatch({ state: 'infoBar', value: `${data.name}` });
     }, 1);
+    */
     setColor('#AD005D');
     setSize(5);
     return true;
   };
 
   const mouseLeave = () => {
-    dispatch({ state: 'infoBar', value: '...' });
+    // dispatch({ state: 'infoBar', value: '...' });
     setColor('#E5097F');
     setSize(0);
   };
@@ -164,15 +168,17 @@ function PointerGroup(props) {
   }, [data.markers]);
 
   const mouseEnter = () => {
+    /*
     setTimeout(() => {
-      dispatch({ state: 'infoBar', value: `Cluster - ${data.markers.length} Libraries` });
+      dispatch({ state: 'infoBar', value: `${data.name}` });
     }, 1);
+    */
     setColor('#AD005D');
     setSize(5);
   };
 
   const mouseLeave = () => {
-    dispatch({ state: 'infoBar', value: '...' });
+    // dispatch({ state: 'infoBar', value: '...' });
     setColor('#E5097F');
     setSize(0);
   };
@@ -241,16 +247,18 @@ function Polygon(props) {
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
+    /*
     setTimeout(() => {
-      dispatch({ state: 'infoBar', value: `Cluster - ${data.markers.length} Libraries` });
+      dispatch({ state: 'infoBar', value: `${data.name}` });
     }, 1);
+    */
     setBorder(sizeL / 4);
     setLimitSize(sizeL);
     setArea(area + sizeL);
   };
 
   const mouseLeave = () => {
-    dispatch({ state: 'infoBar', value: '...' });
+    // dispatch({ state: 'infoBar', value: '...' });
     setBorder(0);
     setLimitSize(0);
     setArea(sizeArea);
