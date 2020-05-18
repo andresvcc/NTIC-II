@@ -614,7 +614,7 @@ const Owner = [
   {
     type: 'library',
     id: 47,
-    name: 'library',
+    name: 'Library',
     address: 'paris',
     pos: [
       48.856613,
@@ -942,7 +942,7 @@ const Owner = [
   {
     type: 'library',
     id: 73,
-    name: 'a?cellee Domenicane',
+    name: 'A?cellee Domenicane',
     city: null,
     start: null,
     end: 2020,
@@ -966,7 +966,7 @@ const Owner = [
   {
     type: 'library',
     id: 76,
-    name: 'domus s. Andree de littore',
+    name: 'Domus s. Andree de littore',
     city: null,
     start: null,
     end: 2020,
@@ -1118,7 +1118,7 @@ const Owner = [
   {
     type: 'library',
     id: 95,
-    name: 'purchased',
+    name: 'Purchased',
     city: null,
     start: null,
     end: 2020,
@@ -1134,7 +1134,7 @@ const Owner = [
   {
     type: 'library',
     id: 97,
-    name: 'libreria Visconteo-Sforzesca',
+    name: 'Libreria Visconteo-Sforzesca',
     city: null,
     start: null,
     end: 2020,
@@ -1294,7 +1294,7 @@ const Owner = [
   {
     type: 'library',
     id: 117,
-    name: 'biblioteca universitaria',
+    name: 'Biblioteca universitaria',
     city: null,
     start: null,
     end: 2020,

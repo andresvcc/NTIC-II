@@ -656,7 +656,7 @@ const cities = [{
   country_name: 'Italy',
   country: 71
 }, {
-  name: 'southwestern Germany',
+  name: 'Southwestern Germany',
   id: 77,
   type: 'city',
   country_name: 'Germany',
@@ -708,7 +708,7 @@ const cities = [{
   country: 71,
   pos: [44.4936714, 11.3430347]
 }, {
-  name: 'civitate castelli',
+  name: 'Civitate castelli',
   id: 87,
   type: 'city',
   country_name: 'Italy',
@@ -777,7 +777,7 @@ const cities = [{
   country: 71,
   pos: [45.9562503, 12.6597197]
 }, {
-  name: 'eastern France',
+  name: 'Eastern France',
   id: 97,
   type: 'city',
   country_name: 'France',
@@ -796,13 +796,13 @@ const cities = [{
   country_name: 'Germany',
   country: 50
 }, {
-  name: 'northern France',
+  name: 'Northern France',
   id: 100,
   type: 'city',
   country_name: 'France',
   country: 46
 }, {
-  name: 'le Mans',
+  name: 'Le Mans',
   id: 101,
   type: 'city',
   country_name: 'France',
