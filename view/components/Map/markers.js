@@ -8,6 +8,12 @@ import PointerMaker from './pointer';
 import PointerMaker2 from './pointer2';
 import GroupPointerMarker from './groupPointer';
 
+async function selectMarker(data, reduxState, dispatch) {
+  console.log(data);
+  // dispatch({ state: 'infoBar', value: data.id });
+  // console.log('marker select', data);
+}
+
 function Pointer2(props) {
   const { data, classes, animated } = props;
   const [color, setColor] = useState('#E5097F');
@@ -15,18 +21,22 @@ function Pointer2(props) {
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
+    setTimeout(() => {
+      dispatch({ state: 'infoBar', value: `${data.name}` });
+    }, 1);
     setColor('#AD005D');
     setSize(5);
   };
 
   const mouseLeave = () => {
+    dispatch({ state: 'infoBar', value: '...' });
     setColor('#E5097F');
     setSize(0);
   };
 
   const handleClick = () => {
     // dispatch({ state: 'greetingStatus', value: true });
-    console.log(data);
+    selectMarker(data, reduxState, dispatch);
   };
 
   return (
@@ -76,18 +86,23 @@ function Pointer(props) {
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
+    setTimeout(() => {
+      dispatch({ state: 'infoBar', value: `${data.name}` });
+    }, 1);
     setColor('#AD005D');
     setSize(5);
+    return true;
   };
 
   const mouseLeave = () => {
+    dispatch({ state: 'infoBar', value: '...' });
     setColor('#E5097F');
     setSize(0);
   };
 
   const handleClick = () => {
     // dispatch({ state: 'greetingStatus', value: true });
-    console.log(data);
+    selectMarker(data, reduxState, dispatch);
   };
 
   return (
@@ -131,6 +146,7 @@ Pointer.propTypes = {
 
 //----
 
+
 function PointerGroup(props) {
   const { data, classes, animated } = props;
   const [color, setColor] = useState('#E5097F');
@@ -148,18 +164,22 @@ function PointerGroup(props) {
   }, [data.markers]);
 
   const mouseEnter = () => {
+    setTimeout(() => {
+      dispatch({ state: 'infoBar', value: `Cluster - ${data.markers.length} Libraries` });
+    }, 1);
     setColor('#AD005D');
     setSize(5);
   };
 
   const mouseLeave = () => {
+    dispatch({ state: 'infoBar', value: '...' });
     setColor('#E5097F');
     setSize(0);
   };
 
   const handleClick = () => {
     // dispatch({ state: 'greetingStatus', value: true });
-    console.log(data);
+    selectMarker(data, reduxState, dispatch);
   };
 
   const contains = data.markers.length < 10 ? data.markers.length : 9;
@@ -206,7 +226,6 @@ PointerGroup.propTypes = {
 
 //----
 
-
 function Polygon(props) {
   const {
     data, classes, animated
@@ -222,12 +241,16 @@ function Polygon(props) {
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
+    setTimeout(() => {
+      dispatch({ state: 'infoBar', value: `Cluster - ${data.markers.length} Libraries` });
+    }, 1);
     setBorder(sizeL / 4);
     setLimitSize(sizeL);
     setArea(area + sizeL);
   };
 
   const mouseLeave = () => {
+    dispatch({ state: 'infoBar', value: '...' });
     setBorder(0);
     setLimitSize(0);
     setArea(sizeArea);
@@ -242,7 +265,7 @@ function Polygon(props) {
 
   const handleClick = () => {
     // dispatch({ state: 'greetingStatus', value: true });
-    console.log(data);
+    selectMarker(data, reduxState, dispatch);
   };
 
   return (

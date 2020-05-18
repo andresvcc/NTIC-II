@@ -30,9 +30,10 @@ export default function SimpleSlide() {
 
   const [reduxState, dispatch] = redux();
   const [defaultSize, setDefaultSIze] = useState(410);
+  const [infoBar, setInfoBar] = useState('...');
 
-  const handleChange = () => {
-    dispatch({ state: 'greetingStatus', value: false });
+  const handleChange = async () => {
+    await dispatch({ state: 'greetingStatus', value: false });
     // console.log('handleChange');
   };
 
@@ -53,6 +54,10 @@ export default function SimpleSlide() {
     dispatch({ state: 'pageSize', value: 5 });
     // console.log('useEffect');
   }, [reduxState.greetingStatus]);
+
+  useEffect(() => {
+    setInfoBar(reduxState.infoBar);
+  }, [reduxState.infoBar]);
 
   const contentProps = useSpring({
     opacity: reduxState.greetingStatus ? 1 : 0.65,
@@ -107,8 +112,8 @@ export default function SimpleSlide() {
             <div style={tabBarStyle}>
               <GridContainer>
                 <GridItem xs={11}>
-                  <div style={zoneBarInfo} onClick={() => { dispatch({ state: 'greetingStatus', value: true }); }} onKeyPress={minimize} tabIndex={0} role="button">
-                    {`Information d'un pointer${' '}`}
+                  <div style={zoneBarInfo} onClick={async () => { await dispatch({ state: 'greetingStatus', value: true }); }} onKeyPress={minimize} tabIndex={0} role="button">
+                    {`${infoBar}`}
                   </div>
                 </GridItem>
                 <GridItem xs={1}>

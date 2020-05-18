@@ -6,6 +6,7 @@ const initialState = {
   sizeInfoBar: { group: false, filter: false, size: 0 },
   pageSize: 5,
   librairiesData: [],
+  infoBar: '...'
 };
 
 
