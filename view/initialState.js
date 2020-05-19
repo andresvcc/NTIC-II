@@ -7,7 +7,7 @@ const initialState = {
   pageSize: 5,
   librairiesData: [],
   infoBar: '...',
-  center: { pos: [41.902229, 12.4581], zoom: 5 },
+  center: { pos: [41.902229, 12.4581], zoom: 3 },
   openSearch: false
 };
 

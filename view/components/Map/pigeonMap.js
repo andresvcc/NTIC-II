@@ -45,9 +45,9 @@ export default function PigeonMap(props) {
     });
   };
 
-  const handleMapClick = ({ event, latLng, pixel }) => {
+  const handleMapClick = async ({ event, latLng, pixel }) => {
     dispatch({ state: 'openSearch', value: false });
-    console.log('Map clicked!', latLng, pixel);
+    // console.log('Map clicked!', latLng, pixel);
   };
 
   const handleAnimationStart = () => animatedAction(true);
@@ -64,7 +64,7 @@ export default function PigeonMap(props) {
 
     setData({
       center: stateRedux.center.pos,
-      zoom: stateRedux.center.zoom,
+      zoom: stateRedux.center.zoom || 5,
       bounds: dataMap.bounds,
       initial: dataMap.initial
     });
@@ -87,7 +87,7 @@ export default function PigeonMap(props) {
           onAnimationStart={handleAnimationStart}
           onAnimationStop={handleAnimationStop}
           minZoom={3}
-          maxZoom={17}
+          maxZoom={18}
           animated
           onClick={handleMapClick}
           dprs={[1, 2]}

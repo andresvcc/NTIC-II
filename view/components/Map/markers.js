@@ -21,17 +21,15 @@ function Pointer2(props) {
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
-    /*
     setTimeout(() => {
       dispatch({ state: 'infoBar', value: `${data.name}` });
     }, 1);
-    */
     setColor('#AD005D');
     setSize(5);
   };
 
   const mouseLeave = () => {
-    // dispatch({ state: 'infoBar', value: '...' });
+    dispatch({ state: 'infoBar', value: '...' });
     setColor('#E5097F');
     setSize(0);
   };
@@ -88,18 +86,16 @@ function Pointer(props) {
   const [reduxState, dispatch] = redux();
 
   const mouseEnter = () => {
-    /*
     setTimeout(() => {
-      dispatch({ state: 'infoBar', value: `${data.name}` });
+      dispatch({ state: 'infoBar', value: `${data.name} ->  (${data.manuscrit.length} manuscrit)` });
     }, 1);
-    */
     setColor('#AD005D');
     setSize(5);
     return true;
   };
 
   const mouseLeave = () => {
-    // dispatch({ state: 'infoBar', value: '...' });
+    dispatch({ state: 'infoBar', value: '...' });
     setColor('#E5097F');
     setSize(0);
   };
@@ -168,17 +164,15 @@ function PointerGroup(props) {
   }, [data.markers]);
 
   const mouseEnter = () => {
-    /*
     setTimeout(() => {
-      dispatch({ state: 'infoBar', value: `${data.name}` });
+      dispatch({ state: 'infoBar', value: `Cluster with ${data.markers.length} libraries and ${manuscritsNumber} manuscrit` });
     }, 1);
-    */
     setColor('#AD005D');
     setSize(5);
   };
 
   const mouseLeave = () => {
-    // dispatch({ state: 'infoBar', value: '...' });
+    dispatch({ state: 'infoBar', value: '...' });
     setColor('#E5097F');
     setSize(0);
   };
@@ -245,20 +239,28 @@ function Polygon(props) {
   const [border, setBorder] = useState(0);
   const [limitSIze, setLimitSize] = useState(0);
   const [reduxState, dispatch] = redux();
+  const [manuscritsNumber, setNumber] = useState(0);
+
+  useEffect(() => {
+    let number = 0;
+    data.markers.forEach((element) => {
+      number += element.manuscrit.length;
+    });
+
+    setNumber(number);
+  }, [data.markers]);
 
   const mouseEnter = () => {
-    /*
     setTimeout(() => {
-      dispatch({ state: 'infoBar', value: `${data.name}` });
+      dispatch({ state: 'infoBar', value: `Cluster with ${data.markers.length} libraries` });
     }, 1);
-    */
     setBorder(sizeL / 4);
     setLimitSize(sizeL);
     setArea(area + sizeL);
   };
 
   const mouseLeave = () => {
-    // dispatch({ state: 'infoBar', value: '...' });
+    dispatch({ state: 'infoBar', value: '...' });
     setBorder(0);
     setLimitSize(0);
     setArea(sizeArea);
@@ -296,7 +298,7 @@ function Polygon(props) {
         onMouseLeave={() => mouseLeave()}
         onClick={handleClick}
       >
-        {data.markers ? data.markers.length : 1}
+        {manuscritsNumber}
       </Avatar>
     </Fade>
   );
