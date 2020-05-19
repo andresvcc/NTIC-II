@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Header title="UNIGE" classes={classes} />
+      <Header classes={classes} />
 
       {
         stateRedux.pageSize > 5 ? '' : (

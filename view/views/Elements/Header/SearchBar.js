@@ -142,19 +142,12 @@ export default function CustomizedInputBase() {
 
   return (
     <Paper component="form" className={classes.root}>
-      <IconButton className={classes.iconButton} aria-label="menu">
-        <MenuIcon />
-      </IconButton>
-
-      <ComboBox />
-
       <IconButton className={classes.iconButton} aria-label="search">
         <SearchIcon />
       </IconButton>
       <Divider className={classes.divider} orientation="vertical" />
-      <IconButton color="primary" className={classes.iconButton} aria-label="directions">
-        <DirectionsIcon />
-      </IconButton>
+
+      <ComboBox />
     </Paper>
   );
 }

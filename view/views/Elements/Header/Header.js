@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import MenuIcon from '@material-ui/icons/Menu';
 import Avatar from '@material-ui/core/Avatar';
 import MenuButton from './MenuButton';
 import {
@@ -28,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
 export default function HeaderElement(props) {
   const classes = useStyles();
   const {
-    title,
     children,
     ...rest
   } = props;
@@ -39,7 +37,7 @@ export default function HeaderElement(props) {
         <Toolbar>
           <Avatar alt="logo" src={`${__API__}/logo.svg`} style={{ width: '60px', height: '60px' }} />
           {
-            window.innerWidth < 560 ? (
+            window.innerWidth < 700 ? (
               <span style={{ color: 'transparent' }}>CDM</span>
             ) : (
               <Typography variant="h6" className={classes.title}>
@@ -48,7 +46,6 @@ export default function HeaderElement(props) {
             )
           }
           <Slider />
-          <MenuButton />
         </Toolbar>
       </AppBar>
     </div>
@@ -57,7 +54,6 @@ export default function HeaderElement(props) {
 
 HeaderElement.defaultProps = {
   classes: {},
-  title: 'TITLE UNDEFINED'
 };
 
 HeaderElement.propTypes = {
