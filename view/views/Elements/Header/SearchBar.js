@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -11,8 +11,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
 import cities from '../../Home/database/cities';
 import countries from '../../Home/database/countries';
-import owner from '../../Home/database/owner';
 
+import {
+  redux
+} from '../../component';
 
 // console.log(allData);
 const useStyles = makeStyles((theme) => ({
@@ -49,15 +51,57 @@ function sortByProperty(property) {
 }
 
 const allCountries = countries.filter((country) => country.name !== undefined);
-const allData = allCountries.concat(cities.concat(owner));
-const allDataSort = allData.sort(sortByProperty('name'));
+const allData = allCountries.concat(cities);
 
 function ComboBox() {
+  const [stateRedux, dispatch] = redux();
+  const [dataRows, setData] = useState([]);
+
   const classes = useStyles();
 
-  const zoomCLikPos = (data) => {
+  useEffect(() => {
+    // console.log(stateRedux);
+    const spliterData = [];
+
+    stateRedux.librairiesData.forEach((element) => {
+      if (element.type === 'polygon') {
+        element.markers.forEach((markers) => {
+          spliterData.push({
+            id: markers.id,
+            name: markers.name,
+            type: markers.type,
+            pos: markers.pos,
+            city: markers.city.name
+          });
+        });
+      } else {
+        spliterData.push({
+          id: element.id,
+          name: element.name,
+          type: element.type,
+          pos: element.pos,
+          city: element.city.name
+        });
+      }
+    });
+
+    const allDataCont = allData.concat(spliterData);
+    const allDataSort = allDataCont.sort(sortByProperty('name'));
+    setData(allDataSort);
+  }, [stateRedux.librairiesData]);
+
+  const zoomCLikPos = async (data) => {
+    // dispatch({ state: 'openSearch', value: false });
+    console.log(data);
     if (data.pos !== undefined) {
-      console.log(data);
+      const placeZoom = data.type === 'country' ? 7 : data.type === 'city' ? 10 : 17;
+      await dispatch({
+        state: 'center',
+        value: {
+          pos: data.pos || [0, 0],
+          zoom: placeZoom
+        }
+      });
     } else {
       console.log('place not gps detected');
     }
@@ -67,10 +111,19 @@ function ComboBox() {
     <Autocomplete
       id="combo-box-demo"
       className={classes.autocomplete}
-      options={allDataSort}
-      includeInputInList
-      getOptionLabel={(option) => `${option.type}: ${option.name} `}
-      onChange={(event, value) => zoomCLikPos(value)}
+      open={stateRedux.openSearch}
+      options={dataRows}
+      onOpen={() => dispatch({ state: 'openSearch', value: true })}
+      clearOnBlur
+      getOptionSelected={(option, value) => option.name === value.name}
+      getOptionLabel={(option) => `${option.type}: ${option.name}`}
+      onChange={(event, value) => (value ? zoomCLikPos(value) : true)}
+      onKeyPress={(ev, value) => {
+        if (ev.key === 'Enter') {
+          // console.log(`Pressed keyCode ${value}`);
+          ev.preventDefault();
+        }
+      }}
       renderInput={(params) => (
         <InputBase
           className={classes.input}

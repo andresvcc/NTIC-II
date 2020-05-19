@@ -20,22 +20,6 @@ export default function TableArticles(props) {
     ...rest
   } = props;
 
-  /*
-[
-  {
-    id: 1,
-    name: 'name',
-    owner: 'type',
-    city: 'city',
-    manuscrit: [{
-      anderson_id: '1', start: '1750', end: '2020', id: 0
-    }, {
-      anderson_id: '2', start: '1750', end: '2020', id: 1
-    }]
-  },
-]
-*/
-
   const [stateRedux, dispatch] = redux();
 
   const [dataRows, setData] = useState([]);
@@ -77,6 +61,11 @@ export default function TableArticles(props) {
   const data1 = {
     columns: [
       {
+        title: '',
+        width: '5%',
+        sorting: false
+      },
+      {
         title: 'ID',
         field: 'id',
         width: '10%',
@@ -99,7 +88,7 @@ export default function TableArticles(props) {
       {
         title: 'Country',
         field: 'country',
-        width: '20%',
+        width: '15%',
       },
       {
         title: 'Total',
@@ -121,10 +110,10 @@ export default function TableArticles(props) {
         render: (rowData, index) => (
           <div key={`${rowData.id}/${index + 1}/${Math.random()}`} style={{ padding: '20px' }}>
             <Grid container spacing={3}>
-              <Grid item xs={7}>
+              <Grid item xs={5}>
                 <SubTable rowData={rowData} />
               </Grid>
-              <Grid item xs={5}>
+              <Grid item xs={7}>
                 <div style={{ position: 'relative' }}>
                   <Paper elevation={2} style={{ minHeight: '12vh', padding: '20px', paddingBottom: '40px' }}>
                     <ChartArea />

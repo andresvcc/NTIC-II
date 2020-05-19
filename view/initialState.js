@@ -6,7 +6,9 @@ const initialState = {
   sizeInfoBar: { group: false, filter: false, size: 0 },
   pageSize: 5,
   librairiesData: [],
-  infoBar: '...'
+  infoBar: '...',
+  center: { pos: [41.902229, 12.4581], zoom: 5 },
+  openSearch: false
 };
 
 

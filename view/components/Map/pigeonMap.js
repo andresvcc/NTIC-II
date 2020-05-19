@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie';
 import Map from 'pigeon-maps';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-
+import redux from '../redux/redux';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,8 +18,10 @@ function mapTilerProvider(x, y, z) {
 }
 
 export default function PigeonMap(props) {
+  const [stateRedux, dispatch] = redux();
   const [cookies, setCookie] = useCookies(['name']);
   const classes = useStyles();
+
   const {
     children,
     setDataMap,
@@ -44,6 +46,7 @@ export default function PigeonMap(props) {
   };
 
   const handleMapClick = ({ event, latLng, pixel }) => {
+    dispatch({ state: 'openSearch', value: false });
     console.log('Map clicked!', latLng, pixel);
   };
 
@@ -55,6 +58,18 @@ export default function PigeonMap(props) {
       setDataMap(dataMap);
     }
   }, [dataMap]);
+
+  useEffect(() => {
+    dispatch({ state: 'openSearch', value: false });
+
+    setData({
+      center: stateRedux.center.pos,
+      zoom: stateRedux.center.zoom,
+      bounds: dataMap.bounds,
+      initial: dataMap.initial
+    });
+  }, [stateRedux.center]);
+
 
   return (
     <div name={cookies.name} onChange={onChange}>
@@ -74,7 +89,7 @@ export default function PigeonMap(props) {
           minZoom={3}
           maxZoom={17}
           animated
-          // onClick={handleMapClick}
+          onClick={handleMapClick}
           dprs={[1, 2]}
         >
           {children}
