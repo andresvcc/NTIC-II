@@ -92,9 +92,9 @@ function ComboBox() {
 
   const zoomCLikPos = async (data) => {
     // dispatch({ state: 'openSearch', value: false });
-    console.log(data);
+    // console.log(data);
     if (data.pos !== undefined) {
-      const placeZoom = data.type === 'country' ? 7 : data.type === 'city' ? 10 : 17;
+      const placeZoom = data.type === 'country' ? 6 : data.type === 'region' ? 9 : data.type === 'city' ? 12 : 17;
       await dispatch({
         state: 'center',
         value: {
