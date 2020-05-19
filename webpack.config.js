@@ -103,7 +103,8 @@ module.exports = {
       __API__: apiHost
     }),
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [outputDirectory],
+      verbose: true,
+      cleanOnceBeforeBuildPatterns: [path.join(__dirname, outputDirectory), '!images*'],
       dangerouslyAllowCleanPatternsOutsideProject: true,
       dry: false
     }),

@@ -87,7 +87,7 @@ function Pointer(props) {
 
   const mouseEnter = () => {
     setTimeout(() => {
-      dispatch({ state: 'infoBar', value: `${data.name} ->  (${data.manuscrit.length} manuscrit)` });
+      dispatch({ state: 'infoBar', value: `${data.name}  (${data.manuscrit.length} manuscrit)` });
     }, 1);
     setColor('#AD005D');
     setSize(5);
