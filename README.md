@@ -126,5 +126,11 @@ J((Local State))-->G
 
 ```
 
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+
 
 
