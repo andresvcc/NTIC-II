@@ -7,7 +7,7 @@ const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const outputDirectory = '/build';
-const apiUrl = '"http://localhost:3000"';
+const apiUrl = '"https://nticii.herokuapp.com"';
 
 module.exports = {
   entry: './view/index.js',
