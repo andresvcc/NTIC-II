@@ -25,6 +25,9 @@ $ npx npm-force-resolutions
 ```bash
 🚀 $ npm run build
 ```
+```bash
+🚀 $ npm start
+```
 Le mode de production est destiné à être lancé par un serveur, la procédure consiste à effectuer une transpilation des modules de ce logiciel, ceci pour générer le dossier **build**.
 > **Note 1:**  le dossier **build** contient les fichiers, **index.html** et autres éléments nécessaires à son fonctionnement. 
 > **Note 2:** le fichier index.html peut également être utilisé localement
