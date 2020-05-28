@@ -1,5 +1,4 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)![codecov](https://img.shields.io/badge/status-developement-orange)
-[![Known Vulnerabilities](https://snyk.io/test/github/andresvcc/stage-meister/badge.svg)](https://snyk.io/test/github/andresvcc/stage-meister)[![Build Status](https://travis-ci.org/andresvcc/ademag.svg?branch=master)](https://travis-ci.org/andresvcc/ademag)   
 
 # Welcome to Digital Statius : the Achilleid
 
