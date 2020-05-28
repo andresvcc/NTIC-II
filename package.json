@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "fix-js": "eslint-auto-fix",
     "dt": "concurrently  \"npm run dev\" \"npm run fix-js\"",
-    "app": "nodemon app.js",
+    "start": "nodemon app.js",
     "clean": "rd /S /Q node_modules && del /F package-lock.json && npm install",
     "reset": "rm -rf node_modules/ && rm -rf package-lock.json && npm install"
   },
@@ -24,6 +24,7 @@
     "bcrypt": "^3.0.6",
     "chart.js": "^2.9.3",
     "classnames": "^2.2.6",
+    "express": "^4.17.1",
     "geolocation-utils": "^1.2.2",
     "lodash": "^4.17.15",
     "material-table": "^1.57.2",
