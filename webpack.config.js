@@ -3,11 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-const outputDirectory = '../../public/buildSite/';
+const outputDirectory = '/build';
 const apiUrl = 'http://localhost:8081';
 
 const apiHost = '"images"';
@@ -16,7 +15,7 @@ module.exports = {
   entry: './view/index.js',
   output: {
     path: path.join(__dirname, outputDirectory),
-    filename: 'bundle.js'
+    filename: './bundle.js'
   },
   performance: {
     hints: process.env.NODE_ENV === 'production' ? 'warning' : false
@@ -47,9 +46,13 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/,
+        test: /\.(png|woff|woff2|eot|ttf|gif)$/,
         loader: 'url-loader?limit=100000'
       },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      }
     ]
   },
   node: {
@@ -65,7 +68,8 @@ module.exports = {
     alias: {
       '@material-ui/core': '@material-ui/core/esm',
       '@material-ui/icons': '@material-ui/icons/esm',
-      'react-dom': '@hot-loader/react-dom'
+      'react-dom': '@hot-loader/react-dom',
+      moment$: path.resolve(__dirname, 'node_modules/moment/moment.js')
     }
   },
   devServer: {
@@ -98,7 +102,8 @@ module.exports = {
       __API__: apiHost
     }),
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [outputDirectory],
+      verbose: true,
+      cleanOnceBeforeBuildPatterns: [path.join(__dirname, outputDirectory), '!images*'],
       dangerouslyAllowCleanPatternsOutsideProject: true,
       dry: false
     }),
@@ -107,12 +112,6 @@ module.exports = {
       inject: 'body',
       template: './public/index.html',
       favicon: './public/favicon.ico',
-    }),
-    new WorkboxPlugin.GenerateSW({
-      // these options encourage the ServiceWorkers to get in there fast
-      // and not allow any straggling "old" SWs to hang around
-      clientsClaim: true,
-      skipWaiting: true,
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /es/),
     new LodashModuleReplacementPlugin()

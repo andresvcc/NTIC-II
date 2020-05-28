@@ -4,10 +4,10 @@ import { Line, defaults } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 
 const data = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+  labels: ['8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'],
   datasets: [
     {
-      label: 'Parts',
+      label: 'Century',
       fill: false,
       lineTension: 0.1,
       borderColor: 'rgba(75,192,192,1)',
@@ -24,7 +24,7 @@ const data = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 5,
-      data: [45, 48, 52, 48, 56, 60],
+      data: [8, 15, 15, 20, 20, 25, 12, 7, 15, 11, 8, 4, 1],
     }
   ]
 };
@@ -35,7 +35,7 @@ const option = {
   fullWidth: true,
   reverse: false,
   labels: {
-    fontColor: 'white'
+    fontColor: 'black'
   },
 };
 
@@ -46,32 +46,42 @@ export default function Test(props) {
     ...rest
   } = props;
 
-  defaults.global.defaultFontColor = 'white';
+  defaults.global.defaultFontColor = 'black';
 
   return (
     <div className={className} {...rest}>
-      <p style={{
-        margin: '2px',
-        textAlign: 'center',
-        color: 'white',
-        fontFamily: '"Black Ops One", cursive',
-        background: '#00000080',
-        fontSize: '2rem'
+      <div style={{
+        position: 'absolute', width: '100px', left: '150px', top: '-8px'
       }}
       >
-        Ventes
-      </p>
-      <Line
-        data={data}
-        legend={option}
-        options={{
-          aspectRatio: 2,
-          responsive: true
+        <p style={{
+          textAlign: 'center',
+          color: 'white',
+          background: '#00000080',
+          fontSize: '12px'
         }}
-      />
+        >
+          Temp
+        </p>
+      </div>
+      <div style={{
+        position: 'absolute', width: '180px', left: '110px', top: '25px'
+      }}
+      >
+
+        <Line
+          data={data}
+          legend={option}
+          options={{
+            aspectRatio: 2,
+            responsive: true
+          }}
+        />
+      </div>
     </div>
   );
 }
+
 
 Test.propTypes = {
   className: PropTypes.string

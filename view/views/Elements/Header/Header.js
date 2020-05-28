@@ -1,63 +1,48 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Avatar from '@material-ui/core/Avatar';
 
 import {
-  Header,
-  HeaderLinks,
-  Parallax,
-  GridRow
+  Slider,
 } from '../../component';
 
-import menuNavegation from './MenuNavegation';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    position: 'fixed',
+    zIndex: '1100',
+    width: '100%',
+    boxShadow:
+      '0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15)',
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
-const dashboardRoutes = [];
-
-export default function HeaderElement(props) {
-  const {
-    classes,
-    title,
-    children,
-    ...rest
-  } = props;
+export default function HeaderElement() {
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Header
-        color="transparent"
-        routes={dashboardRoutes}
-        brand=""
-        urlIcon={`${__API__}/logo.png`}
-        rightLinks={<HeaderLinks color="black" menu={menuNavegation} />}
-        fixed
-        changeColorOnScroll={{
-          height: 500,
-          color: 'dark'
-        }}
-      />
-
-      <Parallax image={`${__API__}/landing.png`} />
-
-      <div className={classes.paralaxDiv}>
-        <GridRow>
-          <h1 className={classes.title}>{title}</h1>
-        </GridRow>
-      </div>
-
-      <div className={classes.paralaxDiv2} {...rest}>
-        {children}
-      </div>
-
+      <AppBar position="static">
+        <Toolbar>
+          <Avatar alt="logo" src={`${__API__}/logo.svg`} style={{ width: '60px', height: '60px' }} />
+          {
+            window.innerWidth < 700 ? (
+              <span style={{ color: 'transparent' }}>DS:the Achilleid </span>
+            ) : (
+              <Typography variant="h6" className={classes.title}>
+                Digital Statius : the Achilleid
+              </Typography>
+            )
+          }
+          <Slider />
+        </Toolbar>
+      </AppBar>
     </div>
   );
 }
-
-HeaderElement.defaultProps = {
-  classes: {},
-  title: 'TITLE UNDEFINED'
-};
-
-HeaderElement.propTypes = {
-  classes: PropTypes.any,
-  title: PropTypes.string,
-  children: PropTypes.any
-};

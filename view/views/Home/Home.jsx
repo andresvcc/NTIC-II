@@ -1,51 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-
-import {
-  CssBaseline,
-} from '@material-ui/core';
-
-import {
-  GridRow,
-  VerticalTabs,
-  Scroll
-} from '../component';
+import React from 'react';
+import { fade, makeStyles } from '@material-ui/core/styles';
+import SearchBar from '../Elements/Header/SearchBar';
+import Map from './sections/map';
+import VerticalMenu from './sections/slide';
 
 import {
   Header,
   Body,
-  Footer,
 } from '../elements';
 
-import styles from './homeStyle';
-import VerticalMenu from './sections/VerticalMenu';
+import {
+  redux
+} from '../component';
 
-const useStyles = makeStyles(styles);
+import styles from './homeStyle';
+
+const useStyles = makeStyles((theme) => ({
+  ...styles(theme, fade)
+}));
 
 export default function Home() {
   const classes = useStyles();
+  const [stateRedux, dispatch] = redux();
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      <Header title="MEISTER ENGINEERING" classes={classes}>
-        {' '}
-      </Header>
-
+      <Header classes={classes} />
+      {
+        stateRedux.pageSize > 5 ? '' : (
+          <div className={classes.gTbox}>
+            <SearchBar />
+          </div>
+        )
+      }
       <Body classes={classes}>
-        <Scroll>
-          <VerticalMenu classes={classes} />
-        </Scroll>
+        <VerticalMenu />
+        <Map classes={classes} />
       </Body>
-
-      <Footer>
-        <GridRow justify="space-around">
-          <h6 style={{ color: 'red' }}>Information 1</h6>
-          <h6>Information 2</h6>
-          <h6>Information 3</h6>
-        </GridRow>
-      </Footer>
     </div>
   );
 }

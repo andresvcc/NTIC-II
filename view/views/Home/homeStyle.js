@@ -1,4 +1,4 @@
-const style = {
+const style = (theme, fade) => ({
   root: {
 
   },
@@ -15,7 +15,8 @@ const style = {
     position: 'absolute',
     top: '250px',
     left: '5%',
-    rigth: '5%'
+    rigth: '5%',
+    zIndex: '50'
   },
   paralaxDiv2: {
     width: '90%',
@@ -26,12 +27,12 @@ const style = {
   },
   bodyDiv: {
     position: 'relative',
-    zIndex: '1000',
+    zIndex: '10',
     background: 'white',
-    width: '100%'
+    width: '100%',
   },
   title: {
-    maxWidth: '50%',
+    // maxWidth: '50%',
     color: 'white',
     fontWeight: 'bolder',
     fontSize: '5rem',
@@ -41,8 +42,32 @@ const style = {
   chart: {
     background: '#000000',
     margin: '20px'
+  },
+  markerPoint: {
+    width: 22,
+    height: 22,
+    color: '#FF3399',
+    '&:hover': {
+      width: 26,
+      height: 26,
+      position: 'relative',
+      top: '-4px',
+      left: '-2px',
+      color: '#EE0078',
+    }
+  },
+  markerPolygon: {
+
+  },
+  gTbox: {
+    position: 'absolute',
+    top: '80px',
+    left: '15px',
+    zIndex: 11,
+    width: '300px',
+    height: '50px',
   }
-};
+});
 
 export default style;
 

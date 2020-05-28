@@ -18,7 +18,7 @@ const addClick = (event) => {
 };
 
 const componentsSet = (classes, setNewRowPosition) => ({
-  Toolbar: (props) => (
+  /* Toolbar: (props) => (
     <div>
       <MTableToolbar {...props} />
       <div className={classes.toolbar}>
@@ -33,8 +33,8 @@ const componentsSet = (classes, setNewRowPosition) => ({
         </Fab>
       </div>
     </div>
-  ),
-  Header: (props) => <MTableHeader {...props} />,
+  ), */
+  // Header: (props) => <MTableHeader {...props} />,
   Groupbar: (props) => (
     <div style={{ background: '#f7f7fd' }}>
       <MTableGroupbar {...props} />

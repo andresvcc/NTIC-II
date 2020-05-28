@@ -45,22 +45,19 @@ export default function SubTable(props) {
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow className={classes.tableRow}>
-            <TableCell className={classes.iconCell} />
-            <TableCell className={classes.attributeCell}>Attribute name</TableCell>
-            <TableCell className={classes.valueCell} align="right">Value</TableCell>
+            <TableCell className={classes.attributeCell}>Anderson_id</TableCell>
+            <TableCell className={classes.valueCell} align="right">Start</TableCell>
+            <TableCell className={classes.valueCell} align="right">End</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rowData.attribute.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>
-                <EditIcon />
-                <DeleteOutlineIcon className={classes.deleteIcon} />
-              </TableCell>
+          {rowData.manuscrit.map((row, index) => (
+            <TableRow key={`${index + 1}/${Math.random()}`}>
               <TableCell component="th" scope="row">
-                {row.name}
+                {row.anderson_id}
               </TableCell>
-              <TableCell align="right">{row.value}</TableCell>
+              <TableCell align="right">{row.start}</TableCell>
+              <TableCell align="right">{row.end}</TableCell>
             </TableRow>
           ))}
         </TableBody>
