@@ -100,37 +100,3 @@ cette suite d'information est destinée à comprendre le fonctionnement de base,
 
 **Data Warehouse**
 <img src="http://imgfz.com/i/LhpPBya.png" /></a>
-
-**sequence Diagram**
-```mermaid
-sequenceDiagram
-Elements->> View: Props
-Components --> View: Props
-Components ->> Redux: Data
-Redux ->> View: Data
-Redux --> Elements: Data
-
-```
-
-**Graphe Diagram**
-```mermaid
-graph LR
-R((Redux))-->B[Component]
-R((Redux))-->A[View]
-B-->G[Elements]
-G-->A
-C[GlobalFunction]-->A
-D[Styles]-->A
-J((Local State))-->B
-J((Local State))-->G
-
-```
-
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-
-
-
