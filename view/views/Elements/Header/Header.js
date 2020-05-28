@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
-import MenuButton from './MenuButton';
+
 import {
   Slider,
 } from '../../component';
@@ -24,12 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function HeaderElement(props) {
+export default function HeaderElement() {
   const classes = useStyles();
-  const {
-    children,
-    ...rest
-  } = props;
 
   return (
     <div className={classes.root}>
@@ -38,7 +33,7 @@ export default function HeaderElement(props) {
           <Avatar alt="logo" src={`${__API__}/logo.svg`} style={{ width: '60px', height: '60px' }} />
           {
             window.innerWidth < 700 ? (
-              <span style={{ color: 'transparent' }}>CDM</span>
+              <span style={{ color: 'transparent' }}>DS:the Achilleid </span>
             ) : (
               <Typography variant="h6" className={classes.title}>
                 Digital Statius : the Achilleid
@@ -51,12 +46,3 @@ export default function HeaderElement(props) {
     </div>
   );
 }
-
-HeaderElement.defaultProps = {
-  classes: {},
-};
-
-HeaderElement.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.any
-};

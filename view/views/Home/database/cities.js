@@ -668,7 +668,9 @@ const cities = [{
   country_name: 'France',
   country: 46,
   pos: [47.4215055, 7.2465475]
-}, {
+},
+// 79 effacé a cause des fautes logiques
+{
   name: 'Abruzzi',
   id: 80,
   type: 'city',

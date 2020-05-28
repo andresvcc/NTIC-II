@@ -6,9 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import DirectionsIcon from '@material-ui/icons/Directions';
 import cities from '../../Home/database/cities';
 import countries from '../../Home/database/countries';
 
@@ -16,7 +14,6 @@ import {
   redux
 } from '../../component';
 
-// console.log(allData);
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: '2px 4px',
@@ -45,7 +42,6 @@ function sortByProperty(property) {
   return (a, b) => {
     if (a[property] > b[property]) return 1;
     if (a[property] < b[property]) return -1;
-
     return 0;
   };
 }
@@ -60,9 +56,7 @@ function ComboBox() {
   const classes = useStyles();
 
   useEffect(() => {
-    // console.log(stateRedux);
     const spliterData = [];
-
     stateRedux.librairiesData.forEach((element) => {
       if (element.type === 'polygon') {
         element.markers.forEach((markers) => {
@@ -84,15 +78,12 @@ function ComboBox() {
         });
       }
     });
-
     const allDataCont = allData.concat(spliterData);
     const allDataSort = allDataCont.sort(sortByProperty('name'));
     setData(allDataSort);
   }, [stateRedux.librairiesData]);
 
-  const zoomCLikPos = async (data) => {
-    // dispatch({ state: 'openSearch', value: false });
-    // console.log(data);
+  const zoomClickTraslate = async (data) => {
     if (data.pos !== undefined) {
       const placeZoom = data.type === 'country' ? 6 : data.type === 'region' ? 9 : data.type === 'city' ? 12 : 17;
       await dispatch({
@@ -117,10 +108,9 @@ function ComboBox() {
       clearOnBlur
       getOptionSelected={(option, value) => option.name === value.name}
       getOptionLabel={(option) => `${option.type}: ${option.name}`}
-      onChange={(event, value) => (value ? zoomCLikPos(value) : true)}
+      onChange={(event, value) => (value ? zoomClickTraslate(value) : true)}
       onKeyPress={(ev, value) => {
         if (ev.key === 'Enter') {
-          // console.log(`Pressed keyCode ${value}`);
           ev.preventDefault();
         }
       }}

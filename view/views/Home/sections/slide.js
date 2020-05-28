@@ -73,11 +73,6 @@ export default function SimpleSlide() {
     color: 'white',
   };
 
-  const blockDroitStyle = {
-    textAlign: 'center',
-    margin: '5px'
-  };
-
   const zoneBarIcon = {
     visibility: reduxState.greetingStatus ? 'visible' : 'hidden',
     cursor: 'pointer',

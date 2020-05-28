@@ -6,7 +6,6 @@ import EditIcon from '@material-ui/icons/Edit';
 
 import {
   Table,
-  Button,
   SubTable,
   ChartArea,
   ChartCompare,
@@ -17,7 +16,6 @@ import {
 export default function TableArticles(props) {
   const {
     classes,
-    ...rest
   } = props;
 
   const [stateRedux, dispatch] = redux();
@@ -60,46 +58,14 @@ export default function TableArticles(props) {
 
   const data1 = {
     columns: [
-      {
-        title: '',
-        width: '5%',
-        sorting: false
-      },
-      {
-        title: 'ID',
-        field: 'id',
-        width: '10%',
-      },
-      {
-        title: 'Name',
-        field: 'name',
-        width: '35%',
-      },
-      {
-        title: 'Owner',
-        field: 'owner',
-        width: '10%',
-      },
-      {
-        title: 'City',
-        field: 'city',
-        width: '20%',
-      },
-      {
-        title: 'Country',
-        field: 'country',
-        width: '15%',
-      },
-      {
-        title: 'Total',
-        field: 'total',
-        width: '5%',
-      },
-      {
-        title: '',
-        width: '100%',
-        sorting: false
-      }
+      { title: '', width: '5%', sorting: false },
+      { title: 'ID', field: 'id', width: '10%' },
+      { title: 'Name', field: 'name', width: '35%', },
+      { title: 'Owner', field: 'owner', width: '10%', },
+      { title: 'City', field: 'city', width: '20%', },
+      { title: 'Country', field: 'country', width: '15%', },
+      { title: 'Total', field: 'total', width: '5%', },
+      { title: '', width: '100%', sorting: false }
     ],
     data: dataRows,
     detailPanel: [

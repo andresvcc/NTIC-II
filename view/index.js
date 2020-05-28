@@ -16,19 +16,6 @@ import theme from './styles/theme';
 
 const themeResposive = responsiveFontSizes(theme, { factor: 6, breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'] });
 
-/*
-// service worker - WPA5
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js').then((registration) => {
-      console.log('SW registered: ', registration);
-    }).catch((registrationError) => {
-      console.log('SW registration failed: ', registrationError);
-    });
-  });
-}
-*/
-
 ReactDOM.render(
   <ThemeProvider theme={themeResposive}>
     <CssBaseline />

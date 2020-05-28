@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
@@ -113,12 +112,6 @@ module.exports = {
       inject: 'body',
       template: './public/index.html',
       favicon: './public/favicon.ico',
-    }),
-    new WorkboxPlugin.GenerateSW({
-      // these options encourage the ServiceWorkers to get in there fast
-      // and not allow any straggling "old" SWs to hang around
-      clientsClaim: true,
-      skipWaiting: true,
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /es/),
     new LodashModuleReplacementPlugin()
