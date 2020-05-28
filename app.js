@@ -4,6 +4,7 @@ const port = 3000
 
 app
 .use(express.static(`${__dirname}/build/`))
+.use(express.static(`${__dirname}/images/`))
 .use('/', express.static(`${__dirname}/images`))
 .get('/', (req, res) => res.sendFile(`${__dirname}/build/index.html`))
 

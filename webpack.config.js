@@ -7,9 +7,7 @@ const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const outputDirectory = '/build';
-const apiUrl = 'http://localhost:8081';
-
-const apiHost = '"images"';
+const apiUrl = '"http://localhost:3000"';
 
 module.exports = {
   entry: './view/index.js',
@@ -99,7 +97,7 @@ module.exports = {
       minRatio: 0.8
     }),
     new webpack.DefinePlugin({
-      __API__: apiHost
+      __API__: apiUrl
     }),
     new CleanWebpackPlugin({
       verbose: true,
