@@ -36,7 +36,8 @@
     "react-hooks/exhaustive-deps": 0, // Checks effect dependencies
     "react/prop-types":0,
     "no-param-reassign":0,
-    "no-shadow":0
+    "no-shadow":0,
+    "no-return-assign":0
   },
   "overrides": [
     {
@@ -48,6 +49,7 @@
   ],
   "globals": {
     "__API__": true,
+    "__LOCAL__": true,
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },

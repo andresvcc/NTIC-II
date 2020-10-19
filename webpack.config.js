@@ -1,24 +1,34 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
+const path = require('path');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const outputDirectory = '/build';
-const apiUrl = '"https://nticii.herokuapp.com"';
+const apiUrl = '"http://46.38.245.184:3000/images"';
 
-module.exports = {
-  entry: './view/index.js',
+const config = {
+  entry: [
+    'react-hot-loader/patch',
+    './src/index.js'
+  ],
   output: {
-    path: path.join(__dirname, outputDirectory),
-    filename: './bundle.js'
+    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js'
   },
+  node: {
+    __dirname: false,
+    fs: 'empty'
+  },
+  externals: [
+    { './cptable': 'var cptable' },
+    { './jszip': 'jszip' }
+  ],
   performance: {
     hints: process.env.NODE_ENV === 'production' ? 'warning' : false
   },
-  // devtool: 'cheap-module-source-map',
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
@@ -34,33 +44,39 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: 'babel-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.(png|woff|woff2|eot|ttf|gif)$/,
-        loader: 'url-loader?limit=100000'
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: 'file-loader'
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      },
+      {
+        test: /\.png$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              mimetype: 'image/png'
+            }
+          }
+        ]
       }
     ]
   },
-  node: {
-    __dirname: false,
-    fs: 'empty'
-  },
-  externals: [
-    { './cptable': 'var cptable' },
-    { './jszip': 'jszip' }
-  ],
   resolve: {
     extensions: ['.html', '.js', '.jsx', '.css'],
     alias: {
@@ -71,22 +87,17 @@ module.exports = {
     }
   },
   devServer: {
-    // inline:false,
-    // liveReload: true,
-    port: 5000,
-    // open: true,
+    noInfo: true, // only errors & warns on hot reload
     proxy: {
       '/api': apiUrl // url serveur final deployé
     },
-    noInfo: true, // only errors & warns on hot reload
     disableHostCheck: false,
     historyApiFallback: true,
     contentBase: './',
     compress: true,
     hot: true,
-    open: false,
+    port: 3500,
   },
-  stats: 'none',
   plugins: [
     // new BundleAnalyzerPlugin(),
     new CompressionPlugin({
@@ -100,18 +111,19 @@ module.exports = {
       __API__: apiUrl
     }),
     new CleanWebpackPlugin({
-      verbose: true,
-      cleanOnceBeforeBuildPatterns: [path.join(__dirname, outputDirectory), '!images*'],
+      cleanOnceBeforeBuildPatterns: [path.join(__dirname, path.resolve(__dirname, 'public'))],
       dangerouslyAllowCleanPatternsOutsideProject: true,
       dry: false
     }),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
+    new LodashModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: 'h-App',
+      title: 'Ntic',
       inject: 'body',
-      template: './public/index.html',
-      favicon: './public/favicon.ico',
+      template: path.join(__dirname, '/dist/index.html'),
+      favicon: path.join(__dirname, '/dist/favicon.ico'),
     }),
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /es/),
-    new LodashModuleReplacementPlugin()
   ]
 };
+
+module.exports = config;
