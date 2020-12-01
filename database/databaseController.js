@@ -68,14 +68,14 @@ const intervaleGenerator = (year, disable, manuscritUniqueID) => {
           });
           const newData = newManuscrit(manuscrit, interval);
           if (interval.owner !== -1 && noExist(ownerFilter[interval.owner])) {
-            const newOwner = Owner[interval.owner];
+            const newOwner = interval.type === 'city' ? cities[interval.owner] : Owner[interval.owner];
             const pos = newOwner.pos ? newOwner.pos : cities[newOwner.city] ? cities[newOwner.city].pos : [0, 0];
             if (pos[0] !== 0 && pos[1] !== 0) {
-              ownerFilter[interval.owner] = {
+              ownerFilter[`${interval.owner}-${interval.type}`] = {
                 ...newOwner,
-                city: newOwner.pos ? newOwner.city : 0,
+                city: interval.type === 'city' ? interval.owner : newOwner.city,
                 pos,
-                type: newOwner.pos ? 'library' : cities[newOwner.city] ? 'city' : 'undefined',
+                type: interval.type,
                 // cityData: cities[Owner[interval.owner].city],
                 manuscrit: [newData]
               };
@@ -120,6 +120,8 @@ const intervaleGenerator = (year, disable, manuscritUniqueID) => {
       }
     });
   }
+
+  console.log(ownerFilter);
 
   const keys = Object.keys(ownerFilter);
   keys.forEach((key) => {

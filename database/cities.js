@@ -5,7 +5,7 @@ const cities = [{
   country: 17,
   country_name: 'Belgium',
   start: null,
-  end: 2020,
+
   pos: [51.219448, 4.402464]
 }, {
   name: 'Ascoli Piceno',
@@ -14,7 +14,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [42.8554, 13.57498],
   altnames: ['Ascoli']
 }, {
@@ -24,7 +24,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [48.370544, 10.89779]
 }, {
   name: 'Baltimore MD',
@@ -33,7 +33,7 @@ const cities = [{
   country: 146,
   country_name: 'US',
   start: null,
-  end: 2020,
+
   pos: [39.290386, -76.61219]
 }, {
   name: 'Bergamo',
@@ -42,7 +42,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [45.698265, 9.67727]
 }, {
   name: 'Berlin',
@@ -51,7 +51,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [52.520008, 13.404954]
 }, {
   name: 'Bern',
@@ -60,7 +60,7 @@ const cities = [{
   country: 135,
   country_name: 'Switzerland',
   start: null,
-  end: 2020,
+
   pos: [46.947975, 7.447447]
 }, {
   name: 'Bologna',
@@ -69,7 +69,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [44.494888, 11.342616]
 }, {
   name: 'Bruxelles',
@@ -78,7 +78,7 @@ const cities = [{
   country: 17,
   country_name: 'Belgium',
   start: null,
-  end: 2020,
+
   pos: [50.850346, 4.351721]
 }, {
   name: 'Bryn Mawr PA',
@@ -87,7 +87,7 @@ const cities = [{
   country: 146,
   country_name: 'US',
   start: null,
-  end: 2020,
+
   pos: [40.023026, -75.315178],
   altnames: ['Bryn Mawr, PA,']
 }, {
@@ -97,7 +97,7 @@ const cities = [{
   country: 145,
   country_name: 'United Kingdom',
   start: null,
-  end: 2020,
+
   pos: [52.205338, 0.121817]
 }, {
   name: 'Carpentras',
@@ -106,7 +106,7 @@ const cities = [{
   country: 46,
   country_name: 'France',
   start: null,
-  end: 2020,
+
   pos: [44.052368, 5.04732]
 }, {
   name: 'Cesena',
@@ -115,7 +115,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [44.13876, 12.23912]
 }, {
   name: 'Chicago IL',
@@ -124,7 +124,7 @@ const cities = [{
   country: 146,
   country_name: 'US',
   start: null,
-  end: 2020,
+
   pos: [41.878113, -87.629799]
 }, {
   name: 'Colmar',
@@ -133,7 +133,7 @@ const cities = [{
   country: 46,
   country_name: 'France',
   start: null,
-  end: 2020,
+
   pos: [48.08062, 7.35995]
 }, {
   name: 'Cologny',
@@ -142,7 +142,7 @@ const cities = [{
   country: 135,
   country_name: 'Switzerland',
   start: null,
-  end: 2020,
+
   pos: [46.215851, 6.18089]
 }, {
   name: 'Darmstadt',
@@ -151,7 +151,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [49.872826, 8.651193]
 }, {
   name: 'Dijon',
@@ -160,7 +160,7 @@ const cities = [{
   country: 46,
   country_name: 'France',
   start: null,
-  end: 2020,
+
   pos: [47.327209, 5.04404]
 }, {
   name: 'Dresden',
@@ -169,7 +169,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [51.050407, 13.737262]
 }, {
   name: 'Düsseldorf',
@@ -178,7 +178,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [51.227741, 6.773456]
 }, {
   name: 'Erfurt',
@@ -187,7 +187,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [50.984768, 11.02988]
 }, {
   name: 'El Escorial',
@@ -196,7 +196,7 @@ const cities = [{
   country: 129,
   country_name: 'Spain',
   start: null,
-  end: 2020,
+
   pos: [40.585079, -4.12952]
 }, {
   name: 'Eton',
@@ -205,7 +205,7 @@ const cities = [{
   country: 145,
   country_name: 'United Kingdom',
   start: null,
-  end: 2020,
+
   pos: [34.824162, -84.761726]
 }, {
   name: 'Eugene OR',
@@ -214,7 +214,7 @@ const cities = [{
   country: 146,
   country_name: 'US',
   start: null,
-  end: 2020,
+
   pos: [44.052071, -123.086754]
 }, {
   name: 'Evanston IL',
@@ -223,7 +223,7 @@ const cities = [{
   country: 146,
   country_name: 'US',
   start: null,
-  end: 2020,
+
   pos: [42.052158, -87.687866]
 }, {
   name: 'Firenze',
@@ -232,7 +232,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [43.769562, 11.255814],
   altnames: ['Florence']
 }, {
@@ -242,7 +242,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [44.407059, 8.93399]
 }, {
   name: 'Göteborg',
@@ -251,7 +251,7 @@ const cities = [{
   country: 134,
   country_name: 'Sweden',
   start: null,
-  end: 2020,
+
   pos: [57.70887, 11.97456]
 }, {
   name: 'Gravenhage',
@@ -260,7 +260,7 @@ const cities = [{
   country: 98,
   country_name: 'Netherlands',
   start: null,
-  end: 2020,
+
   pos: [52.080189, 4.31013]
 }, {
   name: 'Helsinki',
@@ -269,7 +269,7 @@ const cities = [{
   country: 45,
   country_name: 'Finland',
   start: null,
-  end: 2020,
+
   pos: [60.169857, 24.938379]
 }, {
   name: 'Holkham Hall',
@@ -278,7 +278,7 @@ const cities = [{
   country: 145,
   country_name: 'United Kingdom',
   start: null,
-  end: 2020,
+
   pos: [52.43199, 0.78141]
 }, {
   name: 'Karlsruhe',
@@ -287,7 +287,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [49.006889, 8.403653]
 }, {
   name: 'Konstanz',
@@ -296,7 +296,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [47.661942, 9.17243]
 }, {
   name: 'Kraków',
@@ -305,7 +305,7 @@ const cities = [{
   country: 112,
   country_name: 'Poland',
   start: null,
-  end: 2020,
+
   pos: [50.064651, 19.944981]
 }, {
   name: 'Leiden',
@@ -314,7 +314,7 @@ const cities = [{
   country: 98,
   country_name: 'Netherlands',
   start: null,
-  end: 2020,
+
   pos: [52.160114, 4.49701]
 }, {
   name: 'Lincoln',
@@ -323,7 +323,7 @@ const cities = [{
   country: 153,
   country_name: 'England',
   start: null,
-  end: 2020,
+
   pos: [37.346134, -95.262955]
 }, {
   name: 'London',
@@ -332,7 +332,7 @@ const cities = [{
   country: 145,
   country_name: 'United Kingdom',
   start: null,
-  end: 2020,
+
   pos: [51.507351, -0.127758]
 }, {
   name: 'Mainz',
@@ -341,7 +341,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [49.992863, 8.247253]
 }, {
   name: 'Milano',
@@ -350,7 +350,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [39.08252, -94.582306],
   altnames: ['Milan']
 }, {
@@ -360,7 +360,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [44.647129, 10.925227]
 }, {
   name: 'München',
@@ -369,7 +369,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [48.135124, 11.581981]
 }, {
   name: 'Napoli',
@@ -378,7 +378,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [40.839981, 14.25254],
   altnames: ['Naples']
 }, {
@@ -388,7 +388,7 @@ const cities = [{
   country: 145,
   country_name: 'United Kingdom',
   start: null,
-  end: 2020,
+
   pos: [52.954784, -1.158109]
 }, {
   name: 'Oldenburg',
@@ -397,7 +397,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [53.136719, 8.21654]
 }, {
   name: 'Oxford',
@@ -406,7 +406,7 @@ const cities = [{
   country: 145,
   country_name: 'United Kingdom',
   start: null,
-  end: 2020,
+
   pos: [51.752022, -1.257726]
 }, {
   name: 'Padova',
@@ -415,7 +415,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [45.406433, 11.876761]
 }, {
   name: 'Palma de Mallorca',
@@ -424,7 +424,7 @@ const cities = [{
   country: 129,
   country_name: 'Spain',
   start: null,
-  end: 2020,
+
   pos: [38.924549, -0.22069],
   altnames: ['Palma da Mallorca']
 }, {
@@ -434,7 +434,7 @@ const cities = [{
   country: 46,
   country_name: 'France',
   start: null,
-  end: 2020,
+
   pos: [48.856613, 2.352222]
 }, {
   name: 'Parma',
@@ -443,7 +443,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [44.801483, 10.327904]
 }, {
   name: 'Perugia',
@@ -452,7 +452,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [43.110718, 12.390828]
 }, {
   name: 'Poppi',
@@ -461,7 +461,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [43.732769, 11.76403]
 }, {
   name: 'Praha',
@@ -470,7 +470,7 @@ const cities = [{
   country: 37,
   country_name: 'Czech Republic',
   start: null,
-  end: 2020,
+
   pos: [50.075539, 14.4378],
   altnames: ['Prague']
 }, {
@@ -480,7 +480,7 @@ const cities = [{
   country: 146,
   country_name: 'US',
   start: null,
-  end: 2020,
+
   pos: [40.351978, -74.660744],
   altnames: ['Princeton']
 }, {
@@ -490,7 +490,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [41.902782, 12.496365],
   altnames: ['Rome']
 }, {
@@ -500,7 +500,7 @@ const cities = [{
   country: 129,
   country_name: 'Spain',
   start: null,
-  end: 2020,
+
   pos: [40.970104, -5.66354]
 }, {
   name: 'Sankt Florian',
@@ -509,7 +509,7 @@ const cities = [{
   country: 10,
   country_name: 'Austria',
   start: null,
-  end: 2020,
+
   pos: [48.20566, 14.37955]
 }, {
   name: 'Schlägl',
@@ -518,7 +518,7 @@ const cities = [{
   country: 10,
   country_name: 'Austria',
   start: null,
-  end: 2020,
+
   pos: [48.64626, 13.97121]
 }, {
   name: 'Stuttgart',
@@ -527,7 +527,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [48.775845, 9.182932]
 }, {
   name: 'Torino',
@@ -536,7 +536,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [45.068371, 7.68307],
   altnames: ['Turin']
 }, {
@@ -546,7 +546,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [49.749992, 6.637143]
 }, {
   name: 'Città del Vaticano',
@@ -555,7 +555,7 @@ const cities = [{
   country: 152,
   country_name: 'Vaticano',
   start: null,
-  end: 2020,
+
   pos: [41.902229, 12.4581],
   altnames: ['Vaticano', 'Vaticano, Città del']
 }, {
@@ -565,7 +565,7 @@ const cities = [{
   country: 71,
   country_name: 'Italy',
   start: null,
-  end: 2020,
+
   pos: [45.434341, 12.33878],
   altnames: ['Italy Venice', 'Venice', 'Venetiarum']
 }, {
@@ -575,7 +575,7 @@ const cities = [{
   country: 112,
   country_name: 'Poland',
   start: null,
-  end: 2020,
+
   pos: [52.234982, 21.00849],
   altnames: ['Warszawa']
 }, {
@@ -585,7 +585,7 @@ const cities = [{
   country: 10,
   country_name: 'Austria',
   start: null,
-  end: 2020,
+
   pos: [48.208176, 16.373819]
 }, {
   name: 'Wolfenbüttel',
@@ -594,7 +594,7 @@ const cities = [{
   country: 50,
   country_name: 'Germany',
   start: null,
-  end: 2020,
+
   pos: [52.16404, 10.540848]
 }, {
   name: 'Worcester',
@@ -603,7 +603,7 @@ const cities = [{
   country: 145,
   country_name: 'United Kingdom',
   start: null,
-  end: 2020,
+
   pos: [42.262592, -71.802292]
 }, {
   name: 'Wroclaw',
@@ -612,7 +612,7 @@ const cities = [{
   country: 112,
   country_name: 'Poland',
   start: null,
-  end: 2020,
+
   pos: [51.107883, 17.038538]
 }, {
   name: 'Liège',
