@@ -133,7 +133,7 @@ export default function PigeonMap(props) {
           })
         }
         {
-          stateRedux.fleches && zoom < 12 ? (
+          (stateRedux.fleches && zoom < 12) || stateRedux.manuscritUniqueID !== -1 ? (
             <LineDraw
               coordsArray={connecteurs}
             />
