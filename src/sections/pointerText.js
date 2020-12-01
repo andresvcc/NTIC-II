@@ -73,7 +73,7 @@ export default function PointerText(props) {
     const name1 = stateRedux.hoverArrow.libraries[1].type === 'library' ? stateRedux.hoverArrow.libraries[1].name : 'Group libraries';
     const name2 = stateRedux.hoverArrow.libraries[2].type === 'library' ? stateRedux.hoverArrow.libraries[2].name : 'Group libraries';
 
-    console.log('transfert', transfert);
+    // console.log('transfert', transfert);
 
     return (
       <div style={{

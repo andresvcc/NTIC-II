@@ -35,22 +35,26 @@ export default function PigeonMap(props) {
   const [center, setCenter] = useState([]);
   const [OwnerYear, setOwnerYear] = useState([]);
   const [animated, setAnimate] = useState(false);
+  const [fleches, setFleches] = useState(true);
   const [arrows, setArrows] = useState([]);
   const [connecteurs, setConnecteurs] = useState([]);
-  const handleAnimationStart = () => setAnimate(true);
+
+  const handleAnimationStart = () => {
+    setAnimate(true);
+  };
   const handleAnimationStop = () => setAnimate(false);
 
-  const handleBoundsChange = ({ ...rest }) => {
-    setZoom(rest.zoom);
-    setCenter(rest.center);
-  };
-
   const update = async () => {
-    dispatch({ state: 'hoverArrow', value: { visible: false, transfert: [] } });
+    await dispatch({ state: 'hoverArrow', value: { visible: false, transfert: [] } });
     const distanceCal = zoomCalGroup(Math.round(zoom));
     const newMapData = groupFonction(OwnerYear, distanceCal);
     setDataBaseMarker(newMapData);
     await dispatch({ state: 'librairiesData', value: newMapData });
+  };
+
+  const handleBoundsChange = ({ ...rest }) => {
+    setZoom(rest.zoom);
+    setCenter(rest.center);
   };
 
   useEffect(() => {
@@ -83,7 +87,7 @@ export default function PigeonMap(props) {
   }, [stateRedux.center]);
 
   const handleMapClick = async ({ event, latLng, pixel }) => {
-    dispatch({ state: 'openSearch', value: false });
+    await dispatch({ state: 'openSearch', value: false });
     // console.log('Map clicked!', latLng, pixel);
   };
 
@@ -104,7 +108,7 @@ export default function PigeonMap(props) {
         height={device.height * 0.91999}
         boxClassname="pigeon-filters"
         minZoom={3}
-        maxZoom={15}
+        maxZoom={14}
         animate
         onClick={handleMapClick}
         zoomSnap
@@ -130,7 +134,7 @@ export default function PigeonMap(props) {
           })
         }
         {
-          stateRedux.fleches ? (
+          stateRedux.fleches && fleches ? (
             <LineDraw
               coordsArray={connecteurs}
             />
