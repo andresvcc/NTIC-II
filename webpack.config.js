@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const apiUrl = '"http://localhost:3000/images"';
+const apiUrl = '"http://185.183.157.179:9000/images"';
 
 const config = {
   entry: [
