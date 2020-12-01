@@ -187,7 +187,7 @@ function ComboBox() {
   const zoomClickTraslate = async (data) => {
     await dispatch({ state: 'openSearch', value: false });
     if (data.pos !== undefined) {
-      const placeZoom = data.type === 'country' ? 6 : data.type === 'region' ? 9 : data.type === 'city' ? 11 : 14;
+      const placeZoom = data.type === 'country' ? 6 : data.type === 'region' ? 9 : 10;
       await dispatch({
         state: 'center',
         value: {

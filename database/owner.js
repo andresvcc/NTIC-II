@@ -9,8 +9,7 @@ const Owner = [
       9.18043
     ],
     city: 38,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -23,8 +22,7 @@ const Owner = [
       8.3983
     ],
     city: 31,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -37,8 +35,7 @@ const Owner = [
       11.58006
     ],
     city: 40,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -51,8 +48,7 @@ const Owner = [
       9.18603
     ],
     city: 38,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -65,8 +61,7 @@ const Owner = [
       12.47445
     ],
     city: 53,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -79,8 +74,7 @@ const Owner = [
       12.45755
     ],
     city: 60,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -93,8 +87,7 @@ const Owner = [
       9.66321
     ],
     city: 1,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -107,8 +100,7 @@ const Owner = [
       13.577
     ],
     city: 1,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -121,8 +113,7 @@ const Owner = [
       12.39053
     ],
     city: 49,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -135,8 +126,7 @@ const Owner = [
       11.7672
     ],
     city: 50,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -149,8 +139,7 @@ const Owner = [
       12.33852
     ],
     city: 61,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -163,8 +152,7 @@ const Owner = [
       8.93484
     ],
     city: 26,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -177,8 +165,7 @@ const Owner = [
       10.92104
     ],
     city: 39,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -191,8 +178,7 @@ const Owner = [
       12.23904
     ],
     city: 12,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -205,8 +191,7 @@ const Owner = [
       11.2543
     ],
     city: 25,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -219,8 +204,7 @@ const Owner = [
       14.24845
     ],
     city: 1,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -233,8 +217,7 @@ const Owner = [
       9.18768
     ],
     city: 38,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -247,8 +230,7 @@ const Owner = [
       11.26219
     ],
     city: 25,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -261,8 +243,7 @@ const Owner = [
       12.33805
     ],
     city: 61,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -275,8 +256,7 @@ const Owner = [
       10.32584
     ],
     city: 48,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -289,8 +269,7 @@ const Owner = [
       13.83265
     ],
     city: 46,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -303,8 +282,7 @@ const Owner = [
       11.25537
     ],
     city: 25,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -317,8 +295,7 @@ const Owner = [
       -5.66729
     ],
     city: 54,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -331,8 +308,7 @@ const Owner = [
       12.46946
     ],
     city: 53,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -345,8 +321,7 @@ const Owner = [
       19.9231
     ],
     city: 33,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -359,8 +334,7 @@ const Owner = [
       19.93953
     ],
     city: 33,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -373,8 +347,7 @@ const Owner = [
       21.00461
     ],
     city: 62,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -387,8 +360,7 @@ const Owner = [
       17.05294
     ],
     city: 66,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -402,8 +374,7 @@ const Owner = [
       6.18063
     ],
     city: 15,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -416,8 +387,7 @@ const Owner = [
       9.18717
     ],
     city: 32,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -430,8 +400,7 @@ const Owner = [
       4.38109
     ],
     city: 8,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -444,8 +413,7 @@ const Owner = [
       5.0423
     ],
     city: 17,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -458,8 +426,7 @@ const Owner = [
       2.37751
     ],
     city: 47,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -472,8 +439,7 @@ const Owner = [
     ],
     address: 'Boulevard de l\'Empereur 4, 1000 Bruxelles, Bélgica',
     city: 8,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -486,8 +452,7 @@ const Owner = [
       5.0481
     ],
     city: 11,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -500,8 +465,7 @@ const Owner = [
       -1.25812
     ],
     city: 44,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -514,8 +478,7 @@ const Owner = [
       -0.00711
     ],
     city: 36,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -528,8 +491,7 @@ const Owner = [
       -75.3133
     ],
     city: 9,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -542,8 +504,7 @@ const Owner = [
       7.44837
     ],
     city: 6,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -556,8 +517,7 @@ const Owner = [
       -2.22153
     ],
     city: 65,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -570,8 +530,7 @@ const Owner = [
       0.11929
     ],
     city: 44,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -584,8 +543,7 @@ const Owner = [
       4.40895
     ],
     city: 1,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -598,8 +556,7 @@ const Owner = [
       24.94956
     ],
     city: 1,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -612,8 +569,7 @@ const Owner = [
       10.48335
     ],
     city: 64,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -626,8 +582,7 @@ const Owner = [
       8.65808
     ],
     city: 16,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -640,8 +595,7 @@ const Owner = [
       4.32589
     ],
     city: 1,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -654,8 +608,7 @@ const Owner = [
       8.21497
     ],
     city: 43,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -668,8 +621,7 @@ const Owner = [
       2.352222
     ],
     city: 1,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -682,8 +634,7 @@ const Owner = [
       -1.32037
     ],
     city: 30,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -696,8 +647,7 @@ const Owner = [
       7.6899
     ],
     city: 58,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -710,8 +660,7 @@ const Owner = [
       13.59647
     ],
     city: 1,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -724,8 +673,7 @@ const Owner = [
       8.27431
     ],
     city: 37,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -738,8 +686,7 @@ const Owner = [
       4.39809
     ],
     city: 0,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -752,8 +699,7 @@ const Owner = [
       -86.20346
     ],
     city: 51,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -766,8 +712,7 @@ const Owner = [
       -87.67391
     ],
     city: 24,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -780,8 +725,7 @@ const Owner = [
       16.3673
     ],
     city: 63,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -794,8 +738,7 @@ const Owner = [
       -4.1475
     ],
     city: 21,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -808,8 +751,7 @@ const Owner = [
       13.73687
     ],
     city: 18,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -822,8 +764,7 @@ const Owner = [
       10.89057
     ],
     city: 2,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -836,8 +777,7 @@ const Owner = [
       13.37141
     ],
     city: 1,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -850,8 +790,7 @@ const Owner = [
       6.64125
     ],
     city: 59,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -864,8 +803,7 @@ const Owner = [
       13.96777
     ],
     city: 56,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -878,8 +816,7 @@ const Owner = [
       6.78056
     ],
     city: 19,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -892,8 +829,7 @@ const Owner = [
       4.48145
     ],
     city: 34,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -906,8 +842,7 @@ const Owner = [
       11.96391
     ],
     city: 27,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -920,8 +855,7 @@ const Owner = [
       -74.64843
     ],
     city: 52,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -934,8 +868,7 @@ const Owner = [
       -1.2286
     ],
     city: 42,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -948,8 +881,7 @@ const Owner = [
       -123.07857
     ],
     city: 23,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -962,8 +894,7 @@ const Owner = [
       -76.61601
     ],
     city: 3,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -976,8 +907,7 @@ const Owner = [
       11.02243
     ],
     city: 20,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -990,8 +920,7 @@ const Owner = [
       9.18533
     ],
     city: 57,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
   {
@@ -999,8 +928,7 @@ const Owner = [
     id: 71,
     name: 'St. Jacques',
     city: 67,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1008,8 +936,7 @@ const Owner = [
     id: 72,
     name: 'Biblioteca comunale',
     city: 1,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1017,8 +944,7 @@ const Owner = [
     id: 73,
     name: 'A?cellee Domenicane',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1026,8 +952,7 @@ const Owner = [
     id: 74,
     name: 'Biblioteca civica Angelo Mai',
     city: 4,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1035,8 +960,7 @@ const Owner = [
     id: 75,
     name: 'Staatsbibliothek—Preußischer Kulturbesitz',
     city: 5,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1044,8 +968,7 @@ const Owner = [
     id: 76,
     name: 'Domus s. Andree de littore',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1053,8 +976,7 @@ const Owner = [
     id: 77,
     name: 'Monasterio di San Michele di Murano',
     city: 61,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1062,8 +984,7 @@ const Owner = [
     id: 78,
     name: 'Cartusie',
     city: 61,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1071,8 +992,7 @@ const Owner = [
     id: 79,
     name: 'Biblioteca S. Salvatore',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1080,8 +1000,7 @@ const Owner = [
     id: 80,
     name: 'Bibliothèque nationale de France',
     city: 47,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1089,8 +1008,7 @@ const Owner = [
     id: 81,
     name: 'Bibliothèque Royale Albert 1er',
     city: 8,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1098,8 +1016,7 @@ const Owner = [
     id: 82,
     name: 'Abbey of St. Peter',
     city: 73,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1107,8 +1024,7 @@ const Owner = [
     id: 83,
     name: 'Bibliothèque de la ville',
     city: 14,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1116,8 +1032,7 @@ const Owner = [
     id: 84,
     name: 'Bibliothèque',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1125,8 +1040,7 @@ const Owner = [
     id: 85,
     name: 'Bryn Mawr',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1134,8 +1048,7 @@ const Owner = [
     id: 86,
     name: 'St. Martin',
     city: 14,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1143,8 +1056,7 @@ const Owner = [
     id: 87,
     name: 'Abbey of Notre-Dame',
     city: 78,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1152,8 +1064,7 @@ const Owner = [
     id: 88,
     name: 'Library',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1161,8 +1072,7 @@ const Owner = [
     id: 89,
     name: 'Special Collections Library, Northwestern University',
     city: 82,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1170,8 +1080,7 @@ const Owner = [
     id: 90,
     name: 'Biblioteca Ordinis D. Francisci',
     city: 89,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1179,8 +1088,7 @@ const Owner = [
     id: 91,
     name: 'Biblioteka Jagiello?ska',
     city: 33,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1188,8 +1096,11 @@ const Owner = [
     id: 92,
     name: 'Sancte Marie',
     city: 94,
-    start: null,
-    end: 2020,
+
+    pos: [
+      50.0619474,
+      19.9368564
+    ],
     manuscrit: [],
   },
   {
@@ -1197,8 +1108,7 @@ const Owner = [
     id: 93,
     name: 'Bibliotheek der Rijksuniversiteit',
     city: 34,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1206,8 +1116,7 @@ const Owner = [
     id: 94,
     name: 'Bibliotheca publica Leidensis',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1215,8 +1124,7 @@ const Owner = [
     id: 95,
     name: 'Purchased',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1224,8 +1132,7 @@ const Owner = [
     id: 96,
     name: 'Tiron',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1233,8 +1140,7 @@ const Owner = [
     id: 97,
     name: 'Libreria Visconteo-Sforzesca',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1242,8 +1148,7 @@ const Owner = [
     id: 98,
     name: 'Ambrosiana',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1251,8 +1156,7 @@ const Owner = [
     id: 99,
     name: 'Biblioteca nazionale Braidense',
     city: 38,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1260,8 +1164,7 @@ const Owner = [
     id: 100,
     name: 'St. Emmeram',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1269,8 +1172,7 @@ const Owner = [
     id: 101,
     name: 'Sancti Emeranis',
     city: 105,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1278,8 +1180,7 @@ const Owner = [
     id: 102,
     name: 'Winchester',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1287,8 +1188,7 @@ const Owner = [
     id: 103,
     name: 'Corpus Christi College Library',
     city: 44,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1296,8 +1196,7 @@ const Owner = [
     id: 104,
     name: 'Fleury-sur-Loire',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1305,8 +1204,7 @@ const Owner = [
     id: 105,
     name: 'Corbie',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1314,8 +1212,7 @@ const Owner = [
     id: 106,
     name: 'Echternach',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1323,8 +1220,7 @@ const Owner = [
     id: 107,
     name: 'Sacra eremi',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1332,8 +1228,7 @@ const Owner = [
     id: 108,
     name: 'Národní Knihovna ?eska Republiky',
     city: 51,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1341,8 +1236,7 @@ const Owner = [
     id: 109,
     name: 'NJ',
     city: 52,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1350,8 +1244,7 @@ const Owner = [
     id: 110,
     name: 'Bologna',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1359,8 +1252,7 @@ const Owner = [
     id: 111,
     name: 'Bibliotheca Chombergica',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1368,8 +1260,7 @@ const Owner = [
     id: 112,
     name: 'Città del',
     city: 60,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1377,8 +1268,7 @@ const Owner = [
     id: 113,
     name: 'Pisa',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1386,8 +1276,7 @@ const Owner = [
     id: 114,
     name: 'Biblioteca nazionale Marciana',
     city: 61,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1395,8 +1284,7 @@ const Owner = [
     id: 115,
     name: 'Padova',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1404,8 +1292,7 @@ const Owner = [
     id: 116,
     name: 'Biblioteca universitaria',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1413,8 +1300,7 @@ const Owner = [
     id: 117,
     name: 'Biblioteca universitaria',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1422,8 +1308,7 @@ const Owner = [
     id: 118,
     name: 'Erzbischö?iche Bibliothek',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1431,8 +1316,7 @@ const Owner = [
     id: 119,
     name: 'Mondsee',
     city: null,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1440,8 +1324,7 @@ const Owner = [
     id: 120,
     name: 'Herzog-August-Bibliothek',
     city: 64,
-    start: null,
-    end: 2020,
+
     manuscrit: [],
   },
   {
@@ -1454,8 +1337,7 @@ const Owner = [
       -81.949570
     ],
     city: 57,
-    start: null,
-    end: 2020,
+
     manuscrit: []
   },
 

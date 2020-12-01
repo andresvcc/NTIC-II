@@ -730,6 +730,15 @@ const cities = [{
   country: 71,
   altnames: ['Montis Politani'],
   pos: [43.0927229, 11.780972]
+},
+{
+  name: 'northern Italy',
+  id: 89,
+  type: 'city',
+  country_name: 'Italy',
+  country: 71,
+  altnames: ['northern Italy', 'nort Italy'],
+  pos: [43.0927229, 11.780972]
 }, {
   name: 'Arezzo',
   id: 90,
