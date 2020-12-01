@@ -35,17 +35,17 @@ const intervaleGenerator = (year, disable, manuscritUniqueID) => {
   if (disable === true && year[0] === '' && year[1] === '') {
     // si barre temporelle est disable et il n'y a pas des donnes pour les dates. cas des vuea ou on affiche uniquement les lieu de creations
     (manuscrits || []).forEach((manuscrit) => {
-      manuscrit.intervalles.forEach((interval) => {
+      manuscrit.possessions.forEach((interval) => {
         // teste si l'intervale correspond à celle de la creation du manuscrit
         if (interval.production) {
-          if (noExist(ownerFilter[interval.library])) {
-            ownerFilter[interval.library] = {
-              ...Owner[interval.library],
-              // cityData: cities[Owner[interval.library].city],
+          if (noExist(ownerFilter[interval.owner])) {
+            ownerFilter[interval.owner] = {
+              ...Owner[interval.owner],
+              // cityData: cities[Owner[interval.owner].city],
               manuscrit: [newManuscrit(manuscrit, interval)]
             };
           } else {
-            ownerFilter[interval.library].manuscrit.push(newManuscrit(manuscrit, interval));
+            ownerFilter[interval.owner].manuscrit.push(newManuscrit(manuscrit, interval));
           }
         }
       });
@@ -54,21 +54,23 @@ const intervaleGenerator = (year, disable, manuscritUniqueID) => {
     (manuscrits || []).forEach((manuscrit) => {
       // cas normal ou on veut afficher les fleches
       const intervalesLocal = [];
-      manuscrit.intervalles.forEach((interval) => {
+      manuscrit.possessions.forEach((interval) => {
         if (isInTheRange(interval, year, disable)) {
           intervalesLocal.push({
             ...interval,
             end: interval.end === 'current' ? currentYear : interval.end, // si l'intervale end est current il met la date current de l'ane en cours
           });
-          if (noExist(ownerFilter[interval.library])) {
-            ownerFilter[interval.library] = {
-              ...Owner[interval.library],
-              // cityData: cities[Owner[interval.library].city],
-              manuscrit: [newManuscrit(manuscrit, interval)]
+          const newData = newManuscrit(manuscrit, interval);
+          if (interval.owner !== -1 && noExist(ownerFilter[interval.owner])) {
+            const newOwner = Owner[interval.owner];
+            ownerFilter[interval.owner] = {
+              ...newOwner,
+              pos: newOwner.pos ? newOwner.pos : cities[newOwner.city].pos,
+              type: newOwner.pos ? 'library' : cities[newOwner.city].pos ? 'city' : 'undefined',
+              // cityData: cities[Owner[interval.owner].city],
+              manuscrit: [newData]
             };
-          } else {
-            ownerFilter[interval.library].manuscrit.push(newManuscrit(manuscrit, interval));
-          }
+          } else if (interval.owner !== -1) ownerFilter[interval.owner].manuscrit.push(newData);
         }
       });
 
@@ -77,7 +79,7 @@ const intervaleGenerator = (year, disable, manuscritUniqueID) => {
       intervalesLocal.forEach((val, i) => {
         if (i + 1 < intervalesLocal.length) {
           arrows.push({
-            direction: [val.library, intervalesLocal[i + 1].library],
+            direction: [val.owner, intervalesLocal[i + 1].owner],
             date: val.end
           });
         }
@@ -114,7 +116,7 @@ const intervaleGenerator = (year, disable, manuscritUniqueID) => {
     ownerFinal.push(ownerFilter[key]);
   });
 
-  // console.log(intervales);
+  // console.log(ownerFinal);
 
   return [ownerFinal, intervales];
 };

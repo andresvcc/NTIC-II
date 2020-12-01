@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Divider from '@material-ui/core/Divider';
 import TimelineIcon from '@material-ui/icons/Timeline';
@@ -49,8 +49,8 @@ const currentYear = new Date().getFullYear();
 
 const findManuscritby = (val) => {
   const filter = manuscrits.filter((manuscrit) => manuscrit.anderson_id === val.anderson_id);
-  const flatFilter = filter.length > 0 ? filter[0] : { intervalles: [] };
-  const manuscrit = { ...val, intervalles: flatFilter.intervalles };
+  const flatFilter = filter.length > 0 ? filter[0] : { possessions: [] };
+  const manuscrit = { ...val, possessions: flatFilter.possessions };
   return manuscrit;
 };
 
@@ -70,22 +70,25 @@ function TimeLine(props) {
   const device = hookDeviceInfo();
   const proportionWidth = device.type === 'mobile' ? 98 : device.width < 1100 ? 55 : device.width < 1400 ? 45 : 35;
   const style = styles({ device });
+
   return (
     <GridCenter width={proportionWidth * 0.90} height={10}>
       <GridRow horizontal="left">
         <ScrollContainer hideScrollbars={false} vertical horizontal className="scroll-container">
-          <GridRow style={{ width: `${data.intervalles.length * 10}vw` }} horizontal="between">
-            {data.intervalles.map((interval, i) => (
+          <GridRow style={{ width: `${data.possessions.length * 10}vw` }} horizontal="between">
+            {data.possessions.map((interval, i) => (
               <GridCenter width={10} height={10} key={`${i + 1}`}>
                 <GridColon>
                   <GridCenter width={9} height={4} style={style.biblioSpan} vertical="bottom">
                     <span>
-                      {owner[interval.library].name.slice(0, 30)}
+                      {
+                          interval.nameOwner
+                        }
                     </span>
                   </GridCenter>
 
                   <Button config={style.Button} />
-                  {data.intervalles.length > i + 1 ? (
+                  {data.possessions.length > i + 1 ? (
                     <div
                       style={{
                         position: 'relative',

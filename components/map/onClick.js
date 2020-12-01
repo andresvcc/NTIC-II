@@ -9,6 +9,11 @@ export default async ({ data, stateRedux, dispatch }) => {
     await dispatch({ state: 'dialogItems', value: data.manuscrit });
   }
 
+  if (data.type === 'city') {
+    // console.log(data.manuscrit);
+    await dispatch({ state: 'dialogItems', value: data.manuscrit });
+  }
+
   if (data.type === 'polygon') {
     const dataManuscrit = [];
 

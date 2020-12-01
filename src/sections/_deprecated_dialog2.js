@@ -135,10 +135,10 @@ export default function DraggableDialog(props) {
                   <GridCenter width={17.9} height={7} />
                   {
                     stateRedux.dialogItems.map((val, i) => {
-                      const intervale = `${val.intervalles.start} -> ${val.intervalles.end === 'current' ? currentYear : val.intervalles.end}`;
+                      const intervale = `${val.possessions.start} -> ${val.possessions.end === 'current' ? currentYear : val.possessions.end}`;
                       return (
                         <div key={`dialogItem ${i + 1}`} style={{ margin: '.5vw' }}>
-                          {`${val.ms_name} - ${intervale}, ${owner[val.intervalles.library].name}`}
+                          {`${val.ms_name} - ${intervale}, ${owner[val.possessions.owner].name}`}
                         </div>
                       );
                     })

@@ -1,73 +1,55 @@
-import owner from './owner';
-
 const manuscrits = [
   {
-    anderson_id: 1,
-    ms_name: '1_ANTWERPEN',
-    description: 'not description',
-    photo: null,
-    intervalles: [
-      {
-        production: true,
-        start: 800,
-        end: 1000,
-        library: 4
-      },
-      {
-        start: 1001,
-        end: 1500,
-        library: 1
-      },
-      {
-        start: 1501,
-        end: 'current',
-        library: 6
-      },
-    ]
-  },
-  {
-    anderson_id: 2,
-    ms_name: '2_ANTWERPEN',
-    description: 'not description',
-    photo: null,
-    intervalles: [
-      {
-        production: true,
-        start: 800,
-        end: 1000,
-        library: 4
-      },
-      {
-        start: 1001,
-        end: 1500,
-        library: 1
-      },
-      {
-        start: 1001,
-        end: 'current',
-        library: 5
-      },
-    ]
-  },
-  {
+    index: 0,
     anderson_id: 3,
-    ms_name: '2_ANTWERPEN',
-    description: 'not description',
-    photo: null,
-    intervalles: [
+    ms_name: '3_0',
+    possessions: [
+      {
+        start: 2020,
+        end: 'current',
+        owner: 52,
+        nameOwner: 'Museum Plantin-Moretus',
+        type: 'library'
+      },
       {
         production: true,
-        start: 800,
-        end: 1000,
-        library: 4
+        start: 1201,
+        end: 1300,
+        owner: 71,
+        nameOwner: 'St. Jacques',
+        type: 'library'
       },
       {
-        start: 1001,
-        end: 2020,
-        library: 1
-      },
+        start: 1401,
+        end: 1500,
+        owner: -1,
+        nameOwner: 'Wallon',
+        type: 'undefined'
+      }
     ]
   },
+  {
+    index: 1,
+    anderson_id: 6,
+    ms_name: '6_1',
+    possessions: [
+      {
+        start: 2020,
+        end: 'current',
+        owner: 52,
+        nameOwner: 'Museum Plantin-Moretus',
+        type: 'library'
+      },
+      {
+        production: true,
+        start: 1201,
+        end: 1300,
+        owner: 71,
+        nameOwner: 'St. Jacques',
+        type: 'library'
+      }
+    ]
+  }
 ];
 
 export default manuscrits;
