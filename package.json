@@ -7,6 +7,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode development --progress",
     "build-prod": "webpack -p --mode production --progress",
@@ -73,5 +74,8 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "resolutions": {
+    "node-forge": "^0.10.0"
   }
 }
