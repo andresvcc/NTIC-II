@@ -35,7 +35,6 @@ export default function PigeonMap(props) {
   const [center, setCenter] = useState([]);
   const [OwnerYear, setOwnerYear] = useState([]);
   const [animated, setAnimate] = useState(false);
-  const [fleches, setFleches] = useState(true);
   const [arrows, setArrows] = useState([]);
   const [connecteurs, setConnecteurs] = useState([]);
 
@@ -134,7 +133,7 @@ export default function PigeonMap(props) {
           })
         }
         {
-          stateRedux.fleches && fleches ? (
+          stateRedux.fleches && zoom < 12 ? (
             <LineDraw
               coordsArray={connecteurs}
             />
