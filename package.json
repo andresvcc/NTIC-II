@@ -28,7 +28,7 @@
     "geolocation-utils": "^1.2.3",
     "helmet": "^4.1.0",
     "lodash": "^4.17.20",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "pigeon-maps": "^0.16.0",
     "pigeon-marker": "^0.3.4",
     "pigeon-overlay": "^0.2.3",
